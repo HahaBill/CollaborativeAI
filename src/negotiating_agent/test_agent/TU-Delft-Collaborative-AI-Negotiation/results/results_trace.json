@@ -1,0 +1,124 @@
+{
+  "actions": [
+    {
+      "Offer": {
+        "actor": "agents_random_agent_random_agent_RandomAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueE": "valueB",
+            "issueD": "valueB",
+            "issueB": "valueD",
+            "issueA": "valueH"
+          }
+        },
+        "utilities": {
+          "agents_random_agent_random_agent_RandomAgent_1": 0.704816147,
+          "agents_template_agent_template_agent_TemplateAgent_2": 0.3156469751
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_template_agent_template_agent_TemplateAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueE": "valueE",
+            "issueD": "valueA",
+            "issueB": "valueF",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_random_agent_random_agent_RandomAgent_1": 0.6348259609,
+          "agents_template_agent_template_agent_TemplateAgent_2": 0.3102624845
+        }
+      }
+    },
+    {
+      "Accept": {
+        "actor": "agents_random_agent_random_agent_RandomAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueE": "valueE",
+            "issueD": "valueA",
+            "issueB": "valueF",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_random_agent_random_agent_RandomAgent_1": 0.6348259609,
+          "agents_template_agent_template_agent_TemplateAgent_2": 0.3102624845
+        }
+      }
+    }
+  ],
+  "connections": [
+    "agents_random_agent_random_agent_RandomAgent_1",
+    "agents_template_agent_template_agent_TemplateAgent_2"
+  ],
+  "progress": {
+    "ProgressRounds": {
+      "duration": 200,
+      "currentRound": 1,
+      "endtime": 1645609738018
+    }
+  },
+  "settings": {
+    "SAOPSettings": {
+      "participants": [
+        {
+          "TeamInfo": {
+            "parties": [
+              {
+                "party": {
+                  "partyref": "pythonpath:agents.random_agent.random_agent.RandomAgent",
+                  "parameters": {}
+                },
+                "profile": "file:domains/domain00/profileA.json"
+              }
+            ]
+          }
+        },
+        {
+          "TeamInfo": {
+            "parties": [
+              {
+                "party": {
+                  "partyref": "pythonpath:agents.template_agent.template_agent.TemplateAgent",
+                  "parameters": {}
+                },
+                "profile": "file:domains/domain00/profileB.json"
+              }
+            ]
+          }
+        }
+      ],
+      "deadline": {
+        "DeadlineRounds": {
+          "rounds": 200,
+          "durationms": 999
+        }
+      }
+    }
+  },
+  "partyprofiles": {
+    "agents_random_agent_random_agent_RandomAgent_1": {
+      "party": {
+        "partyref": "pythonpath:agents.random_agent.random_agent.RandomAgent",
+        "parameters": {}
+      },
+      "profile": "file:domains/domain00/profileA.json"
+    },
+    "agents_template_agent_template_agent_TemplateAgent_2": {
+      "party": {
+        "partyref": "pythonpath:agents.template_agent.template_agent.TemplateAgent",
+        "parameters": {}
+      },
+      "profile": "file:domains/domain00/profileB.json"
+    }
+  },
+  "error": null
+}

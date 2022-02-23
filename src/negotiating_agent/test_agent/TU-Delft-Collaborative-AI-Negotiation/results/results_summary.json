@@ -1,0 +1,10 @@
+{
+  "num_offers": 3,
+  "agent_1": "RandomAgent",
+  "utility_1": 0.6348259609,
+  "agent_2": "TemplateAgent",
+  "utility_2": 0.3102624845,
+  "nash_product": 0.19696267985393384,
+  "social_welfare": 0.9450884453999999,
+  "result": "agreement"
+}
