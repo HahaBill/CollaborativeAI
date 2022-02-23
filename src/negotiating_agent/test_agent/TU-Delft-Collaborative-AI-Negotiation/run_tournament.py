@@ -2,6 +2,7 @@ import json
 import os
 
 from utils.runners import run_tournament
+from utils.plot_trace import plot_trace
 
 # create results directory if it does not exist
 if not os.path.exists("results"):
