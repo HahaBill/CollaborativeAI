@@ -1,0 +1,9 @@
+{
+  "agent_1": "LinearAgent",
+  "utility_1": 0,
+  "agent_2": "StalinAgent",
+  "utility_2": 0,
+  "nash_product": 0,
+  "social_welfare": 0,
+  "result": "ERROR"
+}

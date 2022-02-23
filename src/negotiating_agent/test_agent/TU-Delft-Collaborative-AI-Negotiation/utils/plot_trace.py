@@ -5,7 +5,8 @@ import plotly.graph_objects as go
 
 
 def plot_trace(results_trace: dict, plot_file: str):
-    utilities = defaultdict(lambda: defaultdict(lambda: {"x": [], "y": [], "bids": []}))
+    utilities = defaultdict(lambda: defaultdict(
+        lambda: {"x": [], "y": [], "bids": []}))
     accept = {"x": [], "y": [], "bids": []}
     for index, action in enumerate(results_trace["actions"], 1):
         if "Offer" in action:
@@ -14,7 +15,8 @@ def plot_trace(results_trace: dict, plot_file: str):
             for agent, util in offer["utilities"].items():
                 utilities[agent][actor]["x"].append(index)
                 utilities[agent][actor]["y"].append(util)
-                utilities[agent][actor]["bids"].append(offer["bid"]["issuevalues"])
+                utilities[agent][actor]["bids"].append(
+                    offer["bid"]["issuevalues"])
         elif "Accept" in action:
             offer = action["Accept"]
             index -= 1

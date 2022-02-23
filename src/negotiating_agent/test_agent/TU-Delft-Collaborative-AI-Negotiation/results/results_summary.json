@@ -1,10 +1,10 @@
 {
-  "num_offers": 152,
+  "num_offers": 103,
   "agent_1": "LinearAgent",
-  "utility_1": 0,
-  "agent_2": "BoulwareAgent",
-  "utility_2": 0,
-  "nash_product": 0,
-  "social_welfare": 0,
-  "result": "failed"
+  "utility_1": 0.7850461741,
+  "agent_2": "StalinAgent",
+  "utility_2": 0.3902806801,
+  "nash_product": 0.306388354737651,
+  "social_welfare": 1.1753268542,
+  "result": "agreement"
 }

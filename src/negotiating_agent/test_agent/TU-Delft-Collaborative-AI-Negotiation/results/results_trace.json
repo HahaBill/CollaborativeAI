@@ -5,34 +5,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
-            "issueB": "valueJ",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0454218915
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0454218915
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -41,34 +41,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueD",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9927602362,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0448440819
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0448440819
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -77,70 +77,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
-            "issueB": "valueJ",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0454218915
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0454218915
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9927602362,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0448440819
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -149,34 +113,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
+            "issueE": "valueA",
             "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueF",
-            "issueC": "valueE"
+            "issueA": "valueJ"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9798999178,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.049467
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0454218915
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -185,34 +149,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueJ",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9764047976,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.165539018
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.165539018
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -221,34 +185,106 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueJ"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9764047976,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.165539018
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueF"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.972660154,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0488891904
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9691650338,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1649612084
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1649612084
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -257,70 +293,70 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9601648678,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.062413934
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9691650338,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1649612084
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueD",
-            "issueC": "valueE"
+            "issueA": "valueF"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9601648678,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.062413934
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9563047154,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1695841265
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -329,106 +365,70 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
-            "issueB": "valueJ",
             "issueE": "valueA",
-            "issueA": "valueD",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9601648678,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.062413934
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.554795105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 1.0
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueE",
-            "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.950433427,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.24785706
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueD",
+            "issueA": "valueH"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9514162336,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0912286394
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
             "issueE": "valueA",
-            "issueA": "valueD",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueD"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.952925104,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0618361244
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0618361244
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -437,70 +437,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
+            "issueE": "valueA",
             "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueB",
-            "issueC": "valueE"
+            "issueA": "valueG"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9478205278,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0631544055
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9473781448,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0896432375
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueB",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.940580764,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0625765959
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -509,106 +473,106 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueC",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueC"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9425166704,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.210161318
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueC"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9352769066,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2095835084
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2095835084
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueE",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9315492806,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4207300715
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueE",
             "issueE": "valueA",
-            "issueA": "valueF",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueE",
+            "issueA": "valueF"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9303333448,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2519021685
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2519021685
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -617,178 +581,70 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueJ",
             "issueE": "valueA",
-            "issueA": "valueG",
-            "issueC": "valueE"
+            "issueB": "valueJ",
+            "issueA": "valueE"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9315492806,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4207300715
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueG"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9237829424,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.209760364
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.209760364
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueC",
-            "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.916130786,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1765598864
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueI",
             "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9159287392,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1667024271
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueE",
-            "issueE": "valueA",
-            "issueA": "valueD",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9105982948,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2648491025
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
             "issueB": "valueA",
-            "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9101027966,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1752831821
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -797,178 +653,322 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueD": "valueA",
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
             "issueB": "valueD",
+            "issueA": "valueG"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9165431786,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2091825544
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9169855616,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1826937224
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueE",
+            "issueA": "valueH"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9090894244,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2942416175
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
             "issueE": "valueC",
-            "issueA": "valueJ",
-            "issueC": "valueE"
+            "issueB": "valueD",
+            "issueA": "valueJ"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.9034307155,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2967842319
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2967842319
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueC",
             "issueE": "valueA",
-            "issueA": "valueI",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9003957556,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1719078114
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
             "issueE": "valueA",
-            "issueA": "valueH",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8923539964,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1015506131
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueE",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8928027392,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2501881322
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
             "issueB": "valueC",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8998908562,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0734348024
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
             "issueE": "valueA",
-            "issueA": "valueC",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueE",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9000128908,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.570780238
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueE",
+            "issueB": "valueJ",
+            "issueA": "valueF"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8962978594,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1341161142
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueB",
+            "issueA": "valueJ"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8903020636,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1769309316
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueC",
+            "issueA": "valueC"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.8822426588,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2211821864
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2211821864
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -977,34 +977,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueE",
             "issueE": "valueA",
-            "issueA": "valueE",
-            "issueC": "valueE"
+            "issueB": "valueE",
+            "issueA": "valueE"
           }
         },
         "utilities": {
           "agents_linear_agent_linear_agent_LinearAgent_1": 0.8819827076,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.62316524
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.62316524
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -1013,34 +1013,538 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueA",
+            "issueE": "valueE",
+            "issueB": "valueJ",
+            "issueA": "valueI"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8770677088,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2455360572
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueE",
+            "issueB": "valueJ",
+            "issueA": "valueE"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8715424246,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3852620592
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueC",
+            "issueB": "valueJ",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8708353471,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.314354084
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueB",
+            "issueB": "valueD",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8639819938,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1211662946
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueC",
+            "issueB": "valueJ",
+            "issueA": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8584910071,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3150945555
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueB",
+            "issueB": "valueJ",
+            "issueA": "valueC"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8535735602,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2694914882
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueG"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8491468561,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.101834684
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueF"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8508336629,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1811977634
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueG"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8419070923,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1012568744
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueH"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8368295063,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.224115022
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueG",
+            "issueA": "valueJ"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8371933898,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2293806059
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueG",
+            "issueA": "valueC"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.826900465,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1538857794
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueF"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8282510392,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0517564965
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueJ",
+            "issueA": "valueJ"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.824755919,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1678285145
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
             "issueB": "valueI",
-            "issueE": "valueA",
-            "issueA": "valueD",
-            "issueC": "valueE"
+            "issueA": "valueJ"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.876093607,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1836944696
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8176974505,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1788938736
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -1049,214 +1553,142 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueD",
+            "issueB": "valueA",
+            "issueA": "valueJ"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8155766026,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1369778934
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
+            "issueE": "valueE",
             "issueB": "valueI",
-            "issueE": "valueA",
-            "issueA": "valueF",
-            "issueC": "valueE"
+            "issueA": "valueJ"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8722334546,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2908646621
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8087314784,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3714686678
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueC",
-            "issueE": "valueA",
-            "issueA": "valueE",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.871275269,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4317509399
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueC",
-            "issueE": "valueA",
-            "issueA": "valueG",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8635089308,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2207812324
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueF",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8580734267,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.181775573
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueJ",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueC",
+            "issueE": "valueA",
+            "issueB": "valueG",
+            "issueA": "valueC"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8033052626,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2740029059
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
             "issueE": "valueB",
-            "issueA": "valueG",
-            "issueC": "valueE"
+            "issueB": "valueA",
+            "issueA": "valueH"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8584350346,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1489734077
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8034108862,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1608807833
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueD",
-            "issueE": "valueB",
-            "issueA": "valueG",
-            "issueC": "valueE"
+            "issueE": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8511952708,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1483955981
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -1265,430 +1697,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueD",
-            "issueE": "valueC",
-            "issueA": "valueC",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8459473859,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4615236584
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueJ",
-            "issueE": "valueD",
-            "issueA": "valueI",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8425483708,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2426987808
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueD",
-            "issueE": "valueC",
-            "issueA": "valueH",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8384915105,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4632859159
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueB",
-            "issueA": "valueB",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8352822152,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2426017022
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueE",
-            "issueE": "valueD",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8323120306,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3296688978
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
+            "issueE": "valueA",
             "issueB": "valueH",
-            "issueE": "valueA",
-            "issueA": "valueH",
-            "issueC": "valueE"
+            "issueA": "valueE"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.825112282,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1365272126
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7980055652,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4654508351
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueD",
-            "issueA": "valueC",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.824395274,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2919731558
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueD",
-            "issueE": "valueD",
-            "issueA": "valueC",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8171555102,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2913953462
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueD",
-            "issueE": "valueD",
-            "issueA": "valueH",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8096996348,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2931576037
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueD",
             "issueE": "valueA",
-            "issueA": "valueC",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8072232304,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0917558784
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueJ",
-            "issueE": "valueD",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.807862865,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.5702740338
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueA",
-            "issueE": "valueE",
-            "issueA": "valueG",
-            "issueC": "valueE"
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7974740854,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1840365158
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -1697,214 +1733,34 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueJ",
+            "issueC": "valueE",
+            "issueD": "valueB",
             "issueE": "valueA",
-            "issueA": "valueG",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7957292662,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.091932734
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueB",
-            "issueE": "valueA",
-            "issueA": "valueJ",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7920707749,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1891223781
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueB",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7853292317,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.6376468505
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueD",
-            "issueE": "valueB",
-            "issueA": "valueF",
-            "issueC": "valueA"
+            "issueA": "valueH"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7854857551,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1204108071
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7937592572,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2563168049
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueE",
-            "issueE": "valueF",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7797877039,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.6274674658
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
+            "issueE": "valueA",
             "issueB": "valueA",
-            "issueE": "valueB",
-            "issueA": "valueE",
-            "issueC": "valueE"
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7763041694,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4898044058
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
@@ -1913,839 +1769,101 @@
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
+            "issueC": "valueE",
             "issueD": "valueC",
-            "issueB": "valueI",
-            "issueE": "valueE",
-            "issueA": "valueD",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7688963462,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3884607103
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueE",
             "issueE": "valueB",
-            "issueA": "valueJ",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7632590281,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3193786767
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
             "issueB": "valueC",
-            "issueE": "valueD",
-            "issueA": "valueC",
-            "issueC": "valueE"
+            "issueA": "valueI"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7641212624,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3029940242
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.787857443,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3513551081
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
+            "issueC": "valueA",
             "issueD": "valueA",
-            "issueB": "valueJ",
-            "issueE": "valueF",
-            "issueA": "valueF",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7614434422,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1183456743
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueJ",
-            "issueE": "valueB",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7533999134,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2698402272
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueB"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2750909408,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.988393509
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueD",
-            "issueE": "valueC",
-            "issueA": "valueC",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7477160972,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4737151049
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueB",
-            "issueE": "valueE",
-            "issueA": "valueD",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7432696706,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3986892148
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueG",
-            "issueE": "valueD",
-            "issueA": "valueJ",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7426671958,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1910753172
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6530263937,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.9878085535
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueE",
             "issueE": "valueA",
-            "issueA": "valueH",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7338453434,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4166482405
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueB"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2750909408,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.988393509
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueH",
-            "issueE": "valueE",
-            "issueA": "valueG",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.730232371,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2190131153
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueF",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7310416686,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.0510946095
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
             "issueB": "valueA",
+            "issueA": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueD": "valueA",
+            "issueE": "valueC",
+            "issueB": "valueI",
+            "issueA": "valueD"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7867640863,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4356346196
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueD": "valueA",
             "issueE": "valueA",
-            "issueA": "valueC",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7245657908,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2221949786
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6530263937,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.9878085535
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueJ",
-            "issueE": "valueC",
-            "issueA": "valueD",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7191864685,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3166435805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueB"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2750909408,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.988393509
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueF",
-            "issueE": "valueF",
-            "issueA": "valueF",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7161691711,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2571622176
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueB"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2750909408,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.988393509
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
-            "issueB": "valueG",
-            "issueE": "valueA",
-            "issueA": "valueB",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7103778313,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.1391874399
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueB"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2750909408,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.988393509
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueB",
-            "issueE": "valueD",
-            "issueA": "valueE",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7037299478,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.6340509494
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueA",
             "issueB": "valueA",
-            "issueE": "valueB",
-            "issueA": "valueE",
-            "issueC": "valueA"
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7016680831,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3818787258
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     },
     {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
+      "Accept": {
         "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueJ",
+            "issueC": "valueA",
+            "issueD": "valueA",
             "issueE": "valueA",
-            "issueA": "valueE",
-            "issueC": "valueA"
+            "issueB": "valueA",
+            "issueA": "valueA"
           }
         },
         "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6992562179,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.477892557
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueC"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4041681445,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.989436163
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueD",
-            "issueE": "valueB",
-            "issueA": "valueG",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6935382944,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3134837636
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6530263937,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.9878085535
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueJ",
-            "issueE": "valueA",
-            "issueA": "valueB",
-            "issueC": "valueA"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6919322627,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.2404340175
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueJ",
-            "issueE": "valueD",
-            "issueA": "valueI",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6848913944,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.4077869463
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueJ",
-            "issueE": "valueD",
-            "issueA": "valueD",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.684386495,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3093139373
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6530263937,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.9878085535
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueC",
-            "issueB": "valueG",
-            "issueE": "valueF",
-            "issueA": "valueH",
-            "issueC": "valueE"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6756242003,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.3324523912
-        }
-      }
-    },
-    {
-      "Offer": {
-        "actor": "agents_boulware_agent_boulware_agent_BoulwareAgent_2",
-        "bid": {
-          "issuevalues": {
-            "issueD": "valueB",
-            "issueB": "valueE",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueC": "valueD"
-          }
-        },
-        "utilities": {
-          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5013775151,
-          "agents_boulware_agent_boulware_agent_BoulwareAgent_2": 0.99009805
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7850461741,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3902806801
         }
       }
     }
   ],
   "connections": [
     "agents_linear_agent_linear_agent_LinearAgent_1",
-    "agents_boulware_agent_boulware_agent_BoulwareAgent_2"
+    "agents_communist_party_agent_stalin_StalinAgent_2"
   ],
   "progress": {
     "ProgressRounds": {
       "duration": 200,
-      "currentRound": 76,
-      "endtime": 1645643350930
+      "currentRound": 51,
+      "endtime": 1645651346253
     }
   },
   "settings": {
@@ -2769,7 +1887,7 @@
             "parties": [
               {
                 "party": {
-                  "partyref": "pythonpath:agents.boulware_agent.boulware_agent.BoulwareAgent",
+                  "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
                   "parameters": {}
                 },
                 "profile": "file:domains/domain00/profileB.json"
@@ -2794,9 +1912,9 @@
       },
       "profile": "file:domains/domain00/profileA.json"
     },
-    "agents_boulware_agent_boulware_agent_BoulwareAgent_2": {
+    "agents_communist_party_agent_stalin_StalinAgent_2": {
       "party": {
-        "partyref": "pythonpath:agents.boulware_agent.boulware_agent.BoulwareAgent",
+        "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
         "parameters": {}
       },
       "profile": "file:domains/domain00/profileB.json"

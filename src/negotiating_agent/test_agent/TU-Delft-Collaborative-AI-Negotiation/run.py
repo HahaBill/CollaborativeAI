@@ -15,8 +15,7 @@ if not os.path.exists("results"):
 settings = {
     "agents": [
         "agents.linear_agent.linear_agent.LinearAgent",
-        "agents.boulware_agent.boulware_agent.BoulwareAgent",
-
+        "agents.communist_party.agent_stalin.StalinAgent",
     ],
     "profiles": ["domains/domain00/profileA.json", "domains/domain00/profileB.json"],
     "deadline_rounds": 200,

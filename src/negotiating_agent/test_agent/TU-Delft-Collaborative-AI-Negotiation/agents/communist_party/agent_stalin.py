@@ -2,6 +2,7 @@ import logging
 from random import randint
 from typing import cast
 
+
 from geniusweb.actions.Accept import Accept
 from geniusweb.actions.Action import Action
 from geniusweb.actions.Offer import Offer
@@ -25,7 +26,7 @@ from geniusweb.profileconnection.ProfileConnectionFactory import (
 from geniusweb.progress.ProgressRounds import ProgressRounds
 
 
-class TemplateAgent(DefaultParty):
+class StalinAgent(DefaultParty):
     """
     Template agent that offers random bids until a bid with sufficient utility is offered.
     """
@@ -35,6 +36,8 @@ class TemplateAgent(DefaultParty):
         self.getReporter().log(logging.INFO, "party is initialized")
         self._profile = None
         self._last_received_bid: Bid = None
+        self.best_offer_opponent: Bid = None
+        #self.best_bid: Bid = None
 
     def notifyChange(self, info: Inform):
         """This is the entry point of all interaction with your agent after is has been initialised.
@@ -107,6 +110,19 @@ class TemplateAgent(DefaultParty):
 
     # execute a turn
     def _myTurn(self):
+
+        profile = self._profile.getProfile()
+        progress = self._progress.get(0)
+
+        if(self.best_offer_opponent is None):
+            self.best_offer_opponent = self._last_received_bid
+
+        if(profile.getUtility(self._last_received_bid) > profile.getUtility(self.best_offer_opponent)):
+            self.best_offer_opponent = self._last_received_bid
+
+        if(progress > 0.9):
+            action = Accept(self._me, self.best_offer_opponent)
+
         # check if the last received offer if the opponent is good enough
         if self._isGood(self._last_received_bid):
             # if so, accept the offer
@@ -124,21 +140,34 @@ class TemplateAgent(DefaultParty):
         if bid is None:
             return False
         profile = self._profile.getProfile()
-
         progress = self._progress.get(0)
 
         # very basic approach that accepts if the offer is valued above 0.6 and
         # 80% of the rounds towards the deadline have passed
-        return profile.getUtility(bid) > 0.6 and progress > 0.8
+        return profile.getUtility(bid) > profile.getUtility(self._findBid()) and progress > 0.9
 
     def _findBid(self) -> Bid:
         # compose a list of all possible bids
-        domain = self._profile.getProfile().getDomain()
-        all_bids = AllBidsList(domain)
+        # domain = self._profile.getProfile().getDomain()
+        # all_bids = AllBidsList(domain)
 
         # take 50 attempts at finding a random bid that is acceptable to us
-        for _ in range(50):
-            bid = all_bids.get(randint(0, all_bids.size() - 1))
-            if self._isGood(bid):
-                break
+        # for _ in range(50):
+        #     bid = all_bids.get(randint(0, all_bids.size() - 1))
+        #     # if self._isGood(bid):
+        #     #     break
+        return self.find_best_bid_init()
+
+    def find_best_bid_init(self) -> Bid:
+        domain = self._profile.getProfile().getDomain()
+        all_bids = AllBidsList(domain)
+        profile = self._profile.getProfile()
+
+        best_utility = 0.0
+        for x in all_bids:
+            # curr_utility = profile.getUtility(x)
+            # if(best_utility < curr_utility):
+            bid = x
+            break
+
         return bid

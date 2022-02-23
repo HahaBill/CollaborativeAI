@@ -1,0 +1,69 @@
+{
+  "actions": [],
+  "connections": [
+    "agents_linear_agent_linear_agent_LinearAgent_1",
+    "agents_communist_party_agent_stalin_StalinAgent_2"
+  ],
+  "progress": {
+    "ProgressRounds": {
+      "duration": 200,
+      "currentRound": 0,
+      "endtime": 1645647232826
+    }
+  },
+  "settings": {
+    "SAOPSettings": {
+      "participants": [
+        {
+          "TeamInfo": {
+            "parties": [
+              {
+                "party": {
+                  "partyref": "pythonpath:agents.linear_agent.linear_agent.LinearAgent",
+                  "parameters": {}
+                },
+                "profile": "file:domains/domain00/profileA.json"
+              }
+            ]
+          }
+        },
+        {
+          "TeamInfo": {
+            "parties": [
+              {
+                "party": {
+                  "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
+                  "parameters": {}
+                },
+                "profile": "file:domains/domain00/profileB.json"
+              }
+            ]
+          }
+        }
+      ],
+      "deadline": {
+        "DeadlineRounds": {
+          "rounds": 200,
+          "durationms": 999
+        }
+      }
+    }
+  },
+  "partyprofiles": {
+    "agents_linear_agent_linear_agent_LinearAgent_1": {
+      "party": {
+        "partyref": "pythonpath:agents.linear_agent.linear_agent.LinearAgent",
+        "parameters": {}
+      },
+      "profile": "file:domains/domain00/profileA.json"
+    },
+    "agents_communist_party_agent_stalin_StalinAgent_2": {
+      "party": {
+        "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
+        "parameters": {}
+      },
+      "profile": "file:domains/domain00/profileB.json"
+    }
+  },
+  "error": null
+}
