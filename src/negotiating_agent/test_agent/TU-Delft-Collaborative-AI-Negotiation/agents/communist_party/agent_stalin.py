@@ -1,8 +1,10 @@
 import logging
+import scipy as sc
+
 from random import randint
-from typing import cast
+from typing import Tuple, cast
 
-
+from sklearn.preprocessing import LabelEncoder
 from geniusweb.actions.Accept import Accept
 from geniusweb.actions.Action import Action
 from geniusweb.actions.Offer import Offer
@@ -24,6 +26,7 @@ from geniusweb.profileconnection.ProfileConnectionFactory import (
     ProfileConnectionFactory,
 )
 from geniusweb.progress.ProgressRounds import ProgressRounds
+from sqlalchemy import false, true
 
 
 class StalinAgent(DefaultParty):
@@ -37,7 +40,11 @@ class StalinAgent(DefaultParty):
         self._profile = None
         self._last_received_bid: Bid = None
         self.best_offer_opponent: Bid = None
-        #self.best_bid: Bid = None
+        self.best_bid: Bid = None
+        self.calculated_bid: bool = False
+        self.opponent_issues = {{}}
+        self.opp_history_bids = ({})
+        self.sorted_bid = ()
 
     def notifyChange(self, info: Inform):
         """This is the entry point of all interaction with your agent after is has been initialised.
@@ -120,7 +127,7 @@ class StalinAgent(DefaultParty):
         if(profile.getUtility(self._last_received_bid) > profile.getUtility(self.best_offer_opponent)):
             self.best_offer_opponent = self._last_received_bid
 
-        if(progress > 0.9):
+        if(progress > 0.7):
             action = Accept(self._me, self.best_offer_opponent)
 
         # check if the last received offer if the opponent is good enough
@@ -133,9 +140,29 @@ class StalinAgent(DefaultParty):
             action = Offer(self._me, bid)
 
         # send the action
+        self.update_opponent_issues()
         self.getConnection().send(action)
 
+    def update_opponent_issues(self):
+        """
+        Keep track of frequencies of the values in bids received by
+        the opponents over period of time
+        """
+
+        recentIssues = self._last_received_bid.getIssues()
+        recentIssuesValues = self._last_received_bid.getIssueValues()
+
+        for issue in recentIssues:
+            if issue in self.opponent_issues:
+                if recentIssuesValues[issue] in self.opponent_issues[issue]:
+                    self.opponent_issues[issue] = self.opponent_issues[issue][recentIssuesValues[issue]] + 1
+                else:
+                    self.opponent_issues[issue][recentIssuesValues[issue]] = 1
+            else:
+                self.opponent_issues[issue][recentIssuesValues[issue]] = 1
+
     # method that checks if we would agree with an offer
+
     def _isGood(self, bid: Bid) -> bool:
         if bid is None:
             return False
@@ -144,30 +171,85 @@ class StalinAgent(DefaultParty):
 
         # very basic approach that accepts if the offer is valued above 0.6 and
         # 80% of the rounds towards the deadline have passed
-        return profile.getUtility(bid) > profile.getUtility(self._findBid()) and progress > 0.9
+        # AC_NEXT
+        return profile.getUtility(bid) > profile.getUtility(self._findBid()) and progress > 0.8
 
     def _findBid(self) -> Bid:
-        # compose a list of all possible bids
-        # domain = self._profile.getProfile().getDomain()
-        # all_bids = AllBidsList(domain)
+        """
+        Finds the best bid
+        """
+        return self.always_best_bid_init()
 
-        # take 50 attempts at finding a random bid that is acceptable to us
-        # for _ in range(50):
-        #     bid = all_bids.get(randint(0, all_bids.size() - 1))
-        #     # if self._isGood(bid):
-        #     #     break
-        return self.find_best_bid_init()
+    def find_best_offer(self) -> Bid:
+        """
+        Finds the best offer according based on the 
+        issue frequency 
+        """
+        for bid in self.sorted_bid:
+            found = True
+            for issue, value in bid.getIssueValues().items():
+                if self.accept(issue, value):
+                    continue
+                else:
+                    found = False
+                    break
+            if(found):
+                return bid
 
-    def find_best_bid_init(self) -> Bid:
-        domain = self._profile.getProfile().getDomain()
-        all_bids = AllBidsList(domain)
-        profile = self._profile.getProfile()
+    def accept(self, issue, value):
+        """
+        Accepts the issues-values
+        """
+        issue_range = acceptable_value_range(issue)
+        return
 
-        best_utility = 0.0
-        for x in all_bids:
-            # curr_utility = profile.getUtility(x)
-            # if(best_utility < curr_utility):
-            bid = x
-            break
+    def calculate_variance(self):
+        lb_encoder = LabelEncoder()
+        categorical_values = []
+        numerical_values = lb_encoder.fit_transform()
 
-        return bid
+    def update_history_opp_issues(self):
+        recentIssuesValues = self._last_received_bid.getIssueValues()
+        self.opp_history_bids.append(recentIssuesValues)
+
+    def sort_high_bids(self):
+        """
+        Sorting bids based on the utility values
+        """
+        temp_tuple_bid = ()
+        if(not self.calculated_bid):
+            domain = self._profile.getProfile().getDomain()
+            all_bids = AllBidsList(domain)
+            profile = self._profile.getProfile()
+
+            for x in all_bids:
+                temp_tuple_bid.append((profile.getUtility(x), x))
+
+            temp_tuple_bid = sorted(temp_tuple_bid, key=lambda x: x[0])
+
+            self.calculated_bid = True
+            self.sorted_bid = zip(*temp_tuple_bid)[1]
+
+    def always_best_bid_init(self) -> Bid:
+        """
+        Returns the best bid
+        """
+        if(not self.calculated_bid):
+            domain = self._profile.getProfile().getDomain()
+            all_bids = AllBidsList(domain)
+            profile = self._profile.getProfile()
+
+            best_utility = 0.0
+
+            for x in all_bids:
+                curr_utility = profile.getUtility(x)
+                if(best_utility < curr_utility):
+                    bid = x
+                    best_utility = curr_utility
+
+            self.calculated_bid = True
+            self.best_bid = bid
+
+            return self.best_bid
+        else:
+            return self.best_bid
