@@ -1,10 +1,10 @@
 {
-  "num_offers": 400,
+  "num_offers": 5,
   "agent_1": "RandomAgent",
-  "utility_1": 0,
+  "utility_1": 0.6509516226,
   "agent_2": "StalinAgent",
-  "utility_2": 0,
-  "nash_product": 0,
-  "social_welfare": 0,
-  "result": "failed"
+  "utility_2": 0.1014159651,
+  "nash_product": 0.06601688703938997,
+  "social_welfare": 0.7523675877,
+  "result": "agreement"
 }
