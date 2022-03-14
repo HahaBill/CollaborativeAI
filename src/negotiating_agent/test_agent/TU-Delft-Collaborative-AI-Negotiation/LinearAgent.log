@@ -2794,3 +2794,105 @@
 2022-02-24 12:33:40,765 - LinearAgent - INFO - party is initialized
 2022-02-24 12:33:41,541 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueA="valueA", issueE="valueC", issueB="valueE", issueD="valueB", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueE="valueC", issueB="valueE", issueD="valueB", issueC="valueA"}}]
 2022-02-24 12:33:41,547 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:13:19,499 - LinearAgent - INFO - party is initialized
+2022-03-02 13:13:20,548 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueB="valueD", issueC="valueE", issueD="valueA", issueE="valueA", issueA="valueJ"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueD", issueC="valueE", issueD="valueA", issueE="valueA", issueA="valueJ"}}]
+2022-03-02 13:13:20,548 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:20:14,044 - LinearAgent - INFO - party is initialized
+2022-03-02 13:20:15,043 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueA="valueJ", issueD="valueA", issueB="valueD", issueC="valueE", issueE="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueJ", issueD="valueA", issueB="valueD", issueC="valueE", issueE="valueA"}}]
+2022-03-02 13:20:15,044 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:23:40,882 - LinearAgent - INFO - party is initialized
+2022-03-02 13:23:41,869 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueE="valueA", issueD="valueA", issueA="valueJ", issueB="valueD", issueC="valueE"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueE="valueA", issueD="valueA", issueA="valueJ", issueB="valueD", issueC="valueE"}}]
+2022-03-02 13:23:41,869 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:24:16,765 - LinearAgent - INFO - party is initialized
+2022-03-02 13:24:18,497 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:24:18,497 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:24:52,349 - LinearAgent - INFO - party is initialized
+2022-03-02 13:24:54,118 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:24:54,118 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:25:00,788 - LinearAgent - INFO - party is initialized
+2022-03-02 13:25:02,545 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:25:02,545 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:25:11,796 - LinearAgent - INFO - party is initialized
+2022-03-02 13:25:13,570 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:25:13,576 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:25:48,891 - LinearAgent - INFO - party is initialized
+2022-03-02 13:25:49,882 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueE", issueD="valueA", issueB="valueD", issueA="valueJ", issueE="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueE", issueD="valueA", issueB="valueD", issueA="valueJ", issueE="valueA"}}]
+2022-03-02 13:25:49,882 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:34:23,113 - LinearAgent - INFO - party is initialized
+2022-03-02 13:34:24,074 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueA", issueA="valueJ", issueB="valueD", issueC="valueE", issueE="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueA", issueA="valueJ", issueB="valueD", issueC="valueE", issueE="valueA"}}]
+2022-03-02 13:34:24,074 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:34:39,994 - LinearAgent - INFO - party is initialized
+2022-03-02 13:34:40,832 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueB="valueJ", issueD="valueA", issueE="valueA", issueA="valueJ", issueC="valueE"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueJ", issueD="valueA", issueE="valueA", issueA="valueJ", issueC="valueE"}}]
+2022-03-02 13:34:40,834 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:34:52,699 - LinearAgent - INFO - party is initialized
+2022-03-02 13:34:53,512 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueE="valueA", issueB="valueJ", issueD="valueA", issueA="valueJ", issueC="valueE"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueE="valueA", issueB="valueJ", issueD="valueA", issueA="valueJ", issueC="valueE"}}]
+2022-03-02 13:34:53,512 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:35:03,515 - LinearAgent - INFO - party is initialized
+2022-03-02 13:35:04,432 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueA="valueJ", issueD="valueA", issueB="valueJ", issueC="valueE", issueE="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueJ", issueD="valueA", issueB="valueJ", issueC="valueE", issueE="valueA"}}]
+2022-03-02 13:35:04,434 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:35:12,048 - LinearAgent - INFO - party is initialized
+2022-03-02 13:35:12,825 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueA", issueB="valueD", issueE="valueA", issueC="valueE", issueA="valueJ"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueA", issueB="valueD", issueE="valueA", issueC="valueE", issueA="valueJ"}}]
+2022-03-02 13:35:12,825 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:35:28,193 - LinearAgent - INFO - party is initialized
+2022-03-02 13:35:29,013 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueA="valueJ", issueD="valueA", issueE="valueA", issueB="valueD", issueC="valueE"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueJ", issueD="valueA", issueE="valueA", issueB="valueD", issueC="valueE"}}]
+2022-03-02 13:35:29,013 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:37:31,997 - LinearAgent - INFO - party is initialized
+2022-03-02 13:37:32,923 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueE="valueA", issueA="valueJ", issueD="valueA", issueC="valueE", issueB="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueE="valueA", issueA="valueJ", issueD="valueA", issueC="valueE", issueB="valueD"}}]
+2022-03-02 13:37:32,924 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:38:29,039 - LinearAgent - INFO - party is initialized
+2022-03-02 13:38:30,053 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueB="valueD", issueD="valueA", issueA="valueJ", issueC="valueE", issueE="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueD", issueD="valueA", issueA="valueJ", issueC="valueE", issueE="valueA"}}]
+2022-03-02 13:38:30,055 - LinearAgent - INFO - party is terminating:
+2022-03-02 13:38:40,812 - LinearAgent - INFO - party is initialized
+2022-03-02 13:38:42,555 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:38:42,561 - LinearAgent - INFO - party is terminating:
+2022-03-02 20:41:35,588 - LinearAgent - INFO - party is initialized
+2022-03-02 20:41:37,425 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 20:41:37,431 - LinearAgent - INFO - party is terminating:
+2022-03-02 20:48:38,026 - LinearAgent - INFO - party is initialized
+2022-03-02 20:48:39,641 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueB", issueB="valueA", issueA="valueD", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueB="valueA", issueA="valueD", issueC="valueA"}}]
+2022-03-02 20:48:39,659 - LinearAgent - INFO - party is terminating:
+2022-03-05 00:16:16,200 - LinearAgent - INFO - party is initialized
+2022-03-05 00:16:21,973 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueB", issueA="valueD", issueC="valueA", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueA="valueD", issueC="valueA", issueB="valueA"}}]
+2022-03-05 00:16:21,982 - LinearAgent - INFO - party is terminating:
+2022-03-05 00:59:23,422 - LinearAgent - INFO - party is initialized
+2022-03-05 00:59:24,955 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueB", issueB="valueA", issueC="valueA", issueA="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueB="valueA", issueC="valueA", issueA="valueA"}}]
+2022-03-05 00:59:24,962 - LinearAgent - INFO - party is terminating:
+2022-03-05 01:00:58,821 - LinearAgent - INFO - party is initialized
+2022-03-05 01:01:00,541 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 01:01:00,554 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:08:15,265 - LinearAgent - INFO - party is initialized
+2022-03-05 18:08:17,010 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:08:17,011 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:08:42,250 - LinearAgent - INFO - party is initialized
+2022-03-05 18:08:43,824 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueB="valueH", issueC="valueB", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueH", issueC="valueB", issueA="valueD"}}]
+2022-03-05 18:08:43,831 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:34:17,587 - LinearAgent - INFO - party is initialized
+2022-03-05 18:34:19,258 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:34:19,265 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:36:05,552 - LinearAgent - INFO - party is initialized
+2022-03-05 18:36:07,279 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:36:07,298 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:39:27,316 - LinearAgent - INFO - party is initialized
+2022-03-05 18:39:28,936 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueO", issueD="valueA", issueB="valueE", issueA="valueI"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueO", issueD="valueA", issueB="valueE", issueA="valueI"}}]
+2022-03-05 18:39:28,942 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:40:19,686 - LinearAgent - INFO - party is initialized
+2022-03-05 18:40:21,122 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueG", issueA="valueB", issueD="valueA", issueB="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueG", issueA="valueB", issueD="valueA", issueB="valueB"}}]
+2022-03-05 18:40:21,127 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:41:15,180 - LinearAgent - INFO - party is initialized
+2022-03-05 18:41:17,007 - LinearAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:41:17,014 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:42:08,915 - LinearAgent - INFO - party is initialized
+2022-03-05 18:42:10,155 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueM", issueD="valueA", issueA="valueE", issueB="valueC"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueM", issueD="valueA", issueA="valueE", issueB="valueC"}}]
+2022-03-05 18:42:10,161 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:42:46,101 - LinearAgent - INFO - party is initialized
+2022-03-05 18:42:47,223 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueD", issueA="valueE", issueB="valueA", issueC="valueC"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueD", issueA="valueE", issueB="valueA", issueC="valueC"}}]
+2022-03-05 18:42:47,229 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:43:57,606 - LinearAgent - INFO - party is initialized
+2022-03-05 18:43:58,426 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueB="valueX", issueC="valueH", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueX", issueC="valueH", issueA="valueD"}}]
+2022-03-05 18:43:58,426 - LinearAgent - INFO - party is terminating:
+2022-03-05 18:44:18,858 - LinearAgent - INFO - party is initialized
+2022-03-05 18:44:19,889 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueD", issueB="valueL", issueA="valueG", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueD", issueB="valueL", issueA="valueG", issueD="valueA"}}]
+2022-03-05 18:44:19,889 - LinearAgent - INFO - party is terminating:
+2022-03-05 22:05:23,266 - LinearAgent - INFO - party is initialized
+2022-03-05 22:05:24,372 - LinearAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueC="valueF", issueB="valueE", issueA="valueH", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueF", issueB="valueE", issueA="valueH", issueD="valueA"}}]
+2022-03-05 22:05:24,390 - LinearAgent - INFO - party is terminating:

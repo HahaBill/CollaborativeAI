@@ -2,19 +2,18 @@
   "actions": [
     {
       "Offer": {
-        "actor": "agents_random_agent_random_agent_RandomAgent_1",
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueC": "valueA",
-            "issueE": "valueC",
-            "issueA": "valueC",
-            "issueB": "valueA",
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
             "issueD": "valueA"
           }
         },
         "utilities": {
-          "agents_random_agent_random_agent_RandomAgent_1": 0.7122490624,
-          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3639199521
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
         }
       }
     },
@@ -23,34 +22,678 @@
         "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
         "bid": {
           "issuevalues": {
-            "issueC": "valueA",
-            "issueE": "valueC",
-            "issueA": "valueA",
-            "issueB": "valueE",
+            "issueC": "valueF",
+            "issueB": "valueC",
+            "issueA": "valueH",
             "issueD": "valueB"
           }
         },
         "utilities": {
-          "agents_random_agent_random_agent_RandomAgent_1": 0.554795105,
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2004083668,
           "agents_communist_party_agent_stalin_StalinAgent_2": 1.0
         }
       }
     },
     {
       "Offer": {
-        "actor": "agents_random_agent_random_agent_RandomAgent_1",
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueC": "valueE",
-            "issueE": "valueF",
-            "issueA": "valueI",
-            "issueB": "valueA",
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueJ",
+            "issueB": "valueC",
+            "issueA": "valueH",
             "issueD": "valueB"
           }
         },
         "utilities": {
-          "agents_random_agent_random_agent_RandomAgent_1": 0.6164856029,
-          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3924065004
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2270138464,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9882008865
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3884848876,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.98164952
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3380334544,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.972574087
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.180001558,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.960152493
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3048005512,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.955356504
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9687238516,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3673882317
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2984741668,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.953985471
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2906927596,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9509973895
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9573778666,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3735823942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.244382896,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9417503585
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1680033214,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.939371625
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9471725,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5684859487
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.221918986,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9325488535
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9423513116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5022202292
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2947339828,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.931767032
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2801016532,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9283219395
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueP",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1851716782,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9260964185
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueO",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1672005502,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.925797873
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueG",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1957399786,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.92265833
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueL",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2128330756,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.922094508
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9163156636,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4074265977
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3458627542,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9215123005
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9099892792,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4060555647
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueX",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1834407028,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.919326177
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9045503666,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5083487292
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueM",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2239281946,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.917788799
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.902207872,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4030674832
         }
       }
     },
@@ -60,46 +703,3750 @@
         "bid": {
           "issuevalues": {
             "issueC": "valueC",
-            "issueE": "valueA",
-            "issueA": "valueC",
-            "issueB": "valueA",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1605503206,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.917431595
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8967210668,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5594105157
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3488503402,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.916324963
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueD",
+            "issueA": "valueA",
             "issueD": "valueA"
           }
         },
         "utilities": {
-          "agents_random_agent_random_agent_RandomAgent_1": 0.6509516226,
-          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1014159651
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8916167656,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3803920332
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3836636992,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9153838005
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.886571789,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4435322445
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3572087392,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.915318138
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8817506006,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.377266525
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueY",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.1814314942,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.914973191
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueK",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2977466554,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.9146886535
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4723361208,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8965078453
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8634881636,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5421929327
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueJ",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4989416004,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8847087318
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 1.0,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4337196137
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6604126416,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8781573653
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8558980084,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3938204522
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6099612084,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8690819323
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8534215952,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5186034607
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2532358668,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.865233665
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8439496556,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.383395025
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.451929312,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8566603383
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.9951788116,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3674538942
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueJ",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2798413464,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8534345515
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8387892656,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5151583682
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5767283052,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8518643493
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8334340984,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3846189472
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5704019208,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8504933163
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueL",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.824348188,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3741646017
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5626205136,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8475052348
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueE",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8222134142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5865323241
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4413123876,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.846883185
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueE",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8173922258,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5202666046
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3093816394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8431412938
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8119234792,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4520700937
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.51631065,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8382582038
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueG",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.807255091,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3747284237
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3908609544,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.837807752
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.8020061145,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1267572437
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4399310754,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8358794703
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueK",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7958335568,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.376571378
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueJ",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.335987119,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8313421803
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7928208842,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3936497565
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.49384674,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8290566988
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.788779661,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.412880114
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5666617368,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8282748773
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7806065984,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5193852822
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.232829058,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.825386158
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueO",
+            "issueB": "valueD",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7787156626,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3778679667
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5520294072,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8248297848
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7707299661,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0604258617
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4974581602,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8247908138
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueE",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7693859142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7212986591
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueP",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4570994322,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8226042638
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7623715671,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0614326867
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueO",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4391283042,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8223057183
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7590767715,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0959730386
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3576280512,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.820590169
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7544875838,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3800503767
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3513016668,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.819219136
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7491786145,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2615235787
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueG",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4676677326,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8191661753
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7424697974,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.403633083
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueL",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4847608296,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8186023533
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7399933842,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5284160915
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6177905082,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8180201458
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.735952161,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.547646449
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3435202596,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8162310545
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7278006231,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0296416566
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueX",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4553684568,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8158340223
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7232510576,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4709460489
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.447006727,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8157153808
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7183217781,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1004642277
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueM",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4958559486,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8142966443
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7134253808,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4138945802
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueC",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4324780746,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8139394403
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueL",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.710919977,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3839772325
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6207780942,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8128328083
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7046476698,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5096293742
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6555914532,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8118916458
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.7016600838,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5148167117
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6291364932,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8118259833
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueD",
+            "issueA": "valueK",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6955139041,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1601208547
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueY",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4533592482,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8114810363
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueD",
+            "issueA": "valueK",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6876846043,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2111826412
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueK",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5696744094,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8111964988
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6837567151,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.070304155
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.297210396,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8069840235
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueX",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6815276042,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3812089015
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueC",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2208308214,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.80460529
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6753924351,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0696800226
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.2889748306,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.8032937868
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueM",
+            "issueB": "valueA",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.669187596,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5144378585
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6653258667,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0460905506
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueE",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6620938445,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2424954839
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6573017551,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0702384925
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6506935371,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0426454581
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueD",
+            "issueA": "valueL",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6443347356,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2198493451
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueD",
+            "issueA": "valueJ",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6411279615,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1853856674
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueM",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6374494215,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0628965227
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueC",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6295558052,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7170980143
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueA",
+            "issueA": "valueK",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6247078265,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.230070705
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueD",
+            "issueA": "valueE",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6194717111,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1823582644
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueK",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6155110393,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1637785071
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueD",
+            "issueA": "valueE",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6116424113,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2334200509
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueD",
+            "issueA": "valueI",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6079973821,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0172297386
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.6044742551,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2050048275
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueD",
+            "issueA": "valueK",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5952978167,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3273603602
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5925108699,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0468723721
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5886263876,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4186905692
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueD",
+            "issueA": "valueI",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5815424221,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0171640761
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueD",
+            "issueA": "valueB",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5779964131,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1812338424
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueE",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5713920287,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4143362891
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueA",
+            "issueA": "valueK",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5670591381,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2985713205
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueR",
+            "issueB": "valueD",
+            "issueA": "valueG",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5621472799,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1908402121
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueG",
+            "issueB": "valueD",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5564337055,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2025323887
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5520660671,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2450431935
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueB",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5486643985,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1241497932
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5419994987,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2214537215
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueX",
+            "issueB": "valueB",
+            "issueA": "valueA",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5392380324,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5126305882
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueK",
+            "issueB": "valueE",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5334812965,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2126090876
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueY",
+            "issueB": "valueD",
+            "issueA": "valueK",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5310826441,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1535817452
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5220120019,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.087469208
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueD",
+            "issueA": "valueE",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5192556237,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3495977699
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueB",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5165519413,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0371164641
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueA",
+            "issueB": "valueD",
+            "issueA": "valueF",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.509724195,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1812350845
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueD",
+            "issueA": "valueI",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5044353361,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0301678776
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueJ",
+            "issueB": "valueD",
+            "issueA": "valueE",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.5006228033,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2490468504
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4265675142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5653748792
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4926369718,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7585250943
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueE",
+            "issueA": "valueG",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4912794649,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2211217
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueA",
+            "issueA": "valueL",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4864374236,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3634214859
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueV",
+            "issueB": "valueE",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4813813079,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3866722401
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueA",
+            "issueA": "valueL",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4750914386,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3696156484
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueT",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4680656302,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.6319082462
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueE",
+            "issueA": "valueL",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4635605638,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.377849393
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueU",
+            "issueB": "valueB",
+            "issueA": "valueG",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4607368553,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1770701366
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueA",
+            "issueA": "valueF",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4544535646,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1563752888
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueB",
+            "issueA": "valueK",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4511421063,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2951610097
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueS",
+            "issueB": "valueE",
+            "issueA": "valueG",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4447783493,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.357259068
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueA",
+            "issueA": "valueI",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4417416711,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1618087044
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueW",
+            "issueB": "valueA",
+            "issueA": "valueC",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4381570126,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.0937512614
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueI",
+            "issueB": "valueD",
+            "issueA": "valueC",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4300090366,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2307019421
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueZ",
+            "issueB": "valueE",
+            "issueA": "valueF",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4249085488,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2984342059
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueG",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.421899126,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.4880332092
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueA",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4152688373,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2290583145
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueH",
+            "issueB": "valueE",
+            "issueA": "valueC",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4134331852,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.302075898
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueP",
+            "issueB": "valueD",
+            "issueA": "valueB",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4059593521,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1920121229
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueN",
+            "issueB": "valueE",
+            "issueA": "valueI",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.4037558363,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1699767865
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueQ",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3952506334,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.6326900677
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3941624688,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.5047465042
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueE",
+            "issueB": "valueD",
+            "issueA": "valueF",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3870347568,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.16960932
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueD",
+            "issueB": "valueE",
+            "issueA": "valueI",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3845805515,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2272327355
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueB",
+            "issueB": "valueD",
+            "issueA": "valueJ",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3798171319,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.2986549754
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueA",
+            "issueA": "valueH",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3737400142,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7001412142
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueP",
+            "issueB": "valueE",
+            "issueA": "valueD",
+            "issueD": "valueB"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3680788193,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.3587831876
+        }
+      }
+    },
+    {
+      "Offer": {
+        "actor": "agents_communist_party_agent_stalin_StalinAgent_2",
+        "bid": {
+          "issuevalues": {
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
+            "issueD": "valueA"
+          }
+        },
+        "utilities": {
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
         }
       }
     },
     {
       "Accept": {
-        "actor": "agents_random_agent_random_agent_RandomAgent_1",
+        "actor": "agents_linear_agent_linear_agent_LinearAgent_1",
         "bid": {
           "issuevalues": {
-            "issueC": "valueC",
-            "issueE": "valueA",
-            "issueA": "valueC",
-            "issueB": "valueA",
+            "issueC": "valueF",
+            "issueB": "valueE",
+            "issueA": "valueH",
             "issueD": "valueA"
           }
         },
         "utilities": {
-          "agents_random_agent_random_agent_RandomAgent_1": 0.6509516226,
-          "agents_communist_party_agent_stalin_StalinAgent_2": 0.1014159651
+          "agents_linear_agent_linear_agent_LinearAgent_1": 0.3622091394,
+          "agents_communist_party_agent_stalin_StalinAgent_2": 0.7083749588
         }
       }
     }
   ],
   "connections": [
-    "agents_random_agent_random_agent_RandomAgent_1",
+    "agents_linear_agent_linear_agent_LinearAgent_1",
     "agents_communist_party_agent_stalin_StalinAgent_2"
   ],
   "progress": {
     "ProgressRounds": {
       "duration": 200,
-      "currentRound": 2,
-      "endtime": 1646182902866
+      "currentRound": 130,
+      "endtime": 1646514324913
     }
   },
   "settings": {
@@ -110,10 +4457,10 @@
             "parties": [
               {
                 "party": {
-                  "partyref": "pythonpath:agents.random_agent.random_agent.RandomAgent",
+                  "partyref": "pythonpath:agents.linear_agent.linear_agent.LinearAgent",
                   "parameters": {}
                 },
-                "profile": "file:domains/domain00/profileA.json"
+                "profile": "file:domains/domain07/profileA.json"
               }
             ]
           }
@@ -126,7 +4473,7 @@
                   "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
                   "parameters": {}
                 },
-                "profile": "file:domains/domain00/profileB.json"
+                "profile": "file:domains/domain07/profileB.json"
               }
             ]
           }
@@ -141,19 +4488,19 @@
     }
   },
   "partyprofiles": {
-    "agents_random_agent_random_agent_RandomAgent_1": {
+    "agents_linear_agent_linear_agent_LinearAgent_1": {
       "party": {
-        "partyref": "pythonpath:agents.random_agent.random_agent.RandomAgent",
+        "partyref": "pythonpath:agents.linear_agent.linear_agent.LinearAgent",
         "parameters": {}
       },
-      "profile": "file:domains/domain00/profileA.json"
+      "profile": "file:domains/domain07/profileA.json"
     },
     "agents_communist_party_agent_stalin_StalinAgent_2": {
       "party": {
         "partyref": "pythonpath:agents.communist_party.agent_stalin.StalinAgent",
         "parameters": {}
       },
-      "profile": "file:domains/domain00/profileB.json"
+      "profile": "file:domains/domain07/profileB.json"
     }
   },
   "error": null

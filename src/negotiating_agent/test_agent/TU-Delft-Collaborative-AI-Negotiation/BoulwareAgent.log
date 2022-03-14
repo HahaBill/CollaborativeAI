@@ -2877,3 +2877,454 @@ Stack (most recent call last):
 2022-02-23 20:09:09,930 - BoulwareAgent - INFO - party is initialized
 2022-02-23 20:09:10,954 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
 2022-02-23 20:09:10,954 - BoulwareAgent - INFO - party is terminating:
+2022-03-02 13:15:55,532 - BoulwareAgent - INFO - party is initialized
+2022-03-02 13:15:56,556 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueA", issueC="valueE", issueE="valueA", issueB="valueD", issueA="valueJ"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueA", issueC="valueE", issueE="valueA", issueB="valueD", issueA="valueJ"}}]
+2022-03-02 13:15:56,556 - BoulwareAgent - INFO - party is terminating:
+2022-03-02 13:18:15,597 - BoulwareAgent - INFO - party is initialized
+2022-03-02 13:18:16,558 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueE="valueA", issueA="valueJ", issueD="valueA", issueC="valueE", issueB="valueJ"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueE="valueA", issueA="valueJ", issueD="valueA", issueC="valueE", issueB="valueJ"}}]
+2022-03-02 13:18:16,558 - BoulwareAgent - INFO - party is terminating:
+2022-03-02 13:43:35,367 - BoulwareAgent - INFO - party is initialized
+2022-03-02 13:43:37,224 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 13:43:37,224 - BoulwareAgent - INFO - party is terminating:
+2022-03-02 20:42:27,593 - BoulwareAgent - INFO - party is initialized
+2022-03-02 20:42:29,451 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 20:42:29,451 - BoulwareAgent - INFO - party is terminating:
+2022-03-02 20:43:08,606 - BoulwareAgent - INFO - party is initialized
+2022-03-02 20:43:10,341 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-02 20:43:10,341 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:19:28,822 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:19:30,568 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueA", issueD="valueA", issueA="valueD", issueC="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueA", issueD="valueA", issueA="valueD", issueC="valueD"}}]
+2022-03-04 22:19:30,568 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:20:11,129 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:20:12,926 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueH", issueC="valueA", issueA="valueD", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueH", issueC="valueA", issueA="valueD", issueB="valueA"}}]
+2022-03-04 22:20:12,938 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:20:38,780 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:20:40,473 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:20:40,473 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:21:13,237 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:21:14,933 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:21:14,933 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:21:46,812 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:21:48,658 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:21:48,658 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:22:05,786 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:22:07,530 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:22:07,530 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:23:19,487 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:23:21,235 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:23:21,241 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:27:26,489 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:27:28,277 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:27:28,282 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:28:24,731 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:28:26,510 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:28:26,510 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:29:02,644 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:29:04,320 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:29:04,320 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:41:30,256 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:41:31,060 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueA", issueD="valueH", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueA", issueD="valueH", issueC="valueA"}}]
+2022-03-04 22:41:31,060 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:41:38,543 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:41:39,177 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueH", issueC="valueA", issueA="valueD", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueH", issueC="valueA", issueA="valueD", issueB="valueA"}}]
+2022-03-04 22:41:39,178 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:42:38,095 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:42:38,804 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueA", issueB="valueA", issueD="valueH", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueB="valueA", issueD="valueH", issueA="valueD"}}]
+2022-03-04 22:42:38,807 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:43:20,337 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:43:22,134 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:43:22,134 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:44:16,001 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:44:17,669 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueD="valueA", issueB="valueA", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueD="valueA", issueB="valueA", issueC="valueA"}}]
+2022-03-04 22:44:17,681 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:47:26,799 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:47:28,632 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:47:28,644 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:48:27,558 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:48:29,156 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueC="valueA", issueD="valueA", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueC="valueA", issueD="valueA", issueB="valueA"}}]
+2022-03-04 22:48:29,175 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:49:15,189 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:49:17,180 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:49:17,180 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 22:50:22,481 - BoulwareAgent - INFO - party is initialized
+2022-03-04 22:50:24,229 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 22:50:24,235 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 23:51:35,365 - BoulwareAgent - INFO - party is initialized
+2022-03-04 23:51:36,530 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueH", issueC="valueA", issueB="valueC", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueH", issueC="valueA", issueB="valueC", issueA="valueD"}}]
+2022-03-04 23:51:36,536 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 23:53:17,861 - BoulwareAgent - INFO - party is initialized
+2022-03-04 23:53:18,931 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueH", issueA="valueD", issueC="valueA", issueB="valueC"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueH", issueA="valueD", issueC="valueA", issueB="valueC"}}]
+2022-03-04 23:53:18,931 - BoulwareAgent - INFO - party is terminating:
+2022-03-04 23:55:09,425 - BoulwareAgent - INFO - party is initialized
+2022-03-04 23:55:11,265 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 23:55:11,266 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:01:58,341 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:02:00,118 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:02:00,118 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:04:42,457 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:04:44,219 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:04:44,219 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:05:15,702 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:05:17,516 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:05:17,528 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:06:51,385 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:06:53,122 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:06:53,123 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:07:35,597 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:07:37,308 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:07:37,321 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:08:31,333 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:08:33,166 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 00:08:33,166 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:08:59,977 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:09:00,838 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueA", issueB="valueC", issueA="valueD", issueD="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueB="valueC", issueA="valueD", issueD="valueH"}}]
+2022-03-05 00:09:00,844 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:10:00,958 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:10:02,681 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueD="valueA", issueB="valueA", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueD="valueA", issueB="valueA", issueC="valueA"}}]
+2022-03-05 00:10:02,681 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:12:04,723 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:12:05,814 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueC", issueD="valueH", issueC="valueA", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueC", issueD="valueH", issueC="valueA", issueA="valueD"}}]
+2022-03-05 00:12:05,814 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 00:12:57,119 - BoulwareAgent - INFO - party is initialized
+2022-03-05 00:12:58,301 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueA", issueC="valueD", issueA="valueD", issueD="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueA", issueC="valueD", issueA="valueD", issueD="valueH"}}]
+2022-03-05 00:12:58,307 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:06:41,895 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:06:43,662 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:06:43,676 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:48:28,501 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:48:29,956 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueA", issueA="valueG", issueC="valueC", issueB="valueO"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueA", issueA="valueG", issueC="valueC", issueB="valueO"}}]
+2022-03-05 18:48:29,963 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:48:59,422 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:49:00,431 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueA", issueA="valueD", issueD="valueD", issueB="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueA="valueD", issueD="valueD", issueB="valueH"}}]
+2022-03-05 18:49:00,443 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:49:36,458 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:49:37,910 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}}]
+2022-03-05 18:49:37,910 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:50:17,237 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:50:18,934 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:50:18,934 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:51:08,173 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:51:09,954 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:51:09,966 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:51:46,566 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:51:48,152 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueD", issueD="valueB", issueC="valueF", issueA="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueD", issueD="valueB", issueC="valueF", issueA="valueA"}}]
+2022-03-05 18:51:48,152 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 18:52:11,319 - BoulwareAgent - INFO - party is initialized
+2022-03-05 18:52:12,726 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueD="valueB", issueC="valueF", issueB="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueD="valueB", issueC="valueF", issueB="valueD"}}]
+2022-03-05 18:52:12,726 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:21:06,769 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:21:08,158 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueA", issueA="valueA", issueC="valueH", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueA", issueA="valueA", issueC="valueH", issueD="valueA"}}]
+2022-03-05 20:21:08,158 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:22:08,269 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:22:09,620 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueF", issueA="valueA", issueB="valueA", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueF", issueA="valueA", issueB="valueA", issueD="valueA"}}]
+2022-03-05 20:22:09,620 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:22:52,968 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:22:54,270 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueA", issueC="valueH", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueA", issueC="valueH", issueD="valueA"}}]
+2022-03-05 20:22:54,276 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:23:35,742 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:23:36,927 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueT", issueA="valueG", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueT", issueA="valueG", issueC="valueA"}}]
+2022-03-05 20:23:36,933 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:24:24,973 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:24:26,273 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueC", issueB="valueD", issueC="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueC", issueB="valueD", issueC="valueB"}}]
+2022-03-05 20:24:26,274 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:25:38,082 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:25:39,241 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueE", issueA="valueD", issueB="valueL"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueE", issueA="valueD", issueB="valueL"}}]
+2022-03-05 20:25:39,241 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:26:29,995 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:26:31,092 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueA", issueC="valueH", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueA", issueC="valueH", issueD="valueA"}}]
+2022-03-05 20:26:31,098 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:27:02,074 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:27:03,736 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:27:03,741 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:27:56,117 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:27:57,660 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueD", issueD="valueA", issueC="valueF"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueD", issueD="valueA", issueC="valueF"}}]
+2022-03-05 20:27:57,666 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:29:03,316 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:29:05,142 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:29:05,154 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:29:29,768 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:29:31,226 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueD", issueC="valueF", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueD", issueC="valueF", issueD="valueA"}}]
+2022-03-05 20:29:31,239 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:31:31,662 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:31:33,494 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:31:33,506 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:32:22,199 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:32:23,893 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueD", issueC="valueF", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueD", issueC="valueF", issueD="valueA"}}]
+2022-03-05 20:32:23,900 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:33:12,279 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:33:14,021 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueE", issueC="valueF", issueA="valueA", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueE", issueC="valueF", issueA="valueA", issueD="valueA"}}]
+2022-03-05 20:33:14,027 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:33:46,101 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:33:47,767 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:33:47,767 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:34:18,343 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:34:20,116 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:34:20,135 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:34:52,879 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:34:54,403 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueD="valueA", issueC="valueF", issueB="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueD="valueA", issueC="valueF", issueB="valueD"}}]
+2022-03-05 20:34:54,422 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:35:27,059 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:35:28,772 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:35:28,772 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:37:06,356 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:37:08,145 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:37:08,152 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:38:31,173 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:38:32,947 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:38:32,947 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:39:03,104 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:39:04,777 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:39:04,777 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:39:47,393 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:39:49,131 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:39:49,131 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:41:23,812 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:41:45,989 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:41:47,605 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:41:47,612 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:43:48,180 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:43:49,962 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:43:49,963 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:44:44,226 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:44:45,951 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:44:45,951 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:46:53,930 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:46:55,335 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueD", issueA="valueA", issueC="valueH", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueD", issueA="valueA", issueC="valueH", issueD="valueA"}}]
+2022-03-05 20:46:55,335 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:48:34,021 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:48:35,822 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:48:35,822 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:48:52,371 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:48:54,046 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:48:54,046 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:49:33,240 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:49:35,018 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:49:35,018 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:50:05,148 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:50:05,418 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueA", issueC="valueF", issueA="valueA", issueB="valueE"}, agents_template_agent_template_agent_TemplateAgent_2=Bid{issueD="valueA", issueC="valueF", issueA="valueA", issueB="valueE"}}]
+2022-03-05 20:50:05,418 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:51:03,998 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:51:04,204 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueH", issueB="valueD", issueD="valueA", issueA="valueA"}, agents_time_dependent_agent_time_dependent_agent_TimeDependentAgent_2=Bid{issueC="valueH", issueB="valueD", issueD="valueA", issueA="valueA"}}]
+2022-03-05 20:51:04,206 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:51:33,735 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:51:35,497 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:51:35,510 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:52:18,799 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:52:20,575 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:52:20,587 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:53:21,925 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:53:23,683 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:53:23,683 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:53:53,036 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:53:54,740 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:53:54,753 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:54:42,307 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:54:44,074 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:54:44,075 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:55:43,446 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:55:45,202 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:55:45,208 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 20:56:43,617 - BoulwareAgent - INFO - party is initialized
+2022-03-05 20:56:45,388 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 20:56:45,388 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:02:43,464 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:02:45,230 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:02:45,242 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:03:06,232 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:03:07,795 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueG", issueA="valueH", issueC="valueG"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueG", issueA="valueH", issueC="valueG"}}]
+2022-03-05 21:03:07,795 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:03:56,438 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:03:58,298 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:03:58,304 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:04:21,456 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:04:23,118 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:04:23,124 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:08:02,435 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:08:04,234 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:08:04,240 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:08:56,269 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:08:57,988 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:08:57,988 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:09:47,831 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:09:49,605 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:09:49,605 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:10:31,427 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:10:33,184 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:10:33,191 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:11:57,862 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:11:59,634 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:11:59,646 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:14:36,526 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:14:38,288 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:14:38,290 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:15:15,910 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:15:17,058 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueF", issueD="valueH", issueA="valueD", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueF", issueD="valueH", issueA="valueD", issueB="valueA"}}]
+2022-03-05 21:15:17,064 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:16:02,897 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:16:03,931 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueD="valueH", issueB="valueC", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueD="valueH", issueB="valueC", issueC="valueA"}}]
+2022-03-05 21:16:03,931 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:16:50,441 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:16:51,319 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueF", issueD="valueH", issueB="valueE", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueF", issueD="valueH", issueB="valueE", issueA="valueD"}}]
+2022-03-05 21:16:51,332 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:17:24,524 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:17:26,248 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:17:26,248 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:17:59,637 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:18:01,353 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:18:01,353 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:19:16,807 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:19:18,522 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:19:18,522 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:20:21,895 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:20:23,639 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:20:23,652 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:21:36,096 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:21:37,885 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:21:37,887 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:22:10,360 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:22:12,056 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:22:12,061 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:22:30,538 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:22:32,254 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:22:32,254 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:23:08,151 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:23:09,877 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:23:09,877 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:23:24,065 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:23:25,742 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:23:25,743 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:23:57,319 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:23:58,768 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:23:58,774 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:24:43,244 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:25:04,719 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:25:04,720 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:25:34,356 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:25:35,511 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueC", issueD="valueB", issueC="valueA", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueC", issueD="valueB", issueC="valueA", issueB="valueA"}}]
+2022-03-05 21:25:35,523 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:26:40,361 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:26:42,101 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:26:42,101 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:28:10,541 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:28:12,268 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:28:12,268 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:28:57,104 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:28:58,364 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueM", issueA="valueA", issueB="valueD", issueD="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueM", issueA="valueA", issueB="valueD", issueD="valueB"}}]
+2022-03-05 21:28:58,364 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:31:04,991 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:31:06,054 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueB", issueB="valueE", issueC="valueV", issueA="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueB="valueE", issueC="valueV", issueA="valueA"}}]
+2022-03-05 21:31:06,054 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:32:50,144 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:32:51,280 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueC="valueH", issueD="valueA", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueC="valueH", issueD="valueA", issueB="valueA"}}]
+2022-03-05 21:32:51,294 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:35:20,408 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:35:21,628 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueE", issueA="valueD", issueD="valueB", issueC="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueE", issueA="valueD", issueD="valueB", issueC="valueD"}}]
+2022-03-05 21:35:21,628 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:36:56,556 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:36:57,876 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueA", issueA="valueP", issueB="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueA="valueP", issueB="valueD"}}]
+2022-03-05 21:36:57,883 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:38:40,179 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:38:41,470 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueA", issueB="valueD", issueA="valueP"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueB="valueD", issueA="valueP"}}]
+2022-03-05 21:38:41,481 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:39:14,229 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:39:15,913 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:39:15,920 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:40:20,405 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:40:21,541 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueC", issueB="valueX", issueD="valueC", issueA="valueG"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueC", issueB="valueX", issueD="valueC", issueA="valueG"}}]
+2022-03-05 21:40:21,548 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:40:55,371 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:40:56,388 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueL", issueA="valueF", issueC="valueD", issueD="valueF"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueL", issueA="valueF", issueC="valueD", issueD="valueF"}}]
+2022-03-05 21:40:56,388 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:41:21,651 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:41:22,635 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueC", issueC="valueA", issueA="valueD", issueD="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueC", issueC="valueA", issueA="valueD", issueD="valueH"}}]
+2022-03-05 21:41:22,648 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:41:47,164 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:41:48,253 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueH", issueB="valueP", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueH", issueB="valueP", issueA="valueD"}}]
+2022-03-05 21:41:48,253 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:42:04,451 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:42:05,533 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueP", issueC="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueP", issueC="valueH"}}]
+2022-03-05 21:42:05,533 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:42:31,444 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:42:32,787 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueB", issueC="valueH", issueA="valueA", issueB="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueC="valueH", issueA="valueA", issueB="valueH"}}]
+2022-03-05 21:42:32,799 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:42:54,922 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:42:56,264 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueB", issueC="valueH", issueA="valueA", issueB="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueC="valueH", issueA="valueA", issueB="valueH"}}]
+2022-03-05 21:42:56,271 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:43:17,474 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:43:18,929 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}}]
+2022-03-05 21:43:18,935 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:43:39,553 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:43:41,057 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueF", issueC="valueB"}}]
+2022-03-05 21:43:41,069 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:44:03,941 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:44:05,624 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:44:05,624 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:44:34,274 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:44:35,920 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueD", issueD="valueA", issueA="valueA", issueC="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueD", issueD="valueA", issueA="valueA", issueC="valueH"}}]
+2022-03-05 21:44:35,920 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:45:10,591 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:45:12,267 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueC="valueF", issueB="valueD", issueD="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueC="valueF", issueB="valueD", issueD="valueA"}}]
+2022-03-05 21:45:12,273 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:45:38,150 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:45:39,860 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:45:39,867 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:46:24,550 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:46:26,143 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueB", issueB="valueF", issueA="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueB", issueB="valueF", issueA="valueH"}}]
+2022-03-05 21:46:26,150 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:47:09,940 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:47:11,574 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueE", issueB="valueU", issueA="valueG"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueE", issueB="valueU", issueA="valueG"}}]
+2022-03-05 21:47:11,574 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:47:52,856 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:47:54,228 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueB="valueP", issueC="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueP", issueC="valueH"}}]
+2022-03-05 21:47:54,235 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:48:27,181 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:48:28,866 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:48:28,878 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:48:50,379 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:48:51,964 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}}]
+2022-03-05 21:48:51,974 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:49:10,032 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:49:11,771 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:49:11,771 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:50:07,627 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:50:09,195 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}}]
+2022-03-05 21:50:09,201 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:50:49,488 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:50:51,053 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueC="valueH", issueB="valueP"}}]
+2022-03-05 21:50:51,053 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:52:06,218 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:52:07,821 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueH", issueB="valueP", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueH", issueB="valueP", issueA="valueD"}}]
+2022-03-05 21:52:07,821 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:52:34,192 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:52:35,842 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:52:35,842 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:53:15,858 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:53:17,613 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:53:17,613 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:53:47,467 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:53:49,066 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueD="valueA", issueB="valueD", issueC="valueF"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueD="valueA", issueB="valueD", issueC="valueF"}}]
+2022-03-05 21:53:49,073 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:54:44,540 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:54:46,140 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueG", issueB="valueQ", issueA="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueG", issueB="valueQ", issueA="valueH"}}]
+2022-03-05 21:54:46,140 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:55:13,830 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:55:15,286 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueC="valueE", issueB="valueU", issueA="valueE"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueE", issueB="valueU", issueA="valueE"}}]
+2022-03-05 21:55:15,293 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:56:04,199 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:56:05,604 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueB="valueB", issueC="valueD", issueE="valueB", issueD="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueB="valueB", issueC="valueD", issueE="valueB", issueD="valueB"}}]
+2022-03-05 21:56:05,605 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:56:29,194 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:56:30,382 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueE="valueB", issueB="valueA", issueA="valueA", issueD="valueB", issueC="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueE="valueB", issueB="valueA", issueA="valueA", issueD="valueB", issueC="valueB"}}]
+2022-03-05 21:56:30,382 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:57:06,408 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:57:07,621 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueD="valueB", issueA="valueA", issueE="valueA", issueB="valueA", issueC="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueA="valueA", issueE="valueA", issueB="valueA", issueC="valueD"}}]
+2022-03-05 21:57:07,646 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:57:40,282 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:57:41,471 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueB", issueC="valueD", issueA="valueA", issueE="valueB", issueD="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueB", issueC="valueD", issueA="valueA", issueE="valueB", issueD="valueB"}}]
+2022-03-05 21:57:41,472 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:57:56,160 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:57:57,501 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueB="valueA", issueC="valueD", issueD="valueB", issueA="valueA", issueE="valueB"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueA", issueC="valueD", issueD="valueB", issueA="valueA", issueE="valueB"}}]
+2022-03-05 21:57:57,520 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:58:07,475 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:58:08,687 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{agents_boulware_agent_boulware_agent_BoulwareAgent_1=Bid{issueA="valueA", issueD="valueB", issueE="valueB", issueB="valueB", issueC="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueA", issueD="valueB", issueE="valueB", issueB="valueB", issueC="valueD"}}]
+2022-03-05 21:58:08,700 - BoulwareAgent - INFO - party is terminating:

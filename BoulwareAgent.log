@@ -1,0 +1,106 @@
+2022-03-05 21:04:09,190 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:04:09,894 - BoulwareAgent - CRITICAL - Failed to handle info
+Traceback (most recent call last):
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 122, in notifyChange
+    self._profileint = ProfileConnectionFactory.create(
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/profileconnection/ProfileConnectionFactory.py", line 30, in create
+    return FileProfileConnector(uri.getPath());
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/profileconnection/FileProfileConnector.py", line 22, in __init__
+    serialized = Path(filename).read_text("utf-8")
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1235, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1221, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1077, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'domains/domain06/profileA.json'
+Stack (most recent call last):
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 101, in run
+    this._handler.notifyChange(mess.get())
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/ClassPathConnectionFactory.py", line 92, in notifyChange
+    this._party2protocol.notifyListeners(data)
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 168, in notifyListeners
+    l.notifyChange(data)
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 143, in notifyChange
+    self.getReporter().log(logging.CRITICAL, "Failed to handle info", ex)
+2022-03-05 21:04:09,895 - BoulwareAgent - CRITICAL - Failed to handle info
+Traceback (most recent call last):
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 132, in notifyChange
+    self._myTurn()
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 208, in _myTurn
+    self._updateUtilSpace()
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 224, in _updateUtilSpace
+    newutilspace = self._profileint.getProfile()
+AttributeError: 'NoneType' object has no attribute 'getProfile'
+Stack (most recent call last):
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 101, in run
+    this._handler.notifyChange(mess.get())
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/ClassPathConnectionFactory.py", line 92, in notifyChange
+    this._party2protocol.notifyListeners(data)
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 168, in notifyListeners
+    l.notifyChange(data)
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 143, in notifyChange
+    self.getReporter().log(logging.CRITICAL, "Failed to handle info", ex)
+2022-03-05 21:04:10,921 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:04:10,921 - BoulwareAgent - INFO - party is terminating:
+2022-03-05 21:55:20,407 - BoulwareAgent - INFO - party is initialized
+2022-03-05 21:55:21,017 - BoulwareAgent - CRITICAL - Failed to handle info
+Traceback (most recent call last):
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 122, in notifyChange
+    self._profileint = ProfileConnectionFactory.create(
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/profileconnection/ProfileConnectionFactory.py", line 30, in create
+    return FileProfileConnector(uri.getPath());
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/profileconnection/FileProfileConnector.py", line 22, in __init__
+    serialized = Path(filename).read_text("utf-8")
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1235, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1221, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/pathlib.py", line 1077, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'domains/domain08/profileA.json'
+Stack (most recent call last):
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 101, in run
+    this._handler.notifyChange(mess.get())
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/ClassPathConnectionFactory.py", line 92, in notifyChange
+    this._party2protocol.notifyListeners(data)
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 168, in notifyListeners
+    l.notifyChange(data)
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 143, in notifyChange
+    self.getReporter().log(logging.CRITICAL, "Failed to handle info", ex)
+2022-03-05 21:55:21,017 - BoulwareAgent - CRITICAL - Failed to handle info
+Traceback (most recent call last):
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 132, in notifyChange
+    self._myTurn()
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 208, in _myTurn
+    self._updateUtilSpace()
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 224, in _updateUtilSpace
+    newutilspace = self._profileint.getProfile()
+AttributeError: 'NoneType' object has no attribute 'getProfile'
+Stack (most recent call last):
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 101, in run
+    this._handler.notifyChange(mess.get())
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/ClassPathConnectionFactory.py", line 92, in notifyChange
+    this._party2protocol.notifyListeners(data)
+  File "/Users/billtonhoang/opt/anaconda3/lib/python3.8/site-packages/geniusweb/simplerunner/BasicConnection.py", line 168, in notifyListeners
+    l.notifyChange(data)
+  File "/Users/billtonhoang/Documents/CollaborativeAI/src/negotiating_agent/test_agent/TU-Delft-Collaborative-AI-Negotiation/agents/time_dependent_agent/time_dependent_agent.py", line 143, in notifyChange
+    self.getReporter().log(logging.CRITICAL, "Failed to handle info", ex)
+2022-03-05 21:55:22,038 - BoulwareAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 21:55:22,038 - BoulwareAgent - INFO - party is terminating:

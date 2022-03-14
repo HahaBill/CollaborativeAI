@@ -21,6 +21,7 @@ tournament_settings = {
         "agents.random_agent.random_agent.RandomAgent",
         "agents.stupid_agent.stupid_agent.StupidAgent",
         "agents.template_agent.template_agent.TemplateAgent",
+        "agents.time_dependent_agent.time_dependent_agent.TimeDependentAgent",
     ],
     "profile_sets": [
         ["domains/domain00/profileA.json", "domains/domain00/profileB.json"],

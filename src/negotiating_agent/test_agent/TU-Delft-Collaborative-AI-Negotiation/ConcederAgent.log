@@ -2746,3 +2746,54 @@ Stack (most recent call last):
 2022-02-23 20:04:43,950 - ConcederAgent - INFO - party is initialized
 2022-02-23 20:04:44,410 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_linear_agent_linear_agent_LinearAgent_1=Bid{issueD="valueC", issueA="valueA", issueE="valueA", issueB="valueE", issueC="valueE"}, agents_conceder_agent_conceder_agent_ConcederAgent_2=Bid{issueD="valueC", issueA="valueA", issueE="valueA", issueB="valueE", issueC="valueE"}}]
 2022-02-23 20:04:44,416 - ConcederAgent - INFO - party is terminating:
+2022-03-02 20:44:41,989 - ConcederAgent - INFO - party is initialized
+2022-03-02 20:44:43,086 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueA="valueD", issueD="valueA", issueC="valueA", issueB="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueD="valueA", issueC="valueA", issueB="valueA"}}]
+2022-03-02 20:44:43,086 - ConcederAgent - INFO - party is terminating:
+2022-03-04 22:55:04,161 - ConcederAgent - INFO - party is initialized
+2022-03-04 22:55:05,165 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueA="valueD", issueB="valueA", issueD="valueA", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueA", issueD="valueA", issueC="valueA"}}]
+2022-03-04 22:55:05,168 - ConcederAgent - INFO - party is terminating:
+2022-03-04 22:57:42,924 - ConcederAgent - INFO - party is initialized
+2022-03-04 22:57:43,908 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueB", issueA="valueD", issueB="valueA", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueA="valueD", issueB="valueA", issueC="valueA"}}]
+2022-03-04 22:57:43,913 - ConcederAgent - INFO - party is terminating:
+2022-03-04 23:42:45,294 - ConcederAgent - INFO - party is initialized
+2022-03-04 23:42:47,073 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-04 23:42:47,074 - ConcederAgent - INFO - party is terminating:
+2022-03-04 23:43:46,050 - ConcederAgent - INFO - party is initialized
+2022-03-04 23:43:47,087 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueF", issueB="valueE", issueC="valueA", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueF", issueB="valueE", issueC="valueA", issueA="valueD"}}]
+2022-03-04 23:43:47,099 - ConcederAgent - INFO - party is terminating:
+2022-03-04 23:46:13,055 - ConcederAgent - INFO - party is initialized
+2022-03-04 23:46:14,154 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueB", issueC="valueA", issueB="valueA", issueA="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueC="valueA", issueB="valueA", issueA="valueA"}}]
+2022-03-04 23:46:14,160 - ConcederAgent - INFO - party is terminating:
+2022-03-04 23:47:12,801 - ConcederAgent - INFO - party is initialized
+2022-03-04 23:47:13,778 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueB", issueA="valueD", issueB="valueA", issueC="valueA"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueA="valueD", issueB="valueA", issueC="valueA"}}]
+2022-03-04 23:47:13,781 - ConcederAgent - INFO - party is terminating:
+2022-03-04 23:48:20,425 - ConcederAgent - INFO - party is initialized
+2022-03-04 23:48:21,454 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueC="valueA", issueB="valueE", issueD="valueF", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueA", issueB="valueE", issueD="valueF", issueA="valueD"}}]
+2022-03-04 23:48:21,454 - ConcederAgent - INFO - party is terminating:
+2022-03-05 00:14:09,453 - ConcederAgent - INFO - party is initialized
+2022-03-05 00:14:10,396 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueB", issueC="valueA", issueB="valueC", issueA="valueI"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueB", issueC="valueA", issueB="valueC", issueA="valueI"}}]
+2022-03-05 00:14:10,408 - ConcederAgent - INFO - party is terminating:
+2022-03-05 17:47:36,459 - ConcederAgent - INFO - party is initialized
+2022-03-05 17:47:38,244 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 17:47:38,244 - ConcederAgent - INFO - party is terminating:
+2022-03-05 17:54:17,966 - ConcederAgent - INFO - party is initialized
+2022-03-05 17:54:19,730 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 17:54:19,736 - ConcederAgent - INFO - party is terminating:
+2022-03-05 17:58:06,421 - ConcederAgent - INFO - party is initialized
+2022-03-05 17:58:07,325 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueB="valueE", issueC="valueA", issueD="valueF", issueA="valueD"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueB="valueE", issueC="valueA", issueD="valueF", issueA="valueD"}}]
+2022-03-05 17:58:07,331 - ConcederAgent - INFO - party is terminating:
+2022-03-05 17:59:14,214 - ConcederAgent - INFO - party is initialized
+2022-03-05 17:59:15,000 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueA="valueD", issueB="valueF", issueC="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueB="valueF", issueC="valueH"}}]
+2022-03-05 17:59:15,005 - ConcederAgent - INFO - party is terminating:
+2022-03-05 18:00:01,307 - ConcederAgent - INFO - party is initialized
+2022-03-05 18:00:02,233 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueD="valueD", issueA="valueE", issueB="valueH", issueC="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueD="valueD", issueA="valueE", issueB="valueH", issueC="valueH"}}]
+2022-03-05 18:00:02,233 - ConcederAgent - INFO - party is terminating:
+2022-03-05 18:00:23,219 - ConcederAgent - INFO - party is initialized
+2022-03-05 18:00:24,302 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueA="valueD", issueC="valueB", issueB="valueH"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueA="valueD", issueC="valueB", issueB="valueH"}}]
+2022-03-05 18:00:24,308 - ConcederAgent - INFO - party is terminating:
+2022-03-05 18:01:00,271 - ConcederAgent - INFO - party is initialized
+2022-03-05 18:01:01,983 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{}]
+2022-03-05 18:01:01,983 - ConcederAgent - INFO - party is terminating:
+2022-03-05 18:01:48,620 - ConcederAgent - INFO - party is initialized
+2022-03-05 18:01:49,475 - ConcederAgent - INFO - Final ourcome:Finished[Agreements{agents_conceder_agent_conceder_agent_ConcederAgent_1=Bid{issueC="valueB", issueE="valueD", issueD="valueB", issueA="valueA", issueB="valueC"}, agents_communist_party_agent_stalin_StalinAgent_2=Bid{issueC="valueB", issueE="valueD", issueD="valueB", issueA="valueA", issueB="valueC"}}]
+2022-03-05 18:01:49,481 - ConcederAgent - INFO - party is terminating:

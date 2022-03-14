@@ -3742,3 +3742,16 @@
 2022-02-23 20:03:54,874 - StupidAgent - INFO - party is terminating:
 2022-02-23 20:03:54,874 - StupidAgent - INFO - party is terminating:
 2022-02-23 20:03:54,874 - StupidAgent - INFO - party is terminating:
+2022-03-02 20:49:25,912 - StupidAgent - INFO - party is initialized
+2022-03-02 20:49:26,752 - StupidAgent - INFO - sending empty offer:
+2022-03-02 20:49:26,752 - StupidAgent - INFO - sent empty offer:
+2022-03-02 20:49:27,782 - StupidAgent - INFO - party is terminating:
+2022-03-02 20:50:00,719 - StupidAgent - INFO - party is initialized
+2022-03-02 20:50:01,629 - StupidAgent - INFO - sending empty offer:
+2022-03-02 20:50:01,629 - StupidAgent - INFO - sent empty offer:
+2022-03-02 20:50:02,658 - StupidAgent - INFO - party is terminating:
+2022-03-05 00:22:21,563 - StupidAgent - INFO - party is initialized
+2022-03-05 00:22:22,208 - StupidAgent - INFO - sending empty offer:
+2022-03-05 00:22:22,208 - StupidAgent - INFO - sent empty offer:
+2022-03-05 00:22:22,245 - StupidAgent - INFO - sending accept:
+2022-03-05 00:22:22,246 - StupidAgent - INFO - party is terminating:
