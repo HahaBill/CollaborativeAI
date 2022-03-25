@@ -11,12 +11,12 @@ press the start button in god mode to start the session.
 
 if __name__ == "__main__":
     agents = [
-        {'name':'agent1', 'botclass':BaseLineAgent, 'settings':{'slowdown':10}},
-        {'name':'agent2', 'botclass':BaseLineAgent, 'settings':{}},
-        {'name':'human', 'botclass':Human, 'settings':{}}
-        ]
+        {'name': 'agent1', 'botclass': BaseLineAgent, 'settings': {}},
+        {'name': 'agent2', 'botclass': BaseLineAgent, 'settings': {}},
+        {'name': 'human', 'botclass': Human, 'settings': {}}
+    ]
 
     print("Started world...")
-    world=BW4TWorld(agents).run()
+    world = BW4TWorld(agents).run()
     print("DONE!")
     print(Statistics(world.getLogger().getFileName()))
