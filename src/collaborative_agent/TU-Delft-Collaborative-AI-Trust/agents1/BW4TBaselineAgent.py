@@ -3,6 +3,7 @@ from re import L
 from typing import final, List, Dict, Final
 import enum
 import random
+from numpy import place
 
 from sqlalchemy import null
 from bw4t.BW4TBrain import BW4TBrain
@@ -18,6 +19,7 @@ class Phase(enum.Enum):
     PLAN_PATH_TO_CLOSED_DOOR = 1,
     FOLLOW_PATH_TO_CLOSED_DOOR = 2,
     OPEN_DOOR = 3,
+
     GRAB_OBJECT = 4,
     DROP_OBJECT = 5,
     SCAN_ROOM = 6,
@@ -32,6 +34,7 @@ class BaseLineAgent(BW4TBrain):
         super().__init__(settings)
         self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
         self._teamMembers = []
+
         self._trustBeliefs = {}
         self._goalBlockCharacteristics = []
         self._alreadyPutInDropZone = set()
@@ -54,7 +57,7 @@ class BaseLineAgent(BW4TBrain):
         c_shape = curr_obj['visualization']['shape']
         c_colour = curr_obj['visualization']['colour']
 
-        for goal in self._goalBlockCharacteristics:
+        for index, goal in enumerate(self._goalBlockCharacteristics):
 
             g_size = goal['visualization']['size']
             g_shape = goal['visualization']['shape']
@@ -63,10 +66,23 @@ class BaseLineAgent(BW4TBrain):
             if(c_size == g_size and c_shape == g_shape and c_colour == g_colour):
                 obj_description = "{size : " + str(g_size) + ", " + \
                     "shape : " + str(g_shape) + ", " + \
-                    "colour : " + g_colour + "}"
-                return (True, goal['location'], obj_description)
+                    "colour : " + g_colour + ", " + \
+                    "order : " + str(index) + "}"
+                result = self._currentlyDesiredOrNot(index, goal)
+                return (True, result[0], obj_description, result[1], index)
 
         return (False, None)
+
+    def _currentlyDesiredOrNot(self, index, goal_block):
+        if index == 0 and index not in self._alreadyPutInDropZone:
+            self._alreadyPutInDropZone.add(index)
+            return goal_block['location'], True
+        elif index - 1 not in self._alreadyPutInDropZone:
+            goal_loc = goal_block['location']
+            return (goal_loc[0] + 1, goal_loc[1]), False
+        else:
+            self._alreadyPutInDropZone.add(index)
+            return goal_block['location'], True
 
     def _sendMessage(self, mssg, sender):
         '''
@@ -156,6 +172,15 @@ class BaseLineAgent(BW4TBrain):
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
+                received = self._processMessages(self._teamMembers)
+                for member in received.keys():
+                    for message in received[member]:
+                        if 'Found currently' in message:
+                            print("UPDATE THE SET WITH INDEX : ",
+                                  int(message[len(message) - 1]))
+                            self._alreadyPutInDropZone.add(
+                                int(message[len(message) - 1]))
+
                 if action != None:
                     return action, {}
                 self._phase = Phase.OPEN_DOOR
@@ -207,11 +232,17 @@ class BaseLineAgent(BW4TBrain):
                 for obj in roomObjects:
                     result = self._checkIfDesiredBlock(obj)
                     if result[0]:
+                        if result[4] in self._alreadyPutInDropZone:
+                            print("LOL ALREADY PUT BRO")
+                            break
                         self._phase = Phase.PLAN_TO_DROP_ZONE
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([result[1]])
-                        self._sendMessage('Found desired object ' + result[2] + ' at ' +
+                        self._sendMessage('Found goal object ' + result[2] + ' at ' +
                                           self._door['room_name'], agent_name)
+                        if result[3]:
+                            self._sendMessage(
+                                'Found currently desired object ' + str(result[4]), agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -224,11 +255,20 @@ class BaseLineAgent(BW4TBrain):
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
+
+                received = self._processMessages(self._teamMembers)
+                for member in received.keys():
+                    for message in received[member]:
+                        if 'Found currently' in message:
+                            self._alreadyPutInDropZone.add(
+                                int(message[len(message) - 1]))
+
                 if action != None:
                     return action, {}
 
                 objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
                 self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+
                 return DropObject.__name__, {'object_id': objCarryId}
 
     ############################################################################################################
@@ -237,10 +277,10 @@ class BaseLineAgent(BW4TBrain):
 
     def _trustBlief(self, member, received):
         '''
-        Baseline implementation of a trust belief. Creates a dictionary with trust belief scores for each team member, 
+        Baseline implementation of a trust belief. Creates a dictionary with trust belief scores for each team member,
         for example based on the received messages. You can change the default value to your preference
 
-        Statistical aggregation for now 
+        Statistical aggregation for now
         '''
 
         default = 0.4
@@ -255,13 +295,6 @@ class BaseLineAgent(BW4TBrain):
                     self._trustBeliefs[member] -= 0.1
                     break
 
-    def DispTrust(self, agent_i, agent_j, action, goal, condition):
-        """
-        Dispositional trust 
-        """
-
-        return null
-
         '''
 
         Lazy
@@ -269,5 +302,5 @@ class BaseLineAgent(BW4TBrain):
 
         Strong
         Liar
-        
+
         '''
