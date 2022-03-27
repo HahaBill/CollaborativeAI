@@ -3,6 +3,7 @@ from re import L
 from typing import final, List, Dict, Final
 import enum
 import random
+from cv2 import phase
 from numpy import place
 
 from sqlalchemy import null
@@ -25,7 +26,15 @@ class Phase(enum.Enum):
     SCAN_ROOM = 6,
     SEARCH_AND_FIND_GOAL_BLOCK = 7,
     ENTER_THE_ROOM = 8,
-    PLAN_TO_DROP_ZONE = 10
+    PLAN_TO_DROP_ZONE = 10.
+    FILLING_BLOCK_IN_DROP_ZONE = 11,
+    PLAN_TO_NEXT_TO_GOAL_BLOCK = 12,
+    GRAB_OBJECT_AT_NEXT_TO_GOAL_BLOCK = 13,
+    CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY = 14,
+
+    PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT = 15,
+    PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE = 16,
+    GRAB_DESIRED_OBJECT_NEARBY = 17
 
 
 class BaseLineAgent(BW4TBrain):
@@ -37,7 +46,14 @@ class BaseLineAgent(BW4TBrain):
 
         self._trustBeliefs = {}
         self._goalBlockCharacteristics = []
+        self._checkGoalBlocksPlacedNearby = []
+        self._nearbyGoalBlocksStored = {}
         self._alreadyPutInDropZone = set()
+
+        self._countPut = 0
+        self._goingCurrLocation = None
+        self._currentlyWantedBlock = 0
+        self._currentlyCarrying = -1
 
     def initialize(self):
         super().initialize()
@@ -74,7 +90,7 @@ class BaseLineAgent(BW4TBrain):
         return (False, None)
 
     def _currentlyDesiredOrNot(self, index, goal_block):
-        if index == 0 and index not in self._alreadyPutInDropZone:
+        if index == self._currentlyWantedBlock and index not in self._alreadyPutInDropZone:
             self._alreadyPutInDropZone.add(index)
             return goal_block['location'], True
         elif index - 1 not in self._alreadyPutInDropZone:
@@ -137,6 +153,19 @@ class BaseLineAgent(BW4TBrain):
             print(self._goalBlockCharacteristics)
             print("\n\n")
 
+        # Initialize a list that checks whether the goal block is placed nearby
+        if len(self._checkGoalBlocksPlacedNearby) == 0:
+            self._checkGoalBlocksPlacedNearby = [
+                False for x in range(len(self._goalBlockCharacteristics))]
+            print(self._checkGoalBlocksPlacedNearby)
+
+        # Initialize a list that stores particular object's id
+        if len(self._nearbyGoalBlocksStored) == 0:
+            self._checkGoalBlocksPlacedNearby = [
+                [] for x in range(len(self._goalBlockCharacteristics))]
+            print(self._checkGoalBlocksPlacedNearby)
+            print(len(self._nearbyGoalBlocksStored))
+
         agent_name = state[self.agent_id]['obj_id']
         # Add team members
         for member in state['World']['team_members']:
@@ -149,8 +178,62 @@ class BaseLineAgent(BW4TBrain):
 
         while True:
 
+            closedDoors = [door for door in state.values()
+                           if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+            received = self._processMessages(self._teamMembers)
+
+            for member in received.keys():
+                for message in received[member]:
+                    if 'Found currently' in message:
+                        # print("UPDATE THE SET WITH INDEX : ",
+                        #       int(message[len(message) - 1]))
+                        self._alreadyPutInDropZone.add(
+                            int(message[len(message) - 1]))
+                        self._currentlyWantedBlock = int(
+                            message[len(message) - 1]) + 1
+
+            if(self._currentlyCarrying == self._currentlyWantedBlock):
+                self._navigator.reset_full()
+                self._navigator.add_waypoints(
+                    [self._goalBlockCharacteristics[self._currentlyCarrying]['location']])
+
+                self._state_tracker.update(state)
+                action = self._navigator.get_move_action(self._state_tracker)
+
+                if action != None:
+                    return action, {}
+
+                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                self._currentlyCarrying = -1
+
+                return DropObject.__name__, {'object_id': objCarryId}
+
+            # if Phase.PLAN_TO_NEXT_TO_GOAL_BLOCK == self._phase:
+            #     self._navigator.add_waypoints(
+            #         [self._goalBlockCharacteristics[self._currentlyWantedBlock - 1]['location']])
+            #     self._state_tracker.update(state)
+            #     action = self._navigator.get_move_action(
+            #         self._state_tracker)
+
+            #     if action != None:
+            #         return action, {}
+
+            #     self._phase = Phase.GRAB_OBJECT_AT_NEXT_TO_GOAL_BLOCK
+
+            # if Phase.GRAB_OBJECT_AT_NEXT_TO_GOAL_BLOCK == self._phase:
+            #     print("CURRENLY WANTED : " + str(self._currentlyWantedBlock))
+
+            # if Phase.FILLING_BLOCK_IN_DROP_ZONE == self._phase:
+            #     ...
+
+            # if len(closedDoors) == 0 and self._currentlyWantedBlock >= len(self._goalBlockCharacteristics):
+            #     self._navigator.reset_full()
+            #     self._phase = Phase.PLAN_TO_NEXT_TO_GOAL_BLOCK
+
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
+
                 closedDoors = [door for door in state.values()
                                if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
                 if len(closedDoors) == 0:
@@ -172,14 +255,6 @@ class BaseLineAgent(BW4TBrain):
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
-                received = self._processMessages(self._teamMembers)
-                for member in received.keys():
-                    for message in received[member]:
-                        if 'Found currently' in message:
-                            print("UPDATE THE SET WITH INDEX : ",
-                                  int(message[len(message) - 1]))
-                            self._alreadyPutInDropZone.add(
-                                int(message[len(message) - 1]))
 
                 if action != None:
                     return action, {}
@@ -232,17 +307,17 @@ class BaseLineAgent(BW4TBrain):
                 for obj in roomObjects:
                     result = self._checkIfDesiredBlock(obj)
                     if result[0]:
-                        if result[4] in self._alreadyPutInDropZone:
-                            print("LOL ALREADY PUT BRO")
-                            break
-                        self._phase = Phase.PLAN_TO_DROP_ZONE
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([result[1]])
-                        self._sendMessage('Found goal object ' + result[2] + ' at ' +
-                                          self._door['room_name'], agent_name)
+                        self._currentlyCarrying = result[4]
                         if result[3]:
+                            self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
                             self._sendMessage(
                                 'Found currently desired object ' + str(result[4]), agent_name)
+                        else:
+                            self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
+                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
+                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -251,25 +326,100 @@ class BaseLineAgent(BW4TBrain):
 
                 self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
 
+            # Update to go to next desired object iff the item is dropped
             if Phase.PLAN_TO_DROP_ZONE == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
 
-                received = self._processMessages(self._teamMembers)
-                for member in received.keys():
-                    for message in received[member]:
-                        if 'Found currently' in message:
-                            self._alreadyPutInDropZone.add(
-                                int(message[len(message) - 1]))
+                if action != None:
+                    return action, {}
+
+                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                self._currentlyCarrying = -1
+
+                return DropObject.__name__, {'object_id': objCarryId}
+
+            if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
+                self._state_tracker.update(state)
+                # Follow path to door
+                action = self._navigator.get_move_action(self._state_tracker)
+
+                if action != None:
+                    return action, {}
+
+                if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
+                    self._currentlyWantedBlock += 1
+
+                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                self._currentlyCarrying = -1
+
+                return DropObject.__name__, {'object_id': objCarryId}
+
+            if Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE == self._phase:
+                self._state_tracker.update(state)
+                # Follow path to door
+                action = self._navigator.get_move_action(self._state_tracker)
 
                 if action != None:
                     return action, {}
 
                 objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+
+                self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
+                self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
+                    objCarryId)
+                self._currentlyCarrying = -1
+                print(self._checkGoalBlocksPlacedNearby)
 
                 return DropObject.__name__, {'object_id': objCarryId}
+
+            if Phase.GRAB_DESIRED_OBJECT_NEARBY == self._phase:
+                self._state_tracker.update(state)
+                # Follow path to door
+                action = self._navigator.get_move_action(self._state_tracker)
+
+                if action != None:
+                    return action, {}
+
+                roomObjects = state.get_closest_with_property('is_goal_block')
+                roomObjects = [
+                    x for x in roomObjects if x['is_collectable'] == True]
+                for obj in roomObjects:
+                    result = self._checkIfDesiredBlock(obj)
+                    if result[0]:
+                        self._navigator.reset_full()
+                        self._navigator.add_waypoints([result[1]])
+                        self._currentlyCarrying = result[4]
+                        if result[3]:
+                            self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
+                            self._sendMessage(
+                                'Found currently desired object ' + str(result[4]), agent_name)
+                        else:
+                            self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
+                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
+                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
+
+                        return GrabObject.__name__, {'object_id': obj['obj_id']}
+
+                print('LOL')
+
+            if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
+                if(self._checkGoalBlocksPlacedNearby[self._currentlyWantedBlock]):
+                    self._navigator.reset_full()
+                    print('OH YEAH')
+
+                    block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]
+                    block_location = block_location[0] + 1, block_location[1]
+                    self._navigator.add_waypoints([block_location])
+
+                    self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
+
+                else:
+                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
 
     ############################################################################################################
     ########################################## Our trust belief system #########################################
