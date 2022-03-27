@@ -425,7 +425,6 @@ class BaseLineAgent(BW4TBrain):
                 self._trustBeliefs[member] = default
 
         for member in received.keys():
-            self.definitive_rel(member, received[member])
             for message in received[member]:
                 if 'Found' in message and 'colour' not in message:
                     self._trustBeliefs[member] -= 0.1
