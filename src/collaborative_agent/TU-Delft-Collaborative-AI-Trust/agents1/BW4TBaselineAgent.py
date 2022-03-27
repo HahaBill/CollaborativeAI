@@ -281,8 +281,6 @@ class BaseLineAgent(BW4TBrain):
                         self._currentlyCarrying = result[4]
                         if result[3]:
                             self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-                            self._sendMessage(
-                                'Found currently desired object ' + str(result[4]), agent_name)
                         else:
                             self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
                             self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
@@ -302,6 +300,9 @@ class BaseLineAgent(BW4TBrain):
 
                 if action != None:
                     return action, {}
+
+                self._sendMessage(
+                    'Found currently desired object ' + str(self._currentlyWantedBlock), agent_name)
 
                 if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
                     self._currentlyWantedBlock += 1
