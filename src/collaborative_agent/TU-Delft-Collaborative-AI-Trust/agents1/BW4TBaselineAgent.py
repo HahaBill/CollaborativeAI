@@ -187,17 +187,18 @@ class BaseLineAgent(BW4TBrain):
                         objCarryId = message[message.find(
                             "{")+1:message.find("}")]
                         index_obj = int(message[len(message) - 1])
-                        if index_obj in self._nearbyGoalBlocksStored and objCarryId not in self._nearbyGoalBlocksStored[index_obj]:
-                            self._checkGoalBlocksPlacedNearby[index_obj] = True
-                            if index_obj not in self._nearbyGoalBlocksStored:
-                                list_obj = []
-                                list_obj.append(objCarryId)
-                                self._nearbyGoalBlocksStored[index_obj] = list_obj
+
+                        self._checkGoalBlocksPlacedNearby[index_obj] = True
+                        if index_obj not in self._nearbyGoalBlocksStored:
+                            list_obj = []
+                            list_obj.append(objCarryId)
+                            self._nearbyGoalBlocksStored[index_obj] = list_obj
+                            print(self._nearbyGoalBlocksStored)
+                        else:
+                            if objCarryId not in self._nearbyGoalBlocksStored[index_obj]:
                                 print(self._nearbyGoalBlocksStored)
-                            else:
                                 self._nearbyGoalBlocksStored[index_obj].append(
                                     objCarryId)
-                                print(self._nearbyGoalBlocksStored)
 
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
