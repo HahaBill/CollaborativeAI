@@ -4,7 +4,7 @@ from re import L
 from typing import final, List, Dict, Final
 import enum
 import random
-from cv2 import phase
+# from cv2 import phase
 from numpy import place
 
 from sqlalchemy import null
@@ -18,6 +18,20 @@ from matrx.messages.message import  Message
 
 import json
 
+# World Knowledge that out agent acquires throughout the run
+class WorldKnowledge:
+    opened_doors = [] # The list of doors opened (by anyone) on the map
+    visited_rooms = {} # The dictionary of visited (by us) rooms with associated block locations inside
+    agent_speeds = {} # The dictionary of agents and their corresponding speeds
+
+    def __init__(self) -> None:
+        pass
+
+    def door_opened(self, door_name):
+        self.opened_doors.append(door_name)
+    
+    def room_visited(self, room_name, blocks):
+        self.visited_rooms[room_name] = blocks
 
 class Phase(enum.Enum):
     PLAN_PATH_TO_CLOSED_DOOR = 1,
@@ -384,29 +398,51 @@ class BaseLineAgent(BW4TBrain):
         '''
         Update the records of trust for this agent in the memory file
         '''
-        trustor = ... # get the name of the trustor
+        trustor = self.agent_id # Get the name (ID) of the trustor
         mem_entry = {trustor : self._trustBeliefs}
-        with open('Memory.json', 'w') as outfile:
+        # !! The path starts at CAI project. I think
+        # we should change the project so that only
+        # collaborative agent is there, without the rest of it.
+        # Perhaps, create a seperate repository, for clarity.
+        with open('./src/collaborative_agent/TU-Delft-Collaborative-AI-Trust/agents1/Memory.json', 'w') as outfile:
             json.dump(mem_entry, outfile)
 
     def direct_exp(self, trustee, messages):
         curr_trust = self._trustBeliefs[trustee]
 
         for message in messages:
-            # Definitive evidence
+            # Definitive evidence #
             if ('Opening' in message):
-                room_name = ... # get room number from the message
-                # if the room is closed
-                    # curr_trust = 0.0 # Namely, the agent is definitely lying/being lazy
+                room_name = ... # Get room number from the message
+                if (room_name not in self.world_knowledge.opened_doors):
+                    curr_trust = 0.0 # Namely, the agent is definitely lying/being lazy
 
-            # Partial evidence
-            ...
+            if ('Found goal block' in message):
+                found_block = ... # Get block type from the message
+                found_location = ... # Get block location from the message
+                found = False
+                for room_info in self.world_knowledge.visited_rooms:
+                    for block, location in room_info:
+                        if (found_block == block or found_location == location):
+                            found = True
+                if (not found):
+                    curr_trust = 0.0
+
+            # trustee_speed = self.world_knowledge.agent_speeds[trustee]
+            # time_passed = current_time - time_of_message
+            # if (|trustee_location - meeting_point| > trustee_speed * time_passed):
+            #     curr_trust = 0.0
+
+            # Partial evidence #
+            # sus_dist = ...
+            # if (|trustee_location - meeting_point| - trustee_speed * time_passed > sus_dist):
+            #     curr_trust = 0.0
 
         self._trustBeliefs[trustee] = curr_trust
 
-    def image(self, trustees, all_messages):
+    def image(self, state, trustees, all_messages):
         for trustee in trustees:
-            self.direct_exp(trustee, all_messages[trustee])
+            self.direct_exp(state, trustee, all_messages[trustee])
             # self.comm_exp(trustee, all_messages)
             # reputation. How to implement?
 
@@ -429,6 +465,8 @@ class BaseLineAgent(BW4TBrain):
                 if 'Found' in message and 'colour' not in message:
                     self._trustBeliefs[member] -= 0.1
                     break
+
+        self.update_mem()
 
         return
         # Generate the trust values for every trustee given their messages
