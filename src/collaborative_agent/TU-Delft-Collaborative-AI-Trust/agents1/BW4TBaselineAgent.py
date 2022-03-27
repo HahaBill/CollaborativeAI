@@ -16,6 +16,8 @@ from matrx.actions.door_actions import OpenDoorAction
 from matrx.actions.object_actions import GrabObject, DropObject
 from matrx.messages.message import Message
 
+import json
+
 
 class Phase(enum.Enum):
     PLAN_PATH_TO_CLOSED_DOOR = 1,
@@ -377,6 +379,36 @@ class BaseLineAgent(BW4TBrain):
     ########################################## Our trust belief system #########################################
     ############################################################################################################
 
+    def update_mem(self):
+        '''
+        Update the records of trust for this agent in the memory file
+        '''
+        trustor = ... # get the name of the trustor
+        mem_entry = {trustor : self._trustBeliefs}
+        with open('Memory.json', 'w') as outfile:
+            json.dump(mem_entry, outfile)
+
+    def direct_exp(self, trustee, messages):
+        curr_trust = self._trustBeliefs[trustee]
+
+        for message in messages:
+            # Definitive evidence
+            if ('Opening' in message):
+                room_name = ... # get room number from the message
+                # if the room is closed
+                    # curr_trust = 0.0 # Namely, the agent is definitely lying/being lazy
+
+            # Partial evidence
+            ...
+
+        self._trustBeliefs[trustee] = curr_trust
+
+    def image(self, trustees, all_messages):
+        for trustee in trustees:
+            self.direct_exp(trustee, all_messages[trustee])
+            # self.comm_exp(trustee, all_messages)
+            # reputation. How to implement?
+
     def _trustBlief(self, member, received):
         '''
         Baseline implementation of a trust belief. Creates a dictionary with trust belief scores for each team member,
@@ -392,10 +424,17 @@ class BaseLineAgent(BW4TBrain):
                 self._trustBeliefs[member] = default
 
         for member in received.keys():
+            self.definitive_rel(member, received[member])
             for message in received[member]:
                 if 'Found' in message and 'colour' not in message:
                     self._trustBeliefs[member] -= 0.1
                     break
+
+        return
+        # Generate the trust values for every trustee given their messages
+        self.image(received.keys(), received)
+        # Save the result trust beliefs in the memory file
+        self.update_mem()
 
         '''
 
