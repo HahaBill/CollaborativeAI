@@ -1,4 +1,5 @@
 
+from operator import index
 from re import L
 from typing import final, List, Dict, Final
 import enum
@@ -95,7 +96,7 @@ class BaseLineAgent(BW4TBrain):
             return goal_block['location'], True
         elif index - 1 not in self._alreadyPutInDropZone:
             goal_loc = goal_block['location']
-            return (goal_loc[0] + 1, goal_loc[1]), False
+            return (goal_loc[0] + 3, goal_loc[1]), False
         else:
             self._alreadyPutInDropZone.add(index)
             return goal_block['location'], True
@@ -159,13 +160,6 @@ class BaseLineAgent(BW4TBrain):
                 False for x in range(len(self._goalBlockCharacteristics))]
             print(self._checkGoalBlocksPlacedNearby)
 
-        # Initialize a list that stores particular object's id
-        if len(self._nearbyGoalBlocksStored) == 0:
-            self._checkGoalBlocksPlacedNearby = [
-                [] for x in range(len(self._goalBlockCharacteristics))]
-            print(self._checkGoalBlocksPlacedNearby)
-            print(len(self._nearbyGoalBlocksStored))
-
         agent_name = state[self.agent_id]['obj_id']
         # Add team members
         for member in state['World']['team_members']:
@@ -185,51 +179,25 @@ class BaseLineAgent(BW4TBrain):
             for member in received.keys():
                 for message in received[member]:
                     if 'Found currently' in message:
-                        # print("UPDATE THE SET WITH INDEX : ",
-                        #       int(message[len(message) - 1]))
                         self._alreadyPutInDropZone.add(
                             int(message[len(message) - 1]))
                         self._currentlyWantedBlock = int(
                             message[len(message) - 1]) + 1
-
-            if(self._currentlyCarrying == self._currentlyWantedBlock):
-                self._navigator.reset_full()
-                self._navigator.add_waypoints(
-                    [self._goalBlockCharacteristics[self._currentlyCarrying]['location']])
-
-                self._state_tracker.update(state)
-                action = self._navigator.get_move_action(self._state_tracker)
-
-                if action != None:
-                    return action, {}
-
-                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
-                self._currentlyCarrying = -1
-
-                return DropObject.__name__, {'object_id': objCarryId}
-
-            # if Phase.PLAN_TO_NEXT_TO_GOAL_BLOCK == self._phase:
-            #     self._navigator.add_waypoints(
-            #         [self._goalBlockCharacteristics[self._currentlyWantedBlock - 1]['location']])
-            #     self._state_tracker.update(state)
-            #     action = self._navigator.get_move_action(
-            #         self._state_tracker)
-
-            #     if action != None:
-            #         return action, {}
-
-            #     self._phase = Phase.GRAB_OBJECT_AT_NEXT_TO_GOAL_BLOCK
-
-            # if Phase.GRAB_OBJECT_AT_NEXT_TO_GOAL_BLOCK == self._phase:
-            #     print("CURRENLY WANTED : " + str(self._currentlyWantedBlock))
-
-            # if Phase.FILLING_BLOCK_IN_DROP_ZONE == self._phase:
-            #     ...
-
-            # if len(closedDoors) == 0 and self._currentlyWantedBlock >= len(self._goalBlockCharacteristics):
-            #     self._navigator.reset_full()
-            #     self._phase = Phase.PLAN_TO_NEXT_TO_GOAL_BLOCK
+                    if 'Stored nearby' in message:
+                        objCarryId = message[message.find(
+                            "{")+1:message.find("}")]
+                        index_obj = int(message[len(message) - 1])
+                        if index_obj in self._nearbyGoalBlocksStored and objCarryId not in self._nearbyGoalBlocksStored[index_obj]:
+                            self._checkGoalBlocksPlacedNearby[index_obj] = True
+                            if index_obj not in self._nearbyGoalBlocksStored:
+                                list_obj = []
+                                list_obj.append(objCarryId)
+                                self._nearbyGoalBlocksStored[index_obj] = list_obj
+                                print(self._nearbyGoalBlocksStored)
+                            else:
+                                self._nearbyGoalBlocksStored[index_obj].append(
+                                    objCarryId)
+                                print(self._nearbyGoalBlocksStored)
 
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
@@ -326,21 +294,6 @@ class BaseLineAgent(BW4TBrain):
 
                 self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
 
-            # Update to go to next desired object iff the item is dropped
-            if Phase.PLAN_TO_DROP_ZONE == self._phase:
-                self._state_tracker.update(state)
-                # Follow path to door
-                action = self._navigator.get_move_action(self._state_tracker)
-
-                if action != None:
-                    return action, {}
-
-                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._currentlyCarrying = -1
-
-                return DropObject.__name__, {'object_id': objCarryId}
-
             if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -368,10 +321,20 @@ class BaseLineAgent(BW4TBrain):
 
                 objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
                 self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                self._sendMessage(
+                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + ", Index: " + str(self._currentlyCarrying), agent_name)
 
                 self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
-                self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
-                    objCarryId)
+                if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
+                    list_obj = []
+                    list_obj.append(objCarryId)
+                    self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
+                    print(self._nearbyGoalBlocksStored)
+                else:
+                    self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
+                        objCarryId)
+                    print(self._nearbyGoalBlocksStored)
+
                 self._currentlyCarrying = -1
                 print(self._checkGoalBlocksPlacedNearby)
 
@@ -385,35 +348,23 @@ class BaseLineAgent(BW4TBrain):
                 if action != None:
                     return action, {}
 
-                roomObjects = state.get_closest_with_property('is_goal_block')
-                roomObjects = [
-                    x for x in roomObjects if x['is_collectable'] == True]
-                for obj in roomObjects:
-                    result = self._checkIfDesiredBlock(obj)
-                    if result[0]:
-                        self._navigator.reset_full()
-                        self._navigator.add_waypoints([result[1]])
-                        self._currentlyCarrying = result[4]
-                        if result[3]:
-                            self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-                            self._sendMessage(
-                                'Found currently desired object ' + str(result[4]), agent_name)
-                        else:
-                            self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
-                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
-                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
+                block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
+                self._navigator.reset_full()
+                self._navigator.add_waypoints([block_location])
 
-                        return GrabObject.__name__, {'object_id': obj['obj_id']}
+                obj = self._nearbyGoalBlocksStored[self._currentlyWantedBlock][0]
+                self._nearbyGoalBlocksStored[self._currentlyWantedBlock].pop(0)
+                self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
 
-                print('LOL')
+                return GrabObject.__name__, {'object_id': obj}
 
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
-                if(self._checkGoalBlocksPlacedNearby[self._currentlyWantedBlock]):
+                if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
                     self._navigator.reset_full()
                     print('OH YEAH')
 
-                    block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]
-                    block_location = block_location[0] + 1, block_location[1]
+                    block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
+                    block_location = block_location[0] + 3, block_location[1]
                     self._navigator.add_waypoints([block_location])
 
                     self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
