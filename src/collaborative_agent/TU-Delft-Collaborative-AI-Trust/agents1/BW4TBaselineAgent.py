@@ -29,7 +29,7 @@ class WorldKnowledge:
 
     def door_opened(self, door_name):
         self.opened_doors.append(door_name)
-    
+
     def room_visited(self, room_name, blocks):
         self.visited_rooms[room_name] = blocks
 
@@ -188,8 +188,6 @@ class BaseLineAgent(BW4TBrain):
 
         while True:
 
-            closedDoors = [door for door in state.values()
-                           if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
             received = self._processMessages(self._teamMembers)
 
             for member in received.keys():
@@ -219,12 +217,12 @@ class BaseLineAgent(BW4TBrain):
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
 
-                closedDoors = [door for door in state.values()
-                               if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-                if len(closedDoors) == 0:
-                    return None, {}
+                doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+                if len(doors) == 0:
+                    doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
+
                 # Randomly pick a closed door
-                self._door = random.choice(closedDoors)
+                self._door = random.choice(doors)
                 doorLoc = self._door['location']
 
                 # Location in front of door is south from door
@@ -283,12 +281,11 @@ class BaseLineAgent(BW4TBrain):
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
 
                 self._state_tracker.update(state)
-                action = self._navigator.get_move_action(
-                    self._state_tracker)
+                action = self._navigator.get_move_action(self._state_tracker)
 
                 roomObjects = state.get_closest_with_property('is_goal_block')
-                roomObjects = [
-                    x for x in roomObjects if x['is_collectable'] == True]
+                roomObjects = [x for x in roomObjects if x['is_collectable'] == True]
+
                 for obj in roomObjects:
                     result = self._checkIfDesiredBlock(obj)
                     if result[0]:
