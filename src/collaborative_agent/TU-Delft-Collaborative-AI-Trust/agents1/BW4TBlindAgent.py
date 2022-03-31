@@ -19,31 +19,32 @@ from agents1.BW4TBaselineAgent import BaseLineAgent, Phase
 
 import json
 
-# World Knowledge that out agent acquires throughout the run
-class WorldKnowledge:
-    opened_doors = [] # The list of doors opened (by anyone) on the map
-    visited_rooms = {} # The dictionary of visited (by us) rooms with associated block locations inside
-    agent_speeds = {} # The dictionary of agents and their corresponding speeds
-
-    def __init__(self) -> None:
-        pass
-
-    def door_opened(self, door_name):
-        self.opened_doors.append(door_name)
-
-    def room_visited(self, room_name, blocks):
-        self.visited_rooms[room_name] = blocks
-
-
-class StrongAgent(BaseLineAgent):
+class BlindAgent(BaseLineAgent):
 
     def __init__(self, settings: Dict[str, object]):
         super().__init__(settings)
-        self._currentlyCarryingTwo = -1
+        self._currentlyDesiredShape = ''
+        self._currentlyDesiredSize = ''
+
+    def _checkIfDesiredBlock(self, curr_obj):
+        c_size = curr_obj['visualization']['size']
+        c_shape = curr_obj['visualization']['shape']
+
+        if (c_size == self._currentlyDesiredSize and c_shape == self._currentlyDesiredShape):
+            obj_description = "{size : " + str(c_size) + ", " + \
+                    "shape : " + str(c_shape) + ", " + \
+                    "colour : " + " " + ", " + \
+                    "order : " + str(index) + "}"
+
+            dropzoneLocation = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
+            return (True, (dropzoneLocation[0] + 3, dropzoneLocation[1]), obj_description, False, self._currentlyWantedBlock)
+
+        return (False, None)
 
     ############################################################################################################
     ############################### Decide on the action based on trust belief #################################
     ############################################################################################################
+
 
     def decide_on_bw4t_action(self, state: State):
         '''
@@ -117,6 +118,9 @@ class StrongAgent(BaseLineAgent):
                                 self._nearbyGoalBlocksStored[index_obj].append(
                                     objCarryId)
 
+            self._currentlyDesiredShape = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']['shape']
+            self._currentlyDesiredSize = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']['size']
+
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
 
@@ -182,7 +186,6 @@ class StrongAgent(BaseLineAgent):
                 self._phase = Phase.SEARCH_AND_FIND_GOAL_BLOCK
 
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
-
                 self._state_tracker.update(state)
                 action = self._navigator.get_move_action(self._state_tracker)
 
@@ -191,20 +194,14 @@ class StrongAgent(BaseLineAgent):
 
                 for obj in roomObjects:
                     result = self._checkIfDesiredBlock(obj)
-
-                    if result[0]: # if desired block found
+                    if result[0]:
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([result[1]])
+                        self._currentlyCarrying = result[4]
+                        self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
 
-                        if self._currentlyCarrying == -1: self._currentlyCarrying = result[4]
-                        elif self._currentlyCarrying != -1 and self._currentlyCarryingTwo == -1: self._currentlyCarryingTwo = result[4]
-                        else: return print('we did something wrong')
-
-                        if result[3]: # if currently desired block found
-                            self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-                        elif not result[3] and self._currentlyCarryingTwo != -1:
-                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' + self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
-                            self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
+                        self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
+                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -227,13 +224,9 @@ class StrongAgent(BaseLineAgent):
                 if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
                     self._currentlyWantedBlock += 1
 
-                if self._currentlyCarryingTwo != -1: objCarryId = state[self.agent_id]['is_carrying'][1]['obj_id']
-                else: objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-
+                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
                 self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-
-                if self._currentlyCarryingTwo != -1: self._currentlyCarryingTwo = -1
-                else: self._currentlyCarrying = -1
+                self._currentlyCarrying = -1
 
                 return DropObject.__name__, {'object_id': objCarryId}
 
@@ -245,28 +238,23 @@ class StrongAgent(BaseLineAgent):
                 if action != None:
                     return action, {}
 
-                if self._currentlyCarryingTwo != -1: objCarryId = state[self.agent_id]['is_carrying'][1]['obj_id']
-                else: objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-
-                objectIndex = self._currentlyCarryingTwo if self._currentlyCarryingTwo != -1 else self._currentlyCarrying
-
+                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
                 self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._sendMessage('Stored nearby the goal object ' + '{' + objCarryId + "}" + ", Index: " + str(objectIndex), agent_name)
+                self._sendMessage(
+                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + ", Index: " + str(self._currentlyCarrying), agent_name)
 
-                self._checkGoalBlocksPlacedNearby[objectIndex] = True
-                if objectIndex not in self._nearbyGoalBlocksStored:
+                self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
+                if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
                     list_obj = []
                     list_obj.append(objCarryId)
-                    self._nearbyGoalBlocksStored[objectIndex] = list_obj
+                    self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
                     print(self._nearbyGoalBlocksStored)
-
                 else:
-                    self._nearbyGoalBlocksStored[objectIndex].append(objCarryId)
+                    self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
+                        objCarryId)
                     print(self._nearbyGoalBlocksStored)
 
-                if self._currentlyCarryingTwo != -1: self._currentlyCarryingTwo = -1
-                else: self._currentlyCarrying = -1
-
+                self._currentlyCarrying = -1
                 print(self._checkGoalBlocksPlacedNearby)
 
                 return DropObject.__name__, {'object_id': objCarryId}
@@ -285,31 +273,12 @@ class StrongAgent(BaseLineAgent):
 
                 obj = self._nearbyGoalBlocksStored[self._currentlyWantedBlock][0]
                 self._nearbyGoalBlocksStored[self._currentlyWantedBlock].pop(0)
-                self._currentlyCarrying = self._currentlyWantedBlock
                 self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
 
                 return GrabObject.__name__, {'object_id': obj}
 
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
-                if self._currentlyWantedBlock == self._currentlyCarrying:
-                    self._navigator.reset_full()
-                    currentlyDesiredDropzone = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
-
-                    dropzoneLocation = currentlyDesiredDropzone[0], currentlyDesiredDropzone[1]
-                    self._navigator.add_waypoints([dropzoneLocation])
-
-                    self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-
-                elif self._currentlyCarrying != -1:
-                    self._navigator.reset_full()
-                    notCurrentlyDesiredDropzone = self._goalBlockCharacteristics[self._currentlyCarrying]['location']
-
-                    dropzoneLocation = notCurrentlyDesiredDropzone[0] + 3, notCurrentlyDesiredDropzone[1]
-                    self._navigator.add_waypoints([dropzoneLocation])
-
-                    self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
-
-                elif self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
+                if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
                     self._navigator.reset_full()
                     print('OH YEAH')
 
