@@ -3,6 +3,7 @@ from bw4t.statistics import Statistics
 from agents1.BW4TBaselineAgent import BaseLineAgent
 from agents1.BW4TStrongAgent import StrongAgent
 from agents1.BW4TBlindAgent import BlindAgent
+from agents1.BW4TLazyAgent import LazyAgent
 from agents1.BW4THuman import Human
 
 
@@ -13,11 +14,12 @@ press the start button in god mode to start the session.
 
 if __name__ == "__main__":
     agents = [
-        {'name': 'baseAgent', 'botclass': BaseLineAgent,
-            'settings': {}},
-        #{'name': 'strongAgent', 'botclass': StrongAgent, 'settings': {}},
+        {'name': 'baseAgent', 'botclass': BaseLineAgent, 'settings': {}},
+        # {'name': 'strongAgent', 'botclass': StrongAgent, 'settings': {}},
         {'name': 'blindAgent', 'botclass': BlindAgent, 'settings': {}},
-        {'name': 'blindAgent2', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'secondBlind', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'thirdBlind', 'botclass': BlindAgent, 'settings': {}},
+        # {'name': 'lazyAgent', 'botclass': LazyAgent, 'settings': {}}
     ]
 
     print("Started world...")

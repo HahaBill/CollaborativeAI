@@ -40,6 +40,7 @@ class StrongAgent(BaseLineAgent):
     def __init__(self, settings: Dict[str, object]):
         super().__init__(settings)
         self._currentlyCarryingTwo = -1
+        self._checkedNearbyBlocks = False
 
     ############################################################################################################
     ############################### Decide on the action based on trust belief #################################
@@ -103,12 +104,14 @@ class StrongAgent(BaseLineAgent):
                     if 'Stored nearby' in message:
                         objCarryId = message[message.find(
                             "{")+1:message.find("}")]
+                        visualizationObj = str(message[message.find(
+                            "[")+1:message.find("]")])
                         index_obj = int(message[len(message) - 1])
 
                         self._checkGoalBlocksPlacedNearby[index_obj] = True
                         if index_obj not in self._nearbyGoalBlocksStored:
                             list_obj = []
-                            list_obj.append(objCarryId)
+                            list_obj.append((objCarryId, visualizationObj))
                             self._nearbyGoalBlocksStored[index_obj] = list_obj
                             print(self._nearbyGoalBlocksStored)
                         else:
@@ -121,21 +124,39 @@ class StrongAgent(BaseLineAgent):
                 self._navigator.reset_full()
 
                 doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-                if len(doors) == 0:
+
+                if len(doors) == 0 and not self._checkedNearbyBlocks:
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                elif len(doors) == 0 and self._checkedNearbyBlocks:
+
                     doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
 
-                # Randomly pick a closed door
-                self._door = random.choice(doors)
-                doorLoc = self._door['location']
+                    # Randomly pick a closed door
+                    self._door = random.choice(doors)
+                    doorLoc = self._door['location']
 
-                # Location in front of door is south from door
-                doorLoc = doorLoc[0], doorLoc[1]+1
+                    # Location in front of door is south from door
+                    doorLoc = doorLoc[0], doorLoc[1]+1
 
-                # Send message of current action
-                self._sendMessage('Moving to door of ' +
-                                  self._door['room_name'], agent_name)
-                self._navigator.add_waypoints([doorLoc])
-                self._phase = Phase.FOLLOW_PATH_TO_CLOSED_DOOR
+                    # Send message of current action
+                    self._sendMessage('Moving to door of ' +
+                                    self._door['room_name'], agent_name)
+                    self._navigator.add_waypoints([doorLoc])
+                    self._phase = Phase.FOLLOW_PATH_TO_CLOSED_DOOR
+
+                else:
+                    # Randomly pick a closed door
+                    self._door = random.choice(doors)
+                    doorLoc = self._door['location']
+
+                    # Location in front of door is south from door
+                    doorLoc = doorLoc[0], doorLoc[1]+1
+
+                    # Send message of current action
+                    self._sendMessage('Moving to door of ' +
+                                    self._door['room_name'], agent_name)
+                    self._navigator.add_waypoints([doorLoc])
+                    self._phase = Phase.FOLLOW_PATH_TO_CLOSED_DOOR
 
             if Phase.FOLLOW_PATH_TO_CLOSED_DOOR == self._phase:
                 self._state_tracker.update(state)
@@ -205,6 +226,8 @@ class StrongAgent(BaseLineAgent):
                         elif not result[3] and self._currentlyCarryingTwo != -1:
                             self._sendMessage('Spotted goal object ' + result[2] + ' at ' + self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
                             self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
+                        else:
+                            self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -249,14 +272,16 @@ class StrongAgent(BaseLineAgent):
                 else: objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
 
                 objectIndex = self._currentlyCarryingTwo if self._currentlyCarryingTwo != -1 else self._currentlyCarrying
-
+                visualizationObj = str(
+                    state[self.agent_id]['is_carrying'][0]['visualization'])
                 self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._sendMessage('Stored nearby the goal object ' + '{' + objCarryId + "}" + ", Index: " + str(objectIndex), agent_name)
+                self._sendMessage(
+                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " + "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
 
                 self._checkGoalBlocksPlacedNearby[objectIndex] = True
                 if objectIndex not in self._nearbyGoalBlocksStored:
                     list_obj = []
-                    list_obj.append(objCarryId)
+                    list_obj.append((objCarryId, visualizationObj))
                     self._nearbyGoalBlocksStored[objectIndex] = list_obj
                     print(self._nearbyGoalBlocksStored)
 
@@ -283,12 +308,26 @@ class StrongAgent(BaseLineAgent):
                 self._navigator.reset_full()
                 self._navigator.add_waypoints([block_location])
 
-                obj = self._nearbyGoalBlocksStored[self._currentlyWantedBlock][0]
-                self._nearbyGoalBlocksStored[self._currentlyWantedBlock].pop(0)
-                self._currentlyCarrying = self._currentlyWantedBlock
-                self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
+                for storedBlockID in self._nearbyGoalBlocksStored[self._currentlyWantedBlock]:
+                    desiredBlock = self._goalBlockCharacteristics[
+                        self._currentlyWantedBlock]['visualization']
+                    # THE CHARACTERISTICS OF THE STORED BLOCK SHOULD BE GET HERE
+                    storedBlock = storedBlockID[1]
+                    storedSize = float(storedBlock[storedBlock.find(
+                        "'size': ")+8:storedBlock.find(",")])
+                    storedShape = int(storedBlock[storedBlock.find(
+                        "'shape': ")+9:storedBlock.find(", 'co")])
+                    storedColour = storedBlock[storedBlock.find(
+                        "'colour': ")+11:storedBlock.find(", 'de") - 1]
 
-                return GrabObject.__name__, {'object_id': obj}
+                    if storedShape == int(desiredBlock['shape']) and storedSize == float(desiredBlock['size']) and storedColour == desiredBlock['colour']:
+                        self._nearbyGoalBlocksStored[self._currentlyWantedBlock].remove(
+                            storedBlockID)
+                        self._currentlyCarrying = self._currentlyWantedBlock
+                        self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
+                        return GrabObject.__name__, {'object_id': storedBlockID[0]}
+
+                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
 
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 if self._currentlyWantedBlock == self._currentlyCarrying:

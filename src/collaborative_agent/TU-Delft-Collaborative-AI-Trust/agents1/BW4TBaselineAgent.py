@@ -367,23 +367,6 @@ class BaseLineAgent(BW4TBrain):
                 return DropObject.__name__, {'object_id': objCarryId}
 
             if Phase.GRAB_DESIRED_OBJECT_NEARBY == self._phase:
-                # self._state_tracker.update(state)
-                # Follow path to door
-                # action = self._navigator.get_move_action(self._state_tracker)
-
-                # if action != None:
-                #     return action, {}
-
-                # block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
-                # self._navigator.reset_full()
-                # self._navigator.add_waypoints([block_location])
-
-                # obj = self._nearbyGoalBlocksStored[self._currentlyWantedBlock][0]
-                # self._nearbyGoalBlocksStored[self._currentlyWantedBlock].pop(0)
-                # self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-
-                # return GrabObject.__name__, {'object_id': obj}
-
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
@@ -400,9 +383,6 @@ class BaseLineAgent(BW4TBrain):
                         self._currentlyWantedBlock]['visualization']
                     # THE CHARACTERISTICS OF THE STORED BLOCK SHOULD BE GET HERE
                     storedBlock = storedBlockID[1]
-                    print("\n")
-                    print("THANKS BLIND !! ", storedBlock)
-                    print("\n")
                     storedSize = float(storedBlock[storedBlock.find(
                         "'size': ")+8:storedBlock.find(",")])
                     print("AFTER SIZE AND AGAIN THANKS BLIND !! ", storedBlock)
@@ -410,11 +390,6 @@ class BaseLineAgent(BW4TBrain):
                         "'shape': ")+9:storedBlock.find(", 'co")])
                     storedColour = storedBlock[storedBlock.find(
                         "'colour': ")+11:storedBlock.find(", 'de") - 1]
-
-                    print("\n")
-                    print("THANKS BLIND !! ", storedBlock)
-                    print("COLOR : ", storedColour)
-                    print("\n")
 
                     if storedShape == int(desiredBlock['shape']) and storedSize == float(desiredBlock['size']) and storedColour == desiredBlock['colour']:
                         self._nearbyGoalBlocksStored[self._currentlyWantedBlock].remove(
