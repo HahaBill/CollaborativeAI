@@ -1,0 +1,8 @@
+done;agent1_acts;agent2_acts;human_acts;agent1_mssg;agent2_mssg;human_mssg;world_nr;tick_nr
+False;;;;0;0;0;1;0
+False;MoveSouthEast;MoveSouth;;0;0;0;1;1
+False;MoveSouthEast;MoveSouth;;1;1;0;1;2
+False;MoveSouthEast;MoveSouth;;1;1;0;1;3
+False;MoveSouthEast;MoveSouth;;1;1;0;1;4
+False;MoveSouthEast;MoveSouth;;1;1;0;1;5
+False;MoveSouthEast;MoveSouth;;1;1;0;1;6

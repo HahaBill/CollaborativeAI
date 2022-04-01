@@ -19,6 +19,7 @@ from agents1.BW4TBaselineAgent import BaseLineAgent, Phase
 
 import json
 
+
 class BlindAgent(BaseLineAgent):
 
     def __init__(self, settings: Dict[str, object]):
@@ -32,9 +33,9 @@ class BlindAgent(BaseLineAgent):
 
         if (c_size == self._currentlyDesiredSize and c_shape == self._currentlyDesiredShape):
             obj_description = "{size : " + str(c_size) + ", " + \
-                    "shape : " + str(c_shape) + ", " + \
-                    "colour : " + " " + ", " + \
-                    "order : " + str(index) + "}"
+                "shape : " + str(c_shape) + ", " + \
+                "colour : " + " " + ", " + \
+                "order : " + str(index) + "}"
 
             dropzoneLocation = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
             return (True, (dropzoneLocation[0] + 3, dropzoneLocation[1]), obj_description, False, self._currentlyWantedBlock)
@@ -44,7 +45,6 @@ class BlindAgent(BaseLineAgent):
     ############################################################################################################
     ############################### Decide on the action based on trust belief #################################
     ############################################################################################################
-
 
     def decide_on_bw4t_action(self, state: State):
         '''
@@ -97,6 +97,7 @@ class BlindAgent(BaseLineAgent):
             for member in received.keys():
                 for message in received[member]:
                     if 'Found currently' in message:
+                        print("MESSAGE : ", message)
                         self._alreadyPutInDropZone.add(
                             int(message[len(message) - 1]))
                         self._currentlyWantedBlock = int(
@@ -111,22 +112,27 @@ class BlindAgent(BaseLineAgent):
                             list_obj = []
                             list_obj.append(objCarryId)
                             self._nearbyGoalBlocksStored[index_obj] = list_obj
-                            print(self._nearbyGoalBlocksStored)
+                            # print(self._nearbyGoalBlocksStored)
                         else:
                             if objCarryId not in self._nearbyGoalBlocksStored[index_obj]:
-                                print(self._nearbyGoalBlocksStored)
+                                # print(self._nearbyGoalBlocksStored)
                                 self._nearbyGoalBlocksStored[index_obj].append(
                                     objCarryId)
 
-            self._currentlyDesiredShape = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']['shape']
-            self._currentlyDesiredSize = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']['size']
+            if(self._currentlyWantedBlock < len(self._goalBlockCharacteristics)):
+                self._currentlyDesiredShape = self._goalBlockCharacteristics[
+                    self._currentlyWantedBlock]['visualization']['shape']
+                self._currentlyDesiredSize = self._goalBlockCharacteristics[
+                    self._currentlyWantedBlock]['visualization']['size']
 
             if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
                 self._navigator.reset_full()
 
-                doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+                doors = [door for door in state.values(
+                ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
                 if len(doors) == 0:
-                    doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
+                    doors = [door for door in state.values(
+                    ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
 
                 # Randomly pick a closed door
                 self._door = random.choice(doors)
@@ -190,7 +196,8 @@ class BlindAgent(BaseLineAgent):
                 action = self._navigator.get_move_action(self._state_tracker)
 
                 roomObjects = state.get_closest_with_property('is_goal_block')
-                roomObjects = [x for x in roomObjects if x['is_collectable'] == True]
+                roomObjects = [
+                    x for x in roomObjects if x['is_collectable'] == True]
 
                 for obj in roomObjects:
                     result = self._checkIfDesiredBlock(obj)
@@ -201,7 +208,7 @@ class BlindAgent(BaseLineAgent):
                         self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
 
                         self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
-                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
+                                          self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -239,23 +246,25 @@ class BlindAgent(BaseLineAgent):
                     return action, {}
 
                 objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                visualizationObj = str(
+                    state[self.agent_id]['is_carrying'][0]['visualization'])
+                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
                 self._sendMessage(
-                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + ", Index: " + str(self._currentlyCarrying), agent_name)
+                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " + "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
 
                 self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
                 if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
                     list_obj = []
-                    list_obj.append(objCarryId)
+                    list_obj.append((objCarryId, visualizationObj))
                     self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
-                    print(self._nearbyGoalBlocksStored)
+                    # print(self._nearbyGoalBlocksStored)
                 else:
                     self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
                         objCarryId)
-                    print(self._nearbyGoalBlocksStored)
+                    # print(self._nearbyGoalBlocksStored)
 
                 self._currentlyCarrying = -1
-                print(self._checkGoalBlocksPlacedNearby)
+                # print(self._checkGoalBlocksPlacedNearby)
 
                 return DropObject.__name__, {'object_id': objCarryId}
 
