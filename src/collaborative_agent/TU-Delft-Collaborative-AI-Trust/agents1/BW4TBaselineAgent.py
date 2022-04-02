@@ -1,4 +1,3 @@
-
 from operator import index
 from re import L
 from typing import final, List, Dict, Final
@@ -21,25 +20,9 @@ import json
 # World Knowledge that out agent acquires throughout the run
 
 
-class WorldKnowledge:
-    opened_doors = []  # The list of doors opened (by anyone) on the map
-    # The dictionary of visited (by us) rooms with associated block locations inside
-    visited_rooms = {}
-    agent_speeds = {}  # The dictionary of agents and their corresponding speeds
-
-    def __init__(self) -> None:
-        pass
-
-    def door_opened(self, door_name):
-        self.opened_doors.append(door_name)
-
-    def room_visited(self, room_name, blocks):
-        self.visited_rooms[room_name] = blocks
-
-
 class Phase(enum.Enum):
-    PLAN_PATH_TO_CLOSED_DOOR = 1,
-    FOLLOW_PATH_TO_CLOSED_DOOR = 2,
+    PLAN_PATH_TO_DOOR = 1,
+    FOLLOW_PATH_TO_DOOR = 2,
     OPEN_DOOR = 3,
 
     GRAB_OBJECT = 4,
@@ -58,15 +41,65 @@ class Phase(enum.Enum):
     GRAB_DESIRED_OBJECT_NEARBY = 17
 
 
+"""
+The BaseLineAgent
+
+
+REQUIRED :
+
+F 'Moving to door of ' + self._door['room_name']
+
+F 'Opening door of ' + self._door['room_name']
+
+F 'Searching' + self._door['room_name']. ==== change to ====> Searching through [room_name]
+
+F 'Put currently desired object ' + str(self._currentlyCarrying), agent_name)  ==== change to ====> Dropped goal block [block_visualization] at drop location [location]
+
+F 'Spotted goal object ' + result[2] + ' at ' + self._door['room_name'] + ", Index: " + str(result[4]) ==== change to ====>
+
+F 'Scanning ' + self._door['room_name'] ==== change to ====> Searching through [room_name]
+
+CUSTOM :
+
+F 'Entering the ' + self._door['room_name']
+
+F 'Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " + "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
+
+"""
+
+'''
+FROM THE ASSIGNMENT
+
+            • Moving to [room_name] 4
+            – e.g., Moving to room_4
+
+            • Opening door of [room_name]
+            – e.g., Opening door of room_4
+
+            • Searching through [room_name]
+            – e.g., Searching through room_4
+
+            • Found goal block [block_visualization] at location [location]
+            – e.g., Found goal block {"size": 0.5, "shape": 1, "colour": "#0008ff"} at location (8, 8)
+
+            • Picking up goal block [block_visualization] at location [location]
+            – e.g., Picking up goal block {"size": 0.5, "shape": 1, "colour": "#0008ff"}
+            at location (8, 8)
+
+            • Dropped goal block [block_visualization] at drop location [location]
+            – e.g., Dropped goal block {"size": 0.5, "shape": 1, "colour": "#0008ff"} at drop location (11, 23)
+'''
+
+
 class BaseLineAgent(BW4TBrain):
 
     def __init__(self, settings: Dict[str, object]):
         super().__init__(settings)
-        self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+        self._phase = Phase.PLAN_PATH_TO_DOOR
         self._teamMembers = []
 
-        self._trustBeliefs = {}
         self._goalBlockCharacteristics = []
+        self._number_of_rooms = 9
         self._checkGoalBlocksPlacedNearby = []
         self._nearbyGoalBlocksStored = {}
         self._alreadyPutInDropZone = set()
@@ -76,11 +109,13 @@ class BaseLineAgent(BW4TBrain):
         self._currentlyWantedBlock = 0
         self._currentlyCarrying = -1
 
-        ## Fields specific to the Trust Model
+        # Fields specific to the Trust Model
+        self._trustBeliefs = {}
         self._defaultBeliefAssignment = True
-        self._defaultTrustValue = 0.6 # Somewhat optimistic to start with
-        self._closedRooms = {} # The list is updated every tick
-        self._visitedRooms = {} # Blocks with locations are added every time a new one is noticed in a room
+        self._defaultTrustValue = 0.6  # Somewhat optimistic to start with
+        self._closedRooms = {}  # The list is updated every tick
+        # Blocks with locations are added every time a new one is noticed in a room
+        self._visitedRooms = {}
 
     def initialize(self):
         super().initialize()
@@ -94,8 +129,15 @@ class BaseLineAgent(BW4TBrain):
         print(state)
         return state
 
-    def _checkIfDesiredBlock(self, curr_obj):
+    ############################################################################################################
+    ###################################### Helper functions ####################################################
+    ############################################################################################################
 
+    def _checkIfDesiredBlock(self, curr_obj):
+        """
+        The function takes the nearby object that is visible to the agent
+        and assessed it whether it is a goal object or not.
+        """
         c_size = curr_obj['visualization']['size']
         c_shape = curr_obj['visualization']['shape']
         c_colour = curr_obj['visualization']['colour']
@@ -117,6 +159,10 @@ class BaseLineAgent(BW4TBrain):
         return (False, None)
 
     def _currentlyDesiredOrNot(self, index, goal_block):
+        """
+        Determining whether the goal block is currently desired one, checking that
+        because the objects have to be dropped in a certain order.
+        """
         if index == self._currentlyWantedBlock and index not in self._alreadyPutInDropZone:
             self._alreadyPutInDropZone.add(index)
             return goal_block['location'], True
@@ -127,6 +173,53 @@ class BaseLineAgent(BW4TBrain):
             self._alreadyPutInDropZone.add(index)
             return goal_block['location'], True
 
+    ############################################################################################################
+    ###################################### Communication protocol ##############################################
+    ############################################################################################################
+
+    # Required messages
+    def _message_moving_to_door(self, room_name, sender):
+        mssg = 'Moving to ' + room_name
+        self._sendMessage(mssg, sender)
+
+    def _message_opening_door(self, room_name, sender):
+        mssg = 'Opening door of ' + room_name
+        self._sendMessage(mssg, sender)
+
+    def _message_searching_room(self, room_name, sender):
+        mssg = 'Searching through ' + room_name
+        self._sendMessage(mssg, sender)
+
+    def _message_found_block(self, block_vis, block_location, sender):
+        mssg = 'Found goal block ' + str(block_vis) + \
+            ' at location ' + str(block_location)
+        self._sendMessage(mssg, sender)
+
+    def _message_picking_up_block(self, block_vis, block_location, sender):
+        mssg = 'Picking up goal block ' + str(block_vis) + \
+            ' at location ' + str(block_location)
+
+    def _message_droping_block(self, block_vis, block_location, sender):
+        mssg = 'Dropped goal block ' + str(block_vis) + \
+            'at drop location' + str(block_location)
+        self._sendMessage(mssg, sender)
+
+    # Custom messages
+    def _message_entering_room(self, room_name, sender):
+        mssg = 'Entering the ' + room_name
+        self._sendMessage(mssg, sender)
+
+    def _message_stored_nearby(self, block_id, block_vis, index, sender):
+        mssg = 'Stored nearby the goal object ' + \
+            '{' + block_id + "}" + "with " + \
+            "[" + block_vis + "]" + ", Index: " + index
+        self._sendMessage(mssg, sender)
+
+    def _message_put_currently_desired(self, curr_carrying, sender):
+        mssg = 'Put currently desired object ' + str(curr_carrying)
+        self._sendMessage(mssg, sender)
+
+    # Send the message content
     def _sendMessage(self, mssg, sender):
         '''
         Enable sending messages in one line of code
@@ -135,6 +228,7 @@ class BaseLineAgent(BW4TBrain):
         if msg.content not in self.received_messages:
             self.send_message(msg)
 
+    # Sort the received messages by other agents
     def _processMessages(self, teamMembers):
         '''
         Process incoming messages and create a dictionary with received messages from each team member.
@@ -158,7 +252,9 @@ class BaseLineAgent(BW4TBrain):
             – e.g., Moving to room_4
 
             • Opening door of [room_name]
-            – e.g., Opening door of room_4 • Searching through [room_name]
+            – e.g., Opening door of room_4
+
+            • Searching through [room_name]
             – e.g., Searching through room_4
 
             • Found goal block [block_visualization] at location [location]
@@ -197,16 +293,20 @@ class BaseLineAgent(BW4TBrain):
 
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
-                ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']] 
-        self._trustBlief(self._teamMembers, receivedMessages)
+        ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+        # Get the total number of rooms in the world
+        # if self._number_of_rooms == -1:
+        #     door_length = [door['room_name'] for door in state.values(
+        #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
+        #     self._number_of_rooms = len(door_length)
+        #self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
             received = self._processMessages(self._teamMembers)
-
             for member in received.keys():
                 for message in received[member]:
-                    if 'Found currently' in message:
+                    if 'Put currently' in message:
                         self._alreadyPutInDropZone.add(
                             int(message[len(message) - 1]))
                         self._currentlyWantedBlock = int(
@@ -223,14 +323,16 @@ class BaseLineAgent(BW4TBrain):
                             list_obj = []
                             list_obj.append((objCarryId, visualizationObj))
                             self._nearbyGoalBlocksStored[index_obj] = list_obj
-                            # print(self._nearbyGoalBlocksStored)
                         else:
                             if objCarryId not in self._nearbyGoalBlocksStored[index_obj]:
-                                # print(self._nearbyGoalBlocksStored)
                                 self._nearbyGoalBlocksStored[index_obj].append(
                                     (objCarryId, visualizationObj))
 
-            if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
+            """
+            Planning a path to a randomly chosen door
+
+            """
+            if Phase.PLAN_PATH_TO_DOOR == self._phase:
                 self._navigator.reset_full()
 
                 doors = [door for door in state.values(
@@ -247,12 +349,16 @@ class BaseLineAgent(BW4TBrain):
                 doorLoc = doorLoc[0], doorLoc[1]+1
 
                 # Send message of current action
-                self._sendMessage('Moving to door of ' +
-                                  self._door['room_name'], agent_name)
+                self._message_moving_to_door(
+                    self._door['room_name'], agent_name)
                 self._navigator.add_waypoints([doorLoc])
-                self._phase = Phase.FOLLOW_PATH_TO_CLOSED_DOOR
+                self._phase = Phase.FOLLOW_PATH_TO_DOOR
 
-            if Phase.FOLLOW_PATH_TO_CLOSED_DOOR == self._phase:
+            """
+            Following the path to the chosen closed door
+            
+            """
+            if Phase.FOLLOW_PATH_TO_DOOR == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
@@ -261,11 +367,14 @@ class BaseLineAgent(BW4TBrain):
                     return action, {}
                 self._phase = Phase.OPEN_DOOR
 
+            """
+            Opening the door
+            
+            """
             if Phase.OPEN_DOOR == self._phase:
                 self._phase = Phase.ENTER_THE_ROOM
                 # Open door
-                self._sendMessage('Opening door of ' +
-                                  self._door['room_name'], agent_name)
+                self._message_opening_door(self._door['room_name'], agent_name)
 
                 enterLoc = self._door['location']
                 enterLoc = enterLoc[0], enterLoc[1] - 1
@@ -273,6 +382,10 @@ class BaseLineAgent(BW4TBrain):
 
                 return OpenDoorAction.__name__, {'object_id': self._door['obj_id']}
 
+            """
+            Entering the room
+            
+            """
             if Phase.ENTER_THE_ROOM == self._phase:
                 self._state_tracker.update(state)
 
@@ -281,13 +394,17 @@ class BaseLineAgent(BW4TBrain):
                 if action != None:
                     return action, {}
 
-                self._sendMessage('Entering the ' +
-                                  self._door['room_name'], agent_name)
+                self._message_entering_room(
+                    self._door['room_name'], agent_name)
                 self._phase = Phase.SCAN_ROOM
 
                 room_name = self._door['room_name']
                 self.visit_new_room(room_name)
 
+            """
+            Searching the through room
+
+            """
             if Phase.SCAN_ROOM == self._phase:
                 self._navigator.reset_full()
                 roomInfo = state.get_room_objects(self._door['room_name'])
@@ -295,10 +412,18 @@ class BaseLineAgent(BW4TBrain):
                             == self._door['room_name'] + "_area"]
                 self._navigator.add_waypoints(roomArea)
 
-                self._sendMessage('Scanning ' +
-                                  self._door['room_name'], agent_name)
+                self._message_searching_room(
+                    self._door['room_name'], agent_name)
+
                 self._phase = Phase.SEARCH_AND_FIND_GOAL_BLOCK
 
+            """
+            Looking for the goal block
+            if found then grab it and drop it either at :
+                a) The Drop zone
+                b) The Intermidiate storage
+            
+            """
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
 
                 self._state_tracker.update(state)
@@ -314,23 +439,34 @@ class BaseLineAgent(BW4TBrain):
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([result[1]])
                         self._currentlyCarrying = result[4]
+
+                        block_vis = result[2]
+                        block_location = result[1]
+                        self._message_found_block(
+                            block_vis, block_location, agent_name)
+
                         if result[3]:
                             self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
                         else:
                             self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
-                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' +
-                                              self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
 
+                        self._message_picking_up_block(
+                            block_vis=block_vis, block_location=block_location, sender=agent_name)
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
-                    
-                    room_name = self._door['room_name'] 
-                    self.discover_block_in_visited_room(obj, room_name)
+
+                    #room_name = self._door['room_name']
+                    #self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}
 
-                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Plan to drop currently desired object
+            at the drop zone
+
+            """
             if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -339,8 +475,12 @@ class BaseLineAgent(BW4TBrain):
                 if action != None:
                     return action, {}
 
-                self._sendMessage(
-                    'Found currently desired object ' + str(self._currentlyCarrying), agent_name)
+                block_vis = state[self.agent_id]['is_carrying'][0]['visualization']
+                block_location = self._goalBlockCharacteristics[self._currentlyCarrying]['location']
+                self._message_put_currently_desired(
+                    self._currentlyCarrying, agent_name)
+                self._message_droping_block(
+                    block_vis, block_location, agent_name)
 
                 if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
                     self._currentlyWantedBlock += 1
@@ -351,6 +491,11 @@ class BaseLineAgent(BW4TBrain):
 
                 return DropObject.__name__, {'object_id': objCarryId}
 
+            """
+            Plan to drop goal object to the next to the drop zone
+            a.k.a. the intermediate storage
+            
+            """
             if Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -363,25 +508,27 @@ class BaseLineAgent(BW4TBrain):
                 visualizationObj = str(
                     state[self.agent_id]['is_carrying'][0]['visualization'])
                 self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._sendMessage(
-                    'Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " + "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
+                self._message_stored_nearby(block_id=objCarryId, block_vis=visualizationObj, index=str(
+                    self._currentlyCarrying), sender=agent_name)
 
                 self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
                 if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
                     list_obj = []
                     list_obj.append((objCarryId, visualizationObj))
                     self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
-                    # print(self._nearbyGoalBlocksStored)
                 else:
                     self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
                         objCarryId)
-                    # print(self._nearbyGoalBlocksStored)
 
                 self._currentlyCarrying = -1
-                # print(self._checkGoalBlocksPlacedNearby)
 
                 return DropObject.__name__, {'object_id': objCarryId}
 
+            """
+            Searching for the currenly desired goal block in the intermediate storage.
+            If found then grab it
+
+            """
             if Phase.GRAB_DESIRED_OBJECT_NEARBY == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -397,11 +544,10 @@ class BaseLineAgent(BW4TBrain):
                 for storedBlockID in self._nearbyGoalBlocksStored[self._currentlyWantedBlock]:
                     desiredBlock = self._goalBlockCharacteristics[
                         self._currentlyWantedBlock]['visualization']
-                    # THE CHARACTERISTICS OF THE STORED BLOCK SHOULD BE GET HERE
+
                     storedBlock = storedBlockID[1]
                     storedSize = float(storedBlock[storedBlock.find(
                         "'size': ")+8:storedBlock.find(",")])
-                    print("AFTER SIZE AND AGAIN THANKS BLIND !! ", storedBlock)
                     storedShape = int(storedBlock[storedBlock.find(
                         "'shape': ")+9:storedBlock.find(", 'co")])
                     storedColour = storedBlock[storedBlock.find(
@@ -412,14 +558,21 @@ class BaseLineAgent(BW4TBrain):
                             storedBlockID)
                         self._currentlyCarrying = self._currentlyWantedBlock
                         self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
+
+                        self._message_picking_up_block(block_vis=desiredBlock, block_location=self._goalBlockCharacteristics[
+                            self._currentlyWantedBlock]['location'], sender=agent_name)
                         return GrabObject.__name__, {'object_id': storedBlockID[0]}
 
-                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Check if the currently desired goal block is in the intermediate storage.
+            If not then go to the rooms.
+
+            """
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
                     self._navigator.reset_full()
-                    print('OH YEAH')
 
                     block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
                     block_location = block_location[0] + 3, block_location[1]
@@ -428,11 +581,13 @@ class BaseLineAgent(BW4TBrain):
                     self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
-    ############################################################################################################
-    ########################################## Our trust belief system #########################################
-    ############################################################################################################
+    #################################################################################################################################################
+    #################################################################################################################################################
+    ####### T -------- R -------- U -------- S -------- T         M -------- O -------- D -------- E -------- L #####################################
+    #################################################################################################################################################
+    #################################################################################################################################################
 
     def update_mem(self):
         '''
@@ -440,10 +595,6 @@ class BaseLineAgent(BW4TBrain):
         '''
         trustor = self.agent_id  # Get the name (ID) of the trustor
         mem_entry = {trustor: self._trustBeliefs}
-        # !! The path starts at CAI project. I think
-        # we should change the project so that only
-        # collaborative agent is there, without the rest of it.
-        # Perhaps, create a seperate repository, for clarity.
         with open('./src/collaborative_agent/TU-Delft-Collaborative-AI-Trust/agents1/Memory.json', 'w') as outfile:
             json.dump(mem_entry, outfile)
 
@@ -451,29 +602,29 @@ class BaseLineAgent(BW4TBrain):
         # Add a new room entry to the dict of visisted rooms (unless it exists already)
         if (room_name not in self._visitedRooms.keys()):
             self._visitedRooms[room_name] = []
-        
 
     def discover_block_in_visited_room(self, block_obj, room_name):
         if (room_name not in self._visitedRooms.keys()):
             raise Exception("Discovered a block in a not yet visited room.\n")
 
         self._visitedRooms[room_name].append(block_obj)
-        print("Discovered a ", block_obj['visualization'], " in room ", room_name)
+        print("Discovered a ",
+              block_obj['visualization'], " in room ", room_name)
 
     def extract_from_message_found_block(self, message):
-            split_1 = message.split("{")[1]
-            split_2 = split_1.split("}")
+        split_1 = message.split("{")[1]
+        split_2 = split_1.split("}")
 
-            split_block = split_2[0].replace(",", ":").split(": ")
-            block_size = split_block[1]
-            block_shape = split_block[3]
-            block_color = split_block[5]
+        split_block = split_2[0].replace(",", ":").split(": ")
+        block_size = split_block[1]
+        block_shape = split_block[3]
+        block_color = split_block[5]
 
-            split_location = split_2[1].split()
-            x = split_location[2].replace("(", "").replace(",", "")
-            y = split_location[3].replace(")", "")
+        split_location = split_2[1].split()
+        x = split_location[2].replace("(", "").replace(",", "")
+        y = split_location[3].replace(")", "")
 
-            return block_size, block_shape, block_color, x, y
+        return block_size, block_shape, block_color, x, y
 
     def direct_exp(self, trustee, messages):
         curr_trust = self._trustBeliefs[trustee]
@@ -484,12 +635,14 @@ class BaseLineAgent(BW4TBrain):
                 message_words = message.split()
                 room_name = message_words[3]  # Get room name from the message
                 if (room_name not in self._closedRooms):
-                    curr_trust = 0.0 # If the room is not open, then agent is lying
+                    curr_trust = 0.0  # If the room is not open, then agent is lying
 
             if ('Found goal block' in message):
                 message_data = self.extract_from_message_found_block(message)
-                found_block_vis = message_data[0:3:] # Get block visualization from the message
-                found_block_location = message_data[3::] # Get block location from the message
+                # Get block visualization from the message
+                found_block_vis = message_data[0:3:]
+                # Get block location from the message
+                found_block_location = message_data[3::]
                 found = False
                 for block_obj in self._visitedRooms.values():
                     block_vis = block_obj["vizualization"]
@@ -498,11 +651,10 @@ class BaseLineAgent(BW4TBrain):
                         found = True
                         curr_trust = 0.0
                         break
-            
+
             # if ('?' in message):
             #     agent_start = ... # Get the starting point
             #     agent_dest = ... # Get the destination
-                
 
             # trustee_speed = self.world_knowledge.agent_speeds[trustee]
             # time_passed = current_time - time_of_message
@@ -540,14 +692,4 @@ class BaseLineAgent(BW4TBrain):
         # Generate the trust values for every trustee given their messages
         self.image(received.keys(), received)
         # Save the result trust beliefs in the memory file
-        #self.update_mem()
-
-        '''
-
-        Lazy
-        Colorblind
-
-        Strong
-        Liar
-
-        '''
+        # self.update_mem()

@@ -38,6 +38,19 @@ class WorldKnowledge:
         self.visited_rooms[room_name] = blocks
 
 
+"""
+The LazyAgent
+
+Less willing to use energy and thus sometimes stops what it is doing. This agent does not complete 
+the action they say they will do 50% of the time, and start another task/action instead (and communicate this new action, 
+therefore they do not lie). For example, this agent may stop searching room X after a few moves, and move to another room instead.
+
+Additional features from the BaselineAgent :
+
+
+"""
+
+
 class LazyAgent(BaseLineAgent):
 
     def __init__(self, settings: Dict[str, object]):
@@ -56,7 +69,8 @@ class LazyAgent(BaseLineAgent):
 
     def decide_if_quit(self, max_steps):
         self._will_quit = bool(random.randint(0, 1))
-        if self._will_quit: self._number_of_steps_to_take = random.randint(0, max_steps)
+        if self._will_quit:
+            self._number_of_steps_to_take = random.randint(0, max_steps)
 
     def decide_on_bw4t_action(self, state: State):
 
@@ -90,7 +104,7 @@ class LazyAgent(BaseLineAgent):
 
             for member in received.keys():
                 for message in received[member]:
-                    if 'Found currently' in message:
+                    if 'Put currently' in message:
                         self._alreadyPutInDropZone.add(
                             int(message[len(message) - 1]))
                         self._currentlyWantedBlock = int(
@@ -114,7 +128,11 @@ class LazyAgent(BaseLineAgent):
                                 self._nearbyGoalBlocksStored[index_obj].append(
                                     (objCarryId, visualizationObj))
 
-            if Phase.PLAN_PATH_TO_CLOSED_DOOR == self._phase:
+            """
+            Planning a path to a randomly chosen door
+
+            """
+            if Phase.PLAN_PATH_TO_DOOR == self._phase:
                 self._navigator.reset_full()
 
                 doors = [door for door in state.values(
@@ -134,18 +152,22 @@ class LazyAgent(BaseLineAgent):
 
                 if not self.check_if_quit():
                     self._navigator.add_waypoints([doorLoc])
-                    self._phase = Phase.FOLLOW_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.FOLLOW_PATH_TO_DOOR
 
-                    self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                    self.decide_if_quit(
+                        len(self._navigator.get_all_waypoints()))
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 # Send message of current action
                 self._sendMessage('Moving to door of ' +
                                   self._door['room_name'], agent_name)
 
-
-            if Phase.FOLLOW_PATH_TO_CLOSED_DOOR == self._phase:
+            """
+            Following the path to the chosen closed door
+            
+            """
+            if Phase.FOLLOW_PATH_TO_DOOR == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
                 action = self._navigator.get_move_action(self._state_tracker)
@@ -160,8 +182,12 @@ class LazyAgent(BaseLineAgent):
 
                     self._phase = Phase.OPEN_DOOR
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Opening the door
+            
+            """
             if Phase.OPEN_DOOR == self._phase:
                 self._sendMessage('Opening door of ' +
                                   self._door['room_name'], agent_name)
@@ -173,13 +199,18 @@ class LazyAgent(BaseLineAgent):
                     self._navigator.add_waypoints([enterLoc])
                     self._phase = Phase.ENTER_THE_ROOM
 
-                    self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                    self.decide_if_quit(
+                        len(self._navigator.get_all_waypoints()))
 
                     return OpenDoorAction.__name__, {'object_id': self._door['obj_id']}
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Entering the room
+            
+            """
             if Phase.ENTER_THE_ROOM == self._phase:
                 self._state_tracker.update(state)
                 # Enter the room
@@ -192,15 +223,19 @@ class LazyAgent(BaseLineAgent):
                         return action, {}
 
                     self._sendMessage('Entering the ' +
-                                  self._door['room_name'], agent_name)
+                                      self._door['room_name'], agent_name)
 
                     self._phase = Phase.SCAN_ROOM
 
                     self.decide_if_quit(0)
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Searching the room
+
+            """
             if Phase.SCAN_ROOM == self._phase:
                 self._navigator.reset_full()
 
@@ -212,13 +247,21 @@ class LazyAgent(BaseLineAgent):
                     self._navigator.add_waypoints(roomArea)
                     self._phase = Phase.SEARCH_AND_FIND_GOAL_BLOCK
 
-                    self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                    self.decide_if_quit(
+                        len(self._navigator.get_all_waypoints()))
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 self._sendMessage('Scanning ' +
                                   self._door['room_name'], agent_name)
 
+            """
+            Looking for the goal block
+            if found then grab it and drop it either at :
+                a) The Drop zone
+                b) The Intermidiate storage
+            
+            """
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
                 self._state_tracker.update(state)
                 action = self._navigator.get_move_action(self._state_tracker)
@@ -226,8 +269,10 @@ class LazyAgent(BaseLineAgent):
                 if not self.check_if_quit():
                     self._number_of_steps_to_take -= 1
 
-                    roomObjects = state.get_closest_with_property('is_goal_block')
-                    roomObjects = [x for x in roomObjects if x['is_collectable'] == True]
+                    roomObjects = state.get_closest_with_property(
+                        'is_goal_block')
+                    roomObjects = [
+                        x for x in roomObjects if x['is_collectable'] == True]
 
                     for obj in roomObjects:
                         result = self._checkIfDesiredBlock(obj)
@@ -238,42 +283,52 @@ class LazyAgent(BaseLineAgent):
 
                             self.decide_if_quit(0)
 
-                            self._sendMessage('Spotted goal object ' + result[2] + ' at ' + self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
+                            self._sendMessage(
+                                'Spotted goal object ' + result[2] + ' at ' + self._door['room_name'] + ", Index: " + str(result[4]), agent_name)
 
                             if not self.check_if_quit():
                                 if result[3]:
                                     self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
 
-                                    self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                                    self.decide_if_quit(
+                                        len(self._navigator.get_all_waypoints()))
 
                                 else:
                                     self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
 
-                                    self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                                    self.decide_if_quit(
+                                        len(self._navigator.get_all_waypoints()))
 
                                 if self._currentlyCarrying != -1:
                                     objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                                    visualizationObj = str(state[self.agent_id]['is_carrying'][0]['visualization'])
+                                    visualizationObj = str(
+                                        state[self.agent_id]['is_carrying'][0]['visualization'])
 
-                                    self._sendMessage('Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " + "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
-                                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                                    self._sendMessage('Stored nearby the goal object ' + '{' + objCarryId + "}" + "with " +
+                                                      "[" + visualizationObj + "]" + ", Index: " + str(self._currentlyCarrying), agent_name)
+                                    self._phase = Phase.PLAN_PATH_TO_DOOR
                                     return DropObject.__name__, {'object_id': objCarryId}
 
                                 self._currentlyCarrying = result[4]
                                 return GrabObject.__name__, {'object_id': obj['obj_id']}
 
                             else:
-                                self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                                self._phase = Phase.PLAN_PATH_TO_DOOR
 
                     if action != None:
                         return action, {}
 
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
                     self.decide_if_quit(0)
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Plan to drop currently desired object
+            at the drop zone
+
+            """
             if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -289,7 +344,7 @@ class LazyAgent(BaseLineAgent):
 
                     if not self.check_if_quit():
                         self._sendMessage(
-                            'Found currently desired object ' + str(self._currentlyCarrying), agent_name)
+                            'Put currently desired object ' + str(self._currentlyCarrying), agent_name)
 
                         if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
                             self._currentlyWantedBlock += 1
@@ -303,12 +358,16 @@ class LazyAgent(BaseLineAgent):
                         return DropObject.__name__, {'object_id': objCarryId}
 
                     else:
-                        self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                        self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
-
+            """
+            Plan to drop goal object to the next to the drop zone
+            a.k.a. the intermediate storage
+            
+            """
             if Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -326,7 +385,6 @@ class LazyAgent(BaseLineAgent):
                         objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
                         visualizationObj = str(
                             state[self.agent_id]['is_carrying'][0]['visualization'])
-
 
                         self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
                         if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
@@ -348,11 +406,16 @@ class LazyAgent(BaseLineAgent):
                         return DropObject.__name__, {'object_id': objCarryId}
 
                     else:
-                        self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                        self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Searching for the currenly desired goal block in the intermediate storage.
+            If found then grab it
+
+            """
             if Phase.GRAB_DESIRED_OBJECT_NEARBY == self._phase:
                 self._state_tracker.update(state)
                 # Follow path to door
@@ -367,7 +430,8 @@ class LazyAgent(BaseLineAgent):
                     self.decide_if_quit(0)
 
                     if not self.check_if_quit():
-                        block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
+                        block_location = self._goalBlockCharacteristics[
+                            self._currentlyWantedBlock]['location']
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([block_location])
 
@@ -389,28 +453,36 @@ class LazyAgent(BaseLineAgent):
                                 self._currentlyCarrying = self._currentlyWantedBlock
 
                                 self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
-                                self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                                self.decide_if_quit(
+                                    len(self._navigator.get_all_waypoints()))
 
                                 return GrabObject.__name__, {'object_id': storedBlockID[0]}
 
                     else:
-                        self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                        self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
 
+            """
+            Check if the currently desired goal block is in the intermediate storage.
+            If not then go to the rooms.
+
+            """
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 if not self.check_if_quit():
                     if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
                         self._navigator.reset_full()
                         print('OH YEAH')
 
-                        block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
-                        block_location = block_location[0] + 3, block_location[1]
+                        block_location = self._goalBlockCharacteristics[
+                            self._currentlyWantedBlock]['location']
+                        block_location = block_location[0] + \
+                            3, block_location[1]
                         self._navigator.add_waypoints([block_location])
 
                         self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
-                        self.decide_if_quit(len(self._navigator.get_all_waypoints()))
+                        self.decide_if_quit(
+                            len(self._navigator.get_all_waypoints()))
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_CLOSED_DOOR
-
+                    self._phase = Phase.PLAN_PATH_TO_DOOR
