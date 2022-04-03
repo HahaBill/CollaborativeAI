@@ -114,7 +114,7 @@ class BaseLineAgent(BW4TBrain):
         # Fields specific to the Trust Model
         self._trustBeliefs = {}
         self._defaultBeliefAssignment = True
-        self._defaultTrustValue = 1.0  # Somewhat optimistic to start with
+        self._defaultTrustValue = 0.5  # Somewhat optimistic to start with
         self._closedRooms = {}  # The list is updated every tick
         self._valid_rooms = []
         self._agents_in_rooms = {}
@@ -328,9 +328,9 @@ class BaseLineAgent(BW4TBrain):
 
             received = self._processMessages(self._teamMembers)
             for member in received.keys():
-                # Check if we trust this agent already or not
-                if (not self.trust_decision(member)):
-                    continue  # Then ignore all their messages
+                # # Check if we trust this agent already or not
+                # if (not self.trust_decision(member)):
+                #     continue  # Then ignore all their messages
 
                 for message in received[member]:
                     if 'Put currently' in message:
