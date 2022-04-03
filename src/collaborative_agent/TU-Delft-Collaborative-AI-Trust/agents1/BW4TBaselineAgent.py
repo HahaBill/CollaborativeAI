@@ -5,6 +5,7 @@ import enum
 import random
 # from cv2 import phase
 from numpy import place
+from sklearn.metrics import adjusted_rand_score
 
 from sqlalchemy import null
 from bw4t.BW4TBrain import BW4TBrain
@@ -744,11 +745,27 @@ class BaseLineAgent(BW4TBrain):
 
         self._trustBeliefs[trustee] = curr_trust
 
+    def process_reputation(self, all_messages):
+        for informant, messages in all_messages.items():
+            for message in reversed(messages):
+                if ('Reputation' in message):
+                    message_words = message.split()
+                    agent_name = message_words[2]
+                    agent_rep = float(message_words[4])
+
+                    # How much can we trust the informant's message
+                    informant_weight = self._trustBeliefs[informant]
+
+                    adjust_factor = informant_weight * (self._trustBeliefs[agent_name] - agent_rep)
+                    adjust_trust = self._trustBeliefs[agent_name] - adjust_factor
+                    self._trustBeliefs[agent_name] = adjust_trust
+                    break # Only the most recent reputation is considered
+
     def image(self, trustees, all_messages):
         for trustee in trustees:
             self.direct_exp(trustee, all_messages[trustee])
             # self.comm_exp(trustee, all_messages)
-            # reputation. How to implement?
+            self.process_reputation(all_messages)
 
     def _trustBlief(self, member, received):
         '''
