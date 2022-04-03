@@ -19,24 +19,6 @@ from agents1.BW4TBaselineAgent import BaseLineAgent, Phase
 
 import json
 
-# World Knowledge that out agent acquires throughout the run
-
-
-class WorldKnowledge:
-    opened_doors = []  # The list of doors opened (by anyone) on the map
-    # The dictionary of visited (by us) rooms with associated block locations inside
-    visited_rooms = {}
-    agent_speeds = {}  # The dictionary of agents and their corresponding speeds
-
-    def __init__(self) -> None:
-        pass
-
-    def door_opened(self, door_name):
-        self.opened_doors.append(door_name)
-
-    def room_visited(self, room_name, blocks):
-        self.visited_rooms[room_name] = blocks
-
 
 """
 The LazyAgent
@@ -93,9 +75,18 @@ class LazyAgent(BaseLineAgent):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
+        self._valid_rooms = [door['room_name'] for door in self._state.values(
+        ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
+        # Record the list of currently closed doors
+        self._closedRooms = [door['room_name'] for door in state.values(
+        ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
         self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
@@ -227,6 +218,9 @@ class LazyAgent(BaseLineAgent):
 
                     self._phase = Phase.SCAN_ROOM
 
+                    room_name = self._door['room_name']
+                    self.visit_new_room(room_name)
+
                     self.decide_if_quit(0)
 
                 else:
@@ -315,6 +309,9 @@ class LazyAgent(BaseLineAgent):
                             else:
                                 self._phase = Phase.PLAN_PATH_TO_DOOR
 
+                        room_name = self._door['room_name']
+                        self.discover_block_in_visited_room(obj, room_name)
+
                     if action != None:
                         return action, {}
 
@@ -333,7 +330,8 @@ class LazyAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if not self.check_if_quit():
                         self._number_of_steps_to_take -= 1
@@ -377,7 +375,8 @@ class LazyAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if not self.check_if_quit():
                         self._number_of_steps_to_take -= 1
@@ -481,14 +480,21 @@ class LazyAgent(BaseLineAgent):
             """
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 self._navigator.reset_full()
+                if self._currentlyWantedBlock >= len(self._goalBlockCharacteristics):
+                    self._currentlyWantedBlock = len(
+                        self._goalBlockCharacteristics) - 1
 
-                goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
+                goalBlockVisualization = self._goalBlockCharacteristics[
+                    self._currentlyWantedBlock]['visualization']
 
                 for index in self._nearbyGoalBlocksStored:
                     for droppedBlock in self._nearbyGoalBlocksStored[index]:
-                        storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
-                        storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
-                        storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
+                        storedSize = float(droppedBlock[1][droppedBlock[1].find(
+                            "'size': ")+8:droppedBlock[1].find(",")])
+                        storedShape = int(droppedBlock[1][droppedBlock[1].find(
+                            "'shape': ")+9:droppedBlock[1].find(", 'co")])
+                        storedColour = droppedBlock[1][droppedBlock[1].find(
+                            "'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
 
                         if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
 
@@ -496,12 +502,14 @@ class LazyAgent(BaseLineAgent):
 
                             # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
                             block_location = self._goalBlockCharacteristics[index]['location']
-                            block_location = block_location[0] + 3, block_location[1]
+                            block_location = block_location[0] + \
+                                3, block_location[1]
                             self._navigator.add_waypoints([block_location])
 
                             self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
 
-                            action = self._navigator.get_move_action(self._state_tracker)
+                            action = self._navigator.get_move_action(
+                                self._state_tracker)
                             return action, {}
 
                 self._phase = Phase.PLAN_PATH_TO_DOOR

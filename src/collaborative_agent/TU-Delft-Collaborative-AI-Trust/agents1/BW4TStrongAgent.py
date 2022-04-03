@@ -128,8 +128,12 @@ class StrongAgent(BaseLineAgent):
                     if 'Put currently' in message:
                         self._alreadyPutInDropZone.add(
                             int(message[len(message) - 1]))
-                        self._currentlyWantedBlock = int(
+
+                        mssg_desired_obj = int(
                             message[len(message) - 1]) + 1
+                        if(mssg_desired_obj < len(self._goalBlockCharacteristics)):
+                            self._currentlyWantedBlock = int(
+                                message[len(message) - 1]) + 1
                     if 'Stored nearby' in message:
                         objCarryId = message[message.find(
                             "{")+1:message.find("}")]
@@ -154,7 +158,8 @@ class StrongAgent(BaseLineAgent):
             if Phase.PLAN_PATH_TO_DOOR == self._phase:
                 self._navigator.reset_full()
 
-                doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+                doors = [door for door in state.values(
+                ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
 
                 if len(doors) == 0:
                     if not self._checkedNearbyBlocks:
@@ -166,13 +171,15 @@ class StrongAgent(BaseLineAgent):
                         self._checkedNearbyBlocks = False
 
                     else:
-                        doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and door['room_name'] not in self._currentlyVisitedRooms]
+                        doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance']
+                                 and door['room_name'] not in self._currentlyVisitedRooms]
 
                         doorChoice = random.choice(doors)
 
                         # Randomly pick a closed door
                         self._door = doorChoice
-                        self._currentlyVisitedRooms.append(doorChoice['room_name'])
+                        self._currentlyVisitedRooms.append(
+                            doorChoice['room_name'])
                         doorLoc = self._door['location']
 
                         # Location in front of door is south from door
@@ -309,7 +316,7 @@ class StrongAgent(BaseLineAgent):
                             self._phase = Phase.PLAN_PATH_TO_DOOR
 
                         self._message_picking_up_block(
-                        block_vis=block_vis, block_location=block_location, sender=agent_name)
+                            block_vis=block_vis, block_location=block_location, sender=agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
@@ -327,7 +334,8 @@ class StrongAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -370,7 +378,8 @@ class StrongAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -385,12 +394,14 @@ class StrongAgent(BaseLineAgent):
 
                     visualizationObj = str(objCarrying['visualization'])
                     self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                    self._message_stored_nearby(block_id=objCarrying['obj_id'], block_vis=visualizationObj, index=str(objectIndex), sender=agent_name)
+                    self._message_stored_nearby(block_id=objCarrying['obj_id'], block_vis=visualizationObj, index=str(
+                        objectIndex), sender=agent_name)
 
                     self._checkGoalBlocksPlacedNearby[objectIndex] = True
                     if objectIndex not in self._nearbyGoalBlocksStored:
                         list_obj = []
-                        list_obj.append((objCarrying['obj_id'], visualizationObj))
+                        list_obj.append(
+                            (objCarrying['obj_id'], visualizationObj))
                         self._nearbyGoalBlocksStored[objectIndex] = list_obj
 
                     else:
@@ -478,13 +489,17 @@ class StrongAgent(BaseLineAgent):
                     self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
 
                 else:
-                    goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
+                    goalBlockVisualization = self._goalBlockCharacteristics[
+                        self._currentlyWantedBlock]['visualization']
 
                     for index in self._nearbyGoalBlocksStored:
                         for droppedBlock in self._nearbyGoalBlocksStored[index]:
-                            storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
-                            storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
-                            storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
+                            storedSize = float(droppedBlock[1][droppedBlock[1].find(
+                                "'size': ")+8:droppedBlock[1].find(",")])
+                            storedShape = int(droppedBlock[1][droppedBlock[1].find(
+                                "'shape': ")+9:droppedBlock[1].find(", 'co")])
+                            storedColour = droppedBlock[1][droppedBlock[1].find(
+                                "'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
 
                             if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
 
@@ -492,12 +507,14 @@ class StrongAgent(BaseLineAgent):
 
                                 # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
                                 block_location = self._goalBlockCharacteristics[index]['location']
-                                block_location = block_location[0] + 3, block_location[1]
+                                block_location = block_location[0] + \
+                                    3, block_location[1]
                                 self._navigator.add_waypoints([block_location])
 
                                 self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
 
-                                action = self._navigator.get_move_action(self._state_tracker)
+                                action = self._navigator.get_move_action(
+                                    self._state_tracker)
                                 return action, {}
 
                     self._phase = Phase.PLAN_PATH_TO_DOOR

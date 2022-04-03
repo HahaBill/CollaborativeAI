@@ -116,9 +116,11 @@ class BaseLineAgent(BW4TBrain):
         # Fields specific to the Trust Model
         self._trustBeliefs = {}
         self._defaultBeliefAssignment = True
-        self._defaultTrustValue = 0.6  # Somewhat optimistic to start with
+        self._defaultTrustValue = 0.5  # Somewhat optimistic to start with
         self._closedRooms = {}  # The list is updated every tick
         self._valid_rooms = []
+        self._agents_in_rooms = {}
+        self._defaultAgentsInRooms = True
         # Blocks with locations are added every time a new one is noticed in a room
         self._visitedRooms = {}
 
@@ -230,6 +232,15 @@ class BaseLineAgent(BW4TBrain):
             "[" + block_vis + "]" + ", Index: " + index
         self._sendMessage(mssg, sender)
 
+    # Reputation message
+    def _message_share_belief(self, trustee, trust_value, sender):
+        mssg = "Reputation of " + trustee + " is " + str(trust_value)
+        self._sendMessage(mssg, sender)
+
+    def _bcast_beliefs(self, sender):
+        for trustee, trust_value in self._trustBeliefs.items():
+            self._message_share_belief(trustee, trust_value, sender)
+
     def _message_put_currently_desired(self, curr_carrying, sender):
         mssg = 'Put currently desired object ' + str(curr_carrying)
         self._sendMessage(mssg, sender)
@@ -302,20 +313,19 @@ class BaseLineAgent(BW4TBrain):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
         self._valid_rooms = [door['room_name'] for door in self._state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-        # Get the total number of rooms in the world
-        # if self._number_of_rooms == -1:
-        #     door_length = [door['room_name'] for door in state.values(
-        #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
-        #     self._number_of_rooms = len(door_length)
-        # self._trustBlief(self._teamMembers, receivedMessages)
+        self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
@@ -362,7 +372,8 @@ class BaseLineAgent(BW4TBrain):
                     if len(self._currentlyVisitedRooms) == len(state.get_all_room_names()) - 1:
                         self._currentlyVisitedRooms = []
 
-                    doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and door['room_name'] not in self._currentlyVisitedRooms]
+                    doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance']
+                             and door['room_name'] not in self._currentlyVisitedRooms]
 
                 # Randomly pick a closed door
                 doorChoice = random.choice(doors)
@@ -484,8 +495,8 @@ class BaseLineAgent(BW4TBrain):
                             block_vis=block_vis, block_location=block_location, sender=agent_name)
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
-                    #room_name = self._door['room_name']
-                    #self.discover_block_in_visited_room(obj, room_name)
+                    room_name = self._door['room_name']
+                    self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}
@@ -501,7 +512,8 @@ class BaseLineAgent(BW4TBrain):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -534,7 +546,8 @@ class BaseLineAgent(BW4TBrain):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -613,13 +626,17 @@ class BaseLineAgent(BW4TBrain):
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 self._navigator.reset_full()
 
-                goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
+                goalBlockVisualization = self._goalBlockCharacteristics[
+                    self._currentlyWantedBlock]['visualization']
 
                 for index in self._nearbyGoalBlocksStored:
                     for droppedBlock in self._nearbyGoalBlocksStored[index]:
-                        storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
-                        storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
-                        storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
+                        storedSize = float(droppedBlock[1][droppedBlock[1].find(
+                            "'size': ")+8:droppedBlock[1].find(",")])
+                        storedShape = int(droppedBlock[1][droppedBlock[1].find(
+                            "'shape': ")+9:droppedBlock[1].find(", 'co")])
+                        storedColour = droppedBlock[1][droppedBlock[1].find(
+                            "'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
 
                         if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
 
@@ -627,12 +644,14 @@ class BaseLineAgent(BW4TBrain):
 
                             # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
                             block_location = self._goalBlockCharacteristics[index]['location']
-                            block_location = block_location[0] + 3, block_location[1]
+                            block_location = block_location[0] + \
+                                3, block_location[1]
                             self._navigator.add_waypoints([block_location])
 
                             self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
 
-                            action = self._navigator.get_move_action(self._state_tracker)
+                            action = self._navigator.get_move_action(
+                                self._state_tracker)
                             return action, {}
 
                 self._phase = Phase.PLAN_PATH_TO_DOOR
@@ -644,8 +663,6 @@ class BaseLineAgent(BW4TBrain):
     #################################################################################################################################################
 
     def update_mem(self):
-
-        return;
         '''
         Update the records of trust for this agent in the memory file
         '''
@@ -659,8 +676,8 @@ class BaseLineAgent(BW4TBrain):
         mem_file.close()
 
         # Update the entry with beliefs
-        if (trustor not in json_object.keys()):
-            json_object[trustor] = mem_entry
+        # if (trustor not in json_object.keys()):
+        json_object[trustor] = mem_entry
 
         # Write to json memory file
         mem_file = open(
@@ -669,25 +686,19 @@ class BaseLineAgent(BW4TBrain):
         mem_file.close()
 
     def visit_new_room(self, room_name):
-        return;
-
         # Add a new room entry to the dict of visisted rooms (unless it exists already)
         if (room_name not in self._visitedRooms.keys()):
             self._visitedRooms[room_name] = []
 
     def discover_block_in_visited_room(self, block_obj, room_name):
-        return;
-
         if (room_name not in self._visitedRooms.keys()):
             raise Exception("Discovered a block in a not yet visited room.\n")
 
         self._visitedRooms[room_name].append(block_obj)
-        print("Discovered a ",
-              block_obj['visualization'], " in room ", room_name)
+        # print("Discovered a ",
+        #       block_obj['visualization'], " in room ", room_name)
 
     def extract_from_message_found_block(self, message):
-        return;
-
         split_1 = message.split("{")[1]
         split_2 = split_1.split("}")
 
@@ -703,18 +714,14 @@ class BaseLineAgent(BW4TBrain):
         return block_size, block_shape, block_color, x, y
 
     def trust_decision(self, trustee):
-        return;
-
         agent_trust = self._trustBeliefs[trustee]
         return agent_trust > 0
 
     def direct_exp(self, trustee, messages):
-
-        return;
         curr_trust = self._trustBeliefs[trustee]
 
         # Variables for noting the state of the trustee
-        current_room = None
+        current_room = self._agents_in_rooms[trustee]
 
         num_messages = len(messages)
         for idx, message in enumerate(messages):
@@ -722,7 +729,7 @@ class BaseLineAgent(BW4TBrain):
             if ('Opening door' in message):
                 message_words = message.split()
                 room_name = message_words[3]  # Get room name from the message
-                if (room_name not in self._closedRooms):
+                if (room_name in self._closedRooms):
                     curr_trust = 0.0  # If the room is not open, then agent is lying
 
             if ('Found goal block' in message):
@@ -732,27 +739,36 @@ class BaseLineAgent(BW4TBrain):
                 # Get block location from the message
                 found_block_location = message_data[3::]
                 found = False
-                for block_obj in self._visitedRooms.values():
-                    block_vis = block_obj["vizualization"]
-                    block_location = block_obj["location"]
-                    if (block_vis == found_block_vis and found_block_location == block_location or found_block_location == block_location):
-                        found = True
-                        curr_trust = 0.0
+                for room, blocks in self._visitedRooms.items():
+                    if (blocks != []):
+                        for block_obj in blocks:
+                            block_vis = block_obj['visualization']
+                            block_location = block_obj['location']
+                            if (block_vis == found_block_vis and found_block_location == block_location or found_block_location == block_location):
+                                found = True
+                                curr_trust = 0.0
+                                break
+                    if (found):
                         break
 
             # Cannot enter a room without leaving first
-            if ('Entering room' in message):
-                entered_room = message.split()[2]
-                if (current_room == None):
-                    current_room = entered_room
-                else:
-                    curr_trust = 0.0
-            if ('Leaving' in message):
-                left_room = message.split()[2]
-                if (current_room == left_room):
-                    current_room = None
-                else:
-                    curr_trust = 0.0
+            # if ('Entering room' in message):
+            #     entered_room = message.split()[2]
+            #     if (current_room == None):
+            #         self._agents_in_rooms[trustee] = entered_room
+            #     else:
+            #         print("ENTERED", self._agents_in_rooms[trustee])
+            #         raise Exception
+            #         curr_trust = 0.0
+            # if ('Leaving' in message):
+            #     left_room = message.split()[2]
+            #     print("Current room ", current_room)
+            #     if (current_room == left_room):
+            #         self._agents_in_rooms[trustee] = None
+            #     else:
+            #         print("LEFT", self._agents_in_rooms[trustee])
+            #         raise Exception
+            #         curr_trust = 0.0
 
             # Check whether the room name used in a message exists on the map
             valid_room_name = None
@@ -761,39 +777,63 @@ class BaseLineAgent(BW4TBrain):
                 'Searching' in message or
                     'Leaving' in message):
                 valid_room_name = message.split()[2]
+                if(valid_room_name not in self._valid_rooms):
+                    curr_trust = 0.0
             elif ('Opening' in message):
                 valid_room_name = message.split()[3]
-            if(valid_room_name not in self._valid_rooms):
-                curr_trust = 0.0
+                if(valid_room_name not in self._valid_rooms):
+                    curr_trust = 0.0
 
         self._trustBeliefs[trustee] = curr_trust
 
-    def image(self, trustees, all_messages):
+    def process_reputation(self, all_messages):
+        for informant, messages in all_messages.items():
+            for message in reversed(messages):
+                if ('Reputation' in message):
 
-        return;
+                    message_words = message.split()
+                    agent_name = message_words[2]
+                    agent_rep = float(message_words[4])
+
+                    if (agent_name == self.agent_id):
+                        continue  # Since, we are not interested in the trust others assign to us
+
+                    # How much can we trust the informant's message
+                    informant_weight = self._trustBeliefs[informant]
+
+                    # print("MESSAGE ", message, " FROM ", informant, " TO ", self.agent_id)
+                    # print(self._trustBeliefs)
+                    adjust_factor = informant_weight * \
+                        (self._trustBeliefs[agent_name] - agent_rep)
+                    adjust_trust = self._trustBeliefs[agent_name] - \
+                        adjust_factor
+                    self._trustBeliefs[agent_name] = adjust_trust
+                    break  # Only the most recent reputation is considered
+
+    def image(self, trustees, all_messages):
         for trustee in trustees:
             self.direct_exp(trustee, all_messages[trustee])
             # self.comm_exp(trustee, all_messages)
-            # reputation. How to implement?
+            self.process_reputation(all_messages)
 
     def _trustBlief(self, member, received):
         '''
         Baseline implementation of a trust belief. Creates a dictionary with trust belief scores for each team member,
         for example based on the received messages. You can change the default value to your preference
-
         Statistical aggregation for now
         '''
-
-        return;
 
         # Assign the default trust value to all other agents
         if (self._defaultBeliefAssignment):
             for member in received.keys():
                 if member not in self._trustBeliefs:
                     self._trustBeliefs[member] = self._defaultTrustValue
+            self._defaultBeliefAssignment = False
 
         # return
         # Generate the trust values for every trustee given their messages
         self.image(received.keys(), received)
         # Save the result trust beliefs in the memory file
-        # self.update_mem()
+        self.update_mem()
+        # Notify other agents of the reputation
+        self._bcast_beliefs(self.agent_id)
