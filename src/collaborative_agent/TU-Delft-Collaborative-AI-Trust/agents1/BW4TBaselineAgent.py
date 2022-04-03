@@ -705,12 +705,17 @@ class BaseLineAgent(BW4TBrain):
                 if (current_room == None):
                     self._agents_in_rooms[trustee] = entered_room
                 else:
+                    print("ENTERED", self._agents_in_rooms[trustee])
+                    raise Exception
                     curr_trust = 0.0
             if ('Leaving' in message):
                 left_room = message.split()[2]
+                print("Current room ", current_room)
                 if (current_room == left_room):
                     self._agents_in_rooms[trustee] = None
                 else:
+                    print("LEFT", self._agents_in_rooms[trustee])
+                    raise Exception
                     curr_trust = 0.0
 
             # # Check whether the room name used in a message exists on the map

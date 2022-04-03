@@ -1,1 +1,1 @@
-{"baseagent0": {"baseagent1": 0.0, "baseagent2": 0.0}, "baseagent1": {"baseagent0": 1.0, "baseagent2": 0.0}, "baseagent2": {"baseagent0": 1.0, "baseagent1": 0.0}}
+{"baseagent0": {"baseagent1": 1.0, "baseagent2": 1.0}, "baseagent1": {"baseagent0": 1.0, "baseagent2": 1.0}, "baseagent2": {"baseagent0": 1.0, "baseagent1": 1.0}}
