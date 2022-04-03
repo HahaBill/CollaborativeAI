@@ -38,7 +38,8 @@ class Phase(enum.Enum):
 
     PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT = 15,
     PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE = 16,
-    GRAB_DESIRED_OBJECT_NEARBY = 17
+    GRAB_DESIRED_OBJECT_NEARBY = 17,
+    LEAVING_THE_ROOM = 18
 
 
 """
@@ -114,6 +115,7 @@ class BaseLineAgent(BW4TBrain):
         self._defaultBeliefAssignment = True
         self._defaultTrustValue = 0.6  # Somewhat optimistic to start with
         self._closedRooms = {}  # The list is updated every tick
+        self._valid_rooms = []
         # Blocks with locations are added every time a new one is noticed in a room
         self._visitedRooms = {}
 
@@ -209,6 +211,10 @@ class BaseLineAgent(BW4TBrain):
         mssg = 'Entering the ' + room_name
         self._sendMessage(mssg, sender)
 
+    def _message_leaving_room(self, room_name, sender):
+        mssg = 'Leaving the ' + room_name
+        self._sendMessage(mssg, sender)
+
     def _message_stored_nearby(self, block_id, block_vis, index, sender):
         mssg = 'Stored nearby the goal object ' + \
             '{' + block_id + "}" + "with " + \
@@ -290,7 +296,8 @@ class BaseLineAgent(BW4TBrain):
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
         # Update trust beliefs for team members
-
+        self._valid_rooms = [door['room_name'] for door in self._state.values(
+        ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
@@ -299,12 +306,16 @@ class BaseLineAgent(BW4TBrain):
         #     door_length = [door['room_name'] for door in state.values(
         #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         #     self._number_of_rooms = len(door_length)
-        #self._trustBlief(self._teamMembers, receivedMessages)
+        # self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
             received = self._processMessages(self._teamMembers)
             for member in received.keys():
+                # Check if we trust this agent already or not
+                # if (not self.trust_decision(member)):
+                #     continue  # Then ignore all their messages
+
                 for message in received[member]:
                     if 'Put currently' in message:
                         self._alreadyPutInDropZone.add(
@@ -447,8 +458,12 @@ class BaseLineAgent(BW4TBrain):
 
                         if result[3]:
                             self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
+                            self._message_leaving_room(
+                                room_name=self._door['room_name'], sender=agent_name)
                         else:
                             self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
+                            self._message_leaving_room(
+                                room_name=self._door['room_name'], sender=agent_name)
 
                         self._message_picking_up_block(
                             block_vis=block_vis, block_location=block_location, sender=agent_name)
@@ -518,7 +533,7 @@ class BaseLineAgent(BW4TBrain):
                     self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
                 else:
                     self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
-                        objCarryId)
+                        (objCarryId, visualizationObj))
 
                 self._currentlyCarrying = -1
 
@@ -594,9 +609,23 @@ class BaseLineAgent(BW4TBrain):
         Update the records of trust for this agent in the memory file
         '''
         trustor = self.agent_id  # Get the name (ID) of the trustor
-        mem_entry = {trustor: self._trustBeliefs}
-        with open('./src/collaborative_agent/TU-Delft-Collaborative-AI-Trust/agents1/Memory.json', 'w') as outfile:
-            json.dump(mem_entry, outfile)
+        mem_entry = self._trustBeliefs
+
+        # Read from the json mem file
+        mem_file = open(
+            './src/collaborative_agent/TU-Delft-Collaborative-AI-Trust/agents1/Memory.json', 'r')
+        json_object = json.load(mem_file)
+        mem_file.close()
+
+        # Update the entry with beliefs
+        if (trustor not in json_object.keys()):
+            json_object[trustor] = mem_entry
+
+        # Write to json memory file
+        mem_file = open(
+            './src/collaborative_agent/TU-Delft-Collaborative-AI-Trust/agents1/Memory.json', "w")
+        json.dump(json_object, mem_file)
+        mem_file.close()
 
     def visit_new_room(self, room_name):
         # Add a new room entry to the dict of visisted rooms (unless it exists already)
@@ -626,10 +655,18 @@ class BaseLineAgent(BW4TBrain):
 
         return block_size, block_shape, block_color, x, y
 
+    def trust_decision(self, trustee):
+        agent_trust = self._trustBeliefs[trustee]
+        return agent_trust > 0
+
     def direct_exp(self, trustee, messages):
         curr_trust = self._trustBeliefs[trustee]
 
-        for message in messages:
+        # Variables for noting the state of the trustee
+        current_room = None
+
+        num_messages = len(messages)
+        for idx, message in enumerate(messages):
             # Definitive evidence #
             if ('Opening door' in message):
                 message_words = message.split()
@@ -652,19 +689,31 @@ class BaseLineAgent(BW4TBrain):
                         curr_trust = 0.0
                         break
 
-            # if ('?' in message):
-            #     agent_start = ... # Get the starting point
-            #     agent_dest = ... # Get the destination
+            # Cannot enter a room without leaving first
+            if ('Entering room' in message):
+                entered_room = message.split()[2]
+                if (current_room == None):
+                    current_room = entered_room
+                else:
+                    curr_trust = 0.0
+            if ('Leaving' in message):
+                left_room = message.split()[2]
+                if (current_room == left_room):
+                    current_room = None
+                else:
+                    curr_trust = 0.0
 
-            # trustee_speed = self.world_knowledge.agent_speeds[trustee]
-            # time_passed = current_time - time_of_message
-            # if (|trustee_location - meeting_point| > trustee_speed * time_passed):
-            #     curr_trust = 0.0
-
-            # Partial evidence #
-            # sus_dist = ...
-            # if (|trustee_location - meeting_point| - trustee_speed * time_passed > sus_dist):
-            #     curr_trust = 0.0
+            # Check whether the room name used in a message exists on the map
+            valid_room_name = None
+            if ('Moving' in message or
+                'Entering' in message or
+                'Searching' in message or
+                    'Leaving' in message):
+                valid_room_name = message.split()[2]
+            elif ('Opening' in message):
+                valid_room_name = message.split()[3]
+            if(valid_room_name not in self._valid_rooms):
+                curr_trust = 0.0
 
         self._trustBeliefs[trustee] = curr_trust
 

@@ -93,17 +93,20 @@ class LiarAgent(BaseLineAgent):
 
     # define the function for lying
     def lie_msg_moving_to_door(self, sender):
-        random_room = random.randint(0, self._number_of_rooms - 1)
+        max_room_number = self._number_of_rooms * 2
+        random_room = random.randint(0, max_room_number - 1)
         mssg = 'Moving to room_' + str(random_room)
         self._sendMessage(mssg, sender)
 
     def lie_msg_opening_door(self, sender):
-        random_room = random.randint(0, self._number_of_rooms - 1)
+        max_room_number = self._number_of_rooms * 2
+        random_room = random.randint(0, max_room_number - 1)
         mssg = 'Opening door of room_' + str(random_room)
         self._sendMessage(mssg, sender)
 
     def lie_msg_searching_room(self, sender):
-        random_room = random.randint(0, self._number_of_rooms - 1)
+        max_room_number = self._number_of_rooms * 2
+        random_room = random.randint(0, max_room_number - 1)
         mssg = 'Searching through room_' + str(random_room)
         self._sendMessage(mssg, sender)
 
@@ -120,7 +123,8 @@ class LiarAgent(BaseLineAgent):
         self._sendMessage(mssg, sender)
 
     def lie_message_entering_room(self, sender):
-        random_room = random.randint(0, self._number_of_rooms - 1)
+        max_room_number = self._number_of_rooms * 2
+        random_room = random.randint(0, max_room_number - 1)
         mssg = 'Entering the room_' + str(random_room)
         self._sendMessage(mssg, sender)
 
