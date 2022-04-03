@@ -18,24 +18,6 @@ from agents1.BW4TBaselineAgent import BaseLineAgent, Phase
 
 import json
 
-# World Knowledge that out agent acquires throughout the run
-
-
-class WorldKnowledge:
-    opened_doors = []  # The list of doors opened (by anyone) on the map
-    # The dictionary of visited (by us) rooms with associated block locations inside
-    visited_rooms = {}
-    agent_speeds = {}  # The dictionary of agents and their corresponding speeds
-
-    def __init__(self) -> None:
-        pass
-
-    def door_opened(self, door_name):
-        self.opened_doors.append(door_name)
-
-    def room_visited(self, room_name, blocks):
-        self.visited_rooms[room_name] = blocks
-
 
 """
 The StrongAgent
@@ -104,20 +86,19 @@ class StrongAgent(BaseLineAgent):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
-                receivedMessages = self._processMessages(self._teamMembers)
+        receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
         self._valid_rooms = [door['room_name'] for door in self._state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-        # Get the total number of rooms in the world
-        # if self._number_of_rooms == -1:
-        #     door_length = [door['room_name'] for door in state.values(
-        #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
-        #     self._number_of_rooms = len(door_length)
-        # self._trustBlief(self._teamMembers, receivedMessages)
+        self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
@@ -319,6 +300,9 @@ class StrongAgent(BaseLineAgent):
                             block_vis=block_vis, block_location=block_location, sender=agent_name)
 
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
+
+                    room_name = self._door['room_name']
+                    self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}

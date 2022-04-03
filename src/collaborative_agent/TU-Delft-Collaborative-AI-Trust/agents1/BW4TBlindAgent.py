@@ -98,20 +98,19 @@ class BlindAgent(BaseLineAgent):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
         self._valid_rooms = [door['room_name'] for door in self._state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-        # Get the total number of rooms in the world
-        # if self._number_of_rooms == -1:
-        #     door_length = [door['room_name'] for door in state.values(
-        #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
-        #     self._number_of_rooms = len(door_length)
-        # self._trustBlief(self._teamMembers, receivedMessages)
+        self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
@@ -264,14 +263,16 @@ class BlindAgent(BaseLineAgent):
                         self._message_found_block(
                             block_vis, block_location, agent_name)
 
-
                         self._phase = Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE
                         self._message_leaving_room(
-                                room_name=self._door['room_name'], sender=agent_name)
+                            room_name=self._door['room_name'], sender=agent_name)
 
                         self._message_picking_up_block(
                             block_vis=block_vis, block_location=block_location, sender=agent_name)
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
+
+                    room_name = self._door['room_name']
+                    self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}
@@ -287,7 +288,8 @@ class BlindAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -320,7 +322,8 @@ class BlindAgent(BaseLineAgent):
                 if self._checkIfCurrentlyCarrying(state):
                     self._state_tracker.update(state)
                     # Follow path to door
-                    action = self._navigator.get_move_action(self._state_tracker)
+                    action = self._navigator.get_move_action(
+                        self._state_tracker)
 
                     if action != None:
                         return action, {}
@@ -399,13 +402,17 @@ class BlindAgent(BaseLineAgent):
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
                 self._navigator.reset_full()
 
-                goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
+                goalBlockVisualization = self._goalBlockCharacteristics[
+                    self._currentlyWantedBlock]['visualization']
 
                 for index in self._nearbyGoalBlocksStored:
                     for droppedBlock in self._nearbyGoalBlocksStored[index]:
-                        storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
-                        storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
-                        storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
+                        storedSize = float(droppedBlock[1][droppedBlock[1].find(
+                            "'size': ")+8:droppedBlock[1].find(",")])
+                        storedShape = int(droppedBlock[1][droppedBlock[1].find(
+                            "'shape': ")+9:droppedBlock[1].find(", 'co")])
+                        storedColour = droppedBlock[1][droppedBlock[1].find(
+                            "'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
 
                         if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
 
@@ -413,12 +420,14 @@ class BlindAgent(BaseLineAgent):
 
                             # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
                             block_location = self._goalBlockCharacteristics[index]['location']
-                            block_location = block_location[0] + 3, block_location[1]
+                            block_location = block_location[0] + \
+                                3, block_location[1]
                             self._navigator.add_waypoints([block_location])
 
                             self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
 
-                            action = self._navigator.get_move_action(self._state_tracker)
+                            action = self._navigator.get_move_action(
+                                self._state_tracker)
                             return action, {}
 
                 self._phase = Phase.PLAN_PATH_TO_DOOR

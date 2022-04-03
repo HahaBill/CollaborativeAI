@@ -19,8 +19,6 @@ from agents1.BW4TBaselineAgent import BaseLineAgent, Phase
 
 import json
 
-# World Knowledge that out agent acquires throughout the run
-
 
 """
 The LiarAgent
@@ -177,20 +175,19 @@ class LiarAgent(BaseLineAgent):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
         self._valid_rooms = [door['room_name'] for door in self._state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         # Record the list of currently closed doors
         self._closedRooms = [door['room_name'] for door in state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
-        # Get the total number of rooms in the world
-        # if self._number_of_rooms == -1:
-        #     door_length = [door['room_name'] for door in state.values(
-        #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
-        #     self._number_of_rooms = len(door_length)
-        # self._trustBlief(self._teamMembers, receivedMessages)
+        self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
@@ -388,8 +385,8 @@ class LiarAgent(BaseLineAgent):
                                 block_vis=block_vis, block_location=block_location, sender=agent_name)
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
-                    # room_name = self._door['room_name']
-                    # self.discover_block_in_visited_room(obj, room_name)
+                    room_name = self._door['room_name']
+                    self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}
@@ -478,7 +475,7 @@ class LiarAgent(BaseLineAgent):
                         self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
                     else:
                         self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
-                            objCarryId)
+                            (objCarryId, visualizationObj))
 
                     self._currentlyCarrying = -1
 
@@ -547,9 +544,12 @@ class LiarAgent(BaseLineAgent):
 
                 for index in self._nearbyGoalBlocksStored:
                     for droppedBlock in self._nearbyGoalBlocksStored[index]:
-                        print(droppedBlock[1])
+                        if droppedBlock[1] == "l":
+                            print("FOUND YEAH :  ", droppedBlock[1])
+                            continue
+
                         storedSize = float(droppedBlock[1][droppedBlock[1].find(
-                            "'size': ")+8:droppedBlock[1].find(", 'sh")])
+                            "{'size': ")+9:droppedBlock[1].find(", 'sh")])
                         storedShape = int(droppedBlock[1][droppedBlock[1].find(
                             "'shape': ")+9:droppedBlock[1].find(", 'co")])
                         storedColour = droppedBlock[1][droppedBlock[1].find(
