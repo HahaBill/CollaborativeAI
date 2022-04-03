@@ -113,9 +113,11 @@ class BaseLineAgent(BW4TBrain):
         # Fields specific to the Trust Model
         self._trustBeliefs = {}
         self._defaultBeliefAssignment = True
-        self._defaultTrustValue = 0.6  # Somewhat optimistic to start with
+        self._defaultTrustValue = 1.0  # Somewhat optimistic to start with
         self._closedRooms = {}  # The list is updated every tick
         self._valid_rooms = []
+        self._agents_in_rooms = {}
+        self._defaultAgentsInRooms = True
         # Blocks with locations are added every time a new one is noticed in a room
         self._visitedRooms = {}
 
@@ -293,8 +295,12 @@ class BaseLineAgent(BW4TBrain):
         for member in state['World']['team_members']:
             if member != agent_name and member not in self._teamMembers:
                 self._teamMembers.append(member)
+                if (self._defaultAgentsInRooms):
+                    self._agents_in_rooms[member] = None
+        self._defaultAgentsInRooms = False
         # Process messages from team members
         receivedMessages = self._processMessages(self._teamMembers)
+
         # Update trust beliefs for team members
         self._valid_rooms = [door['room_name'] for door in self._state.values(
         ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
@@ -306,15 +312,15 @@ class BaseLineAgent(BW4TBrain):
         #     door_length = [door['room_name'] for door in state.values(
         #     ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
         #     self._number_of_rooms = len(door_length)
-        # self._trustBlief(self._teamMembers, receivedMessages)
+        self._trustBlief(self._teamMembers, receivedMessages)
 
         while True:
 
             received = self._processMessages(self._teamMembers)
             for member in received.keys():
                 # Check if we trust this agent already or not
-                # if (not self.trust_decision(member)):
-                #     continue  # Then ignore all their messages
+                if (not self.trust_decision(member)):
+                    continue  # Then ignore all their messages
 
                 for message in received[member]:
                     if 'Put currently' in message:
@@ -469,8 +475,8 @@ class BaseLineAgent(BW4TBrain):
                             block_vis=block_vis, block_location=block_location, sender=agent_name)
                         return GrabObject.__name__, {'object_id': obj['obj_id']}
 
-                    #room_name = self._door['room_name']
-                    #self.discover_block_in_visited_room(obj, room_name)
+                    room_name = self._door['room_name']
+                    self.discover_block_in_visited_room(obj, room_name)
 
                 if action != None:
                     return action, {}
@@ -618,8 +624,8 @@ class BaseLineAgent(BW4TBrain):
         mem_file.close()
 
         # Update the entry with beliefs
-        if (trustor not in json_object.keys()):
-            json_object[trustor] = mem_entry
+        # if (trustor not in json_object.keys()):
+        json_object[trustor] = mem_entry
 
         # Write to json memory file
         mem_file = open(
@@ -663,7 +669,7 @@ class BaseLineAgent(BW4TBrain):
         curr_trust = self._trustBeliefs[trustee]
 
         # Variables for noting the state of the trustee
-        current_room = None
+        current_room = self._agents_in_rooms[trustee]
 
         num_messages = len(messages)
         for idx, message in enumerate(messages):
@@ -671,7 +677,7 @@ class BaseLineAgent(BW4TBrain):
             if ('Opening door' in message):
                 message_words = message.split()
                 room_name = message_words[3]  # Get room name from the message
-                if (room_name not in self._closedRooms):
+                if (room_name in self._closedRooms):
                     curr_trust = 0.0  # If the room is not open, then agent is lying
 
             if ('Found goal block' in message):
@@ -681,39 +687,43 @@ class BaseLineAgent(BW4TBrain):
                 # Get block location from the message
                 found_block_location = message_data[3::]
                 found = False
-                for block_obj in self._visitedRooms.values():
-                    block_vis = block_obj["vizualization"]
-                    block_location = block_obj["location"]
-                    if (block_vis == found_block_vis and found_block_location == block_location or found_block_location == block_location):
-                        found = True
-                        curr_trust = 0.0
+                for room, blocks in self._visitedRooms.items():
+                    if (blocks != []):
+                        for block_obj in blocks:
+                            block_vis = block_obj['visualization']
+                            block_location = block_obj['location']
+                            if (block_vis == found_block_vis and found_block_location == block_location or found_block_location == block_location):
+                                found = True
+                                curr_trust = 0.0
+                                break
+                    if (found):
                         break
 
             # Cannot enter a room without leaving first
             if ('Entering room' in message):
                 entered_room = message.split()[2]
                 if (current_room == None):
-                    current_room = entered_room
+                    self._agents_in_rooms[trustee] = entered_room
                 else:
                     curr_trust = 0.0
             if ('Leaving' in message):
                 left_room = message.split()[2]
                 if (current_room == left_room):
-                    current_room = None
+                    self._agents_in_rooms[trustee] = None
                 else:
                     curr_trust = 0.0
 
-            # Check whether the room name used in a message exists on the map
-            valid_room_name = None
-            if ('Moving' in message or
-                'Entering' in message or
-                'Searching' in message or
-                    'Leaving' in message):
-                valid_room_name = message.split()[2]
-            elif ('Opening' in message):
-                valid_room_name = message.split()[3]
-            if(valid_room_name not in self._valid_rooms):
-                curr_trust = 0.0
+            # # Check whether the room name used in a message exists on the map
+            # valid_room_name = None
+            # if ('Moving' in message or
+            #     'Entering' in message or
+            #     'Searching' in message or
+            #         'Leaving' in message):
+            #     valid_room_name = message.split()[2]
+            # elif ('Opening' in message):
+            #     valid_room_name = message.split()[3]
+            # if(valid_room_name not in self._valid_rooms):
+            #     curr_trust = 0.0
 
         self._trustBeliefs[trustee] = curr_trust
 
@@ -736,9 +746,10 @@ class BaseLineAgent(BW4TBrain):
             for member in received.keys():
                 if member not in self._trustBeliefs:
                     self._trustBeliefs[member] = self._defaultTrustValue
+            self._defaultBeliefAssignment = False
 
         # return
         # Generate the trust values for every trustee given their messages
         self.image(received.keys(), received)
         # Save the result trust beliefs in the memory file
-        # self.update_mem()
+        self.update_mem()
