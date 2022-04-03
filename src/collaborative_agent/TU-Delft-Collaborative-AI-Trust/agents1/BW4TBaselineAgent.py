@@ -110,6 +110,9 @@ class BaseLineAgent(BW4TBrain):
         self._currentlyWantedBlock = 0
         self._currentlyCarrying = -1
 
+        self._currentlyVisitedRooms = []
+        self._droppedBlockIndex = -1
+
         # Fields specific to the Trust Model
         self._trustBeliefs = {}
         self._defaultBeliefAssignment = True
@@ -174,6 +177,12 @@ class BaseLineAgent(BW4TBrain):
         else:
             self._alreadyPutInDropZone.add(index)
             return goal_block['location'], True
+
+    def _checkIfCurrentlyCarrying(self, state):
+        if self._currentlyCarrying != -1:
+            return len(state[self.agent_id]['is_carrying']) != 0
+
+        return False
 
     ############################################################################################################
     ###################################### Communication protocol ##############################################
@@ -348,12 +357,18 @@ class BaseLineAgent(BW4TBrain):
 
                 doors = [door for door in state.values(
                 ) if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and not door['is_open']]
+
                 if len(doors) == 0:
-                    doors = [door for door in state.values(
-                    ) if 'class_inheritance' in door and 'Door' in door['class_inheritance']]
+                    if len(self._currentlyVisitedRooms) == len(state.get_all_room_names()) - 1:
+                        self._currentlyVisitedRooms = []
+
+                    doors = [door for door in state.values() if 'class_inheritance' in door and 'Door' in door['class_inheritance'] and door['room_name'] not in self._currentlyVisitedRooms]
 
                 # Randomly pick a closed door
-                self._door = random.choice(doors)
+                doorChoice = random.choice(doors)
+
+                self._door = doorChoice
+                self._currentlyVisitedRooms.append(doorChoice['room_name'])
                 doorLoc = self._door['location']
 
                 # Location in front of door is south from door
@@ -367,7 +382,7 @@ class BaseLineAgent(BW4TBrain):
 
             """
             Following the path to the chosen closed door
-            
+
             """
             if Phase.FOLLOW_PATH_TO_DOOR == self._phase:
                 self._state_tracker.update(state)
@@ -380,7 +395,7 @@ class BaseLineAgent(BW4TBrain):
 
             """
             Opening the door
-            
+
             """
             if Phase.OPEN_DOOR == self._phase:
                 self._phase = Phase.ENTER_THE_ROOM
@@ -395,7 +410,7 @@ class BaseLineAgent(BW4TBrain):
 
             """
             Entering the room
-            
+
             """
             if Phase.ENTER_THE_ROOM == self._phase:
                 self._state_tracker.update(state)
@@ -433,7 +448,7 @@ class BaseLineAgent(BW4TBrain):
             if found then grab it and drop it either at :
                 a) The Drop zone
                 b) The Intermidiate storage
-            
+
             """
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
 
@@ -483,61 +498,71 @@ class BaseLineAgent(BW4TBrain):
 
             """
             if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
-                self._state_tracker.update(state)
-                # Follow path to door
-                action = self._navigator.get_move_action(self._state_tracker)
+                if self._checkIfCurrentlyCarrying(state):
+                    self._state_tracker.update(state)
+                    # Follow path to door
+                    action = self._navigator.get_move_action(self._state_tracker)
 
-                if action != None:
-                    return action, {}
+                    if action != None:
+                        return action, {}
 
-                block_vis = state[self.agent_id]['is_carrying'][0]['visualization']
-                block_location = self._goalBlockCharacteristics[self._currentlyCarrying]['location']
-                self._message_put_currently_desired(
-                    self._currentlyCarrying, agent_name)
-                self._message_droping_block(
-                    block_vis, block_location, agent_name)
+                    block_vis = state[self.agent_id]['is_carrying'][0]['visualization']
+                    block_location = self._goalBlockCharacteristics[self._currentlyCarrying]['location']
+                    self._message_put_currently_desired(
+                        self._currentlyCarrying, agent_name)
+                    self._message_droping_block(
+                        block_vis, block_location, agent_name)
 
-                if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
-                    self._currentlyWantedBlock += 1
+                    if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
+                        self._currentlyWantedBlock += 1
 
-                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._currentlyCarrying = -1
+                    objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                    self._currentlyCarrying = -1
 
-                return DropObject.__name__, {'object_id': objCarryId}
+                    return DropObject.__name__, {'object_id': objCarryId}
+                else:
+                    self._currentlyCarrying = -1
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
 
             """
             Plan to drop goal object to the next to the drop zone
             a.k.a. the intermediate storage
-            
+
             """
             if Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE == self._phase:
-                self._state_tracker.update(state)
-                # Follow path to door
-                action = self._navigator.get_move_action(self._state_tracker)
+                if self._checkIfCurrentlyCarrying(state):
+                    self._state_tracker.update(state)
+                    # Follow path to door
+                    action = self._navigator.get_move_action(self._state_tracker)
 
-                if action != None:
-                    return action, {}
+                    if action != None:
+                        return action, {}
 
-                objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                visualizationObj = str(
-                    state[self.agent_id]['is_carrying'][0]['visualization'])
-                self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
-                self._message_stored_nearby(block_id=objCarryId, block_vis=visualizationObj, index=str(
-                    self._currentlyCarrying), sender=agent_name)
+                    objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
 
-                self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
-                if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
-                    list_obj = []
-                    list_obj.append((objCarryId, visualizationObj))
-                    self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
+                    visualizationObj = str(
+                        state[self.agent_id]['is_carrying'][0]['visualization'])
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                    self._message_stored_nearby(block_id=objCarryId, block_vis=visualizationObj, index=str(
+                        self._currentlyCarrying), sender=agent_name)
+
+                    self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
+                    if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
+                        list_obj = []
+                        list_obj.append((objCarryId, visualizationObj))
+                        self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
+                    else:
+                        self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
+                            (objCarryId, visualizationObj))
+
+                    self._currentlyCarrying = -1
+
+                    return DropObject.__name__, {'object_id': objCarryId}
+
                 else:
-                    self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
-                        (objCarryId, visualizationObj))
-
-                self._currentlyCarrying = -1
-
-                return DropObject.__name__, {'object_id': objCarryId}
+                    self._currentlyCarrying = -1
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
 
             """
             Searching for the currenly desired goal block in the intermediate storage.
@@ -556,7 +581,7 @@ class BaseLineAgent(BW4TBrain):
                 self._navigator.reset_full()
                 self._navigator.add_waypoints([block_location])
 
-                for storedBlockID in self._nearbyGoalBlocksStored[self._currentlyWantedBlock]:
+                for storedBlockID in self._nearbyGoalBlocksStored[self._droppedBlockIndex]:
                     desiredBlock = self._goalBlockCharacteristics[
                         self._currentlyWantedBlock]['visualization']
 
@@ -569,7 +594,7 @@ class BaseLineAgent(BW4TBrain):
                         "'colour': ")+11:storedBlock.find(", 'de") - 1]
 
                     if storedShape == int(desiredBlock['shape']) and storedSize == float(desiredBlock['size']) and storedColour == desiredBlock['colour']:
-                        self._nearbyGoalBlocksStored[self._currentlyWantedBlock].remove(
+                        self._nearbyGoalBlocksStored[self._droppedBlockIndex].remove(
                             storedBlockID)
                         self._currentlyCarrying = self._currentlyWantedBlock
                         self._phase = Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT
@@ -586,17 +611,31 @@ class BaseLineAgent(BW4TBrain):
 
             """
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
-                if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
-                    self._navigator.reset_full()
+                self._navigator.reset_full()
 
-                    block_location = self._goalBlockCharacteristics[self._currentlyWantedBlock]['location']
-                    block_location = block_location[0] + 3, block_location[1]
-                    self._navigator.add_waypoints([block_location])
+                goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
 
-                    self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
+                for index in self._nearbyGoalBlocksStored:
+                    for droppedBlock in self._nearbyGoalBlocksStored[index]:
+                        storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
+                        storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
+                        storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
 
-                else:
-                    self._phase = Phase.PLAN_PATH_TO_DOOR
+                        if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
+
+                            self._droppedBlockIndex = index
+
+                            # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
+                            block_location = self._goalBlockCharacteristics[index]['location']
+                            block_location = block_location[0] + 3, block_location[1]
+                            self._navigator.add_waypoints([block_location])
+
+                            self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
+
+                            action = self._navigator.get_move_action(self._state_tracker)
+                            return action, {}
+
+                self._phase = Phase.PLAN_PATH_TO_DOOR
 
     #################################################################################################################################################
     #################################################################################################################################################
@@ -605,6 +644,8 @@ class BaseLineAgent(BW4TBrain):
     #################################################################################################################################################
 
     def update_mem(self):
+
+        return;
         '''
         Update the records of trust for this agent in the memory file
         '''
@@ -628,11 +669,15 @@ class BaseLineAgent(BW4TBrain):
         mem_file.close()
 
     def visit_new_room(self, room_name):
+        return;
+
         # Add a new room entry to the dict of visisted rooms (unless it exists already)
         if (room_name not in self._visitedRooms.keys()):
             self._visitedRooms[room_name] = []
 
     def discover_block_in_visited_room(self, block_obj, room_name):
+        return;
+
         if (room_name not in self._visitedRooms.keys()):
             raise Exception("Discovered a block in a not yet visited room.\n")
 
@@ -641,6 +686,8 @@ class BaseLineAgent(BW4TBrain):
               block_obj['visualization'], " in room ", room_name)
 
     def extract_from_message_found_block(self, message):
+        return;
+
         split_1 = message.split("{")[1]
         split_2 = split_1.split("}")
 
@@ -656,10 +703,14 @@ class BaseLineAgent(BW4TBrain):
         return block_size, block_shape, block_color, x, y
 
     def trust_decision(self, trustee):
+        return;
+
         agent_trust = self._trustBeliefs[trustee]
         return agent_trust > 0
 
     def direct_exp(self, trustee, messages):
+
+        return;
         curr_trust = self._trustBeliefs[trustee]
 
         # Variables for noting the state of the trustee
@@ -718,6 +769,8 @@ class BaseLineAgent(BW4TBrain):
         self._trustBeliefs[trustee] = curr_trust
 
     def image(self, trustees, all_messages):
+
+        return;
         for trustee in trustees:
             self.direct_exp(trustee, all_messages[trustee])
             # self.comm_exp(trustee, all_messages)
@@ -730,6 +783,8 @@ class BaseLineAgent(BW4TBrain):
 
         Statistical aggregation for now
         '''
+
+        return;
 
         # Assign the default trust value to all other agents
         if (self._defaultBeliefAssignment):

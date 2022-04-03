@@ -41,8 +41,8 @@ class WorldKnowledge:
 """
 The LazyAgent
 
-Less willing to use energy and thus sometimes stops what it is doing. This agent does not complete 
-the action they say they will do 50% of the time, and start another task/action instead (and communicate this new action, 
+Less willing to use energy and thus sometimes stops what it is doing. This agent does not complete
+the action they say they will do 50% of the time, and start another task/action instead (and communicate this new action,
 therefore they do not lie). For example, this agent may stop searching room X after a few moves, and move to another room instead.
 
 Additional features from the BaselineAgent :
@@ -165,7 +165,7 @@ class LazyAgent(BaseLineAgent):
 
             """
             Following the path to the chosen closed door
-            
+
             """
             if Phase.FOLLOW_PATH_TO_DOOR == self._phase:
                 self._state_tracker.update(state)
@@ -186,7 +186,7 @@ class LazyAgent(BaseLineAgent):
 
             """
             Opening the door
-            
+
             """
             if Phase.OPEN_DOOR == self._phase:
                 self._sendMessage('Opening door of ' +
@@ -209,7 +209,7 @@ class LazyAgent(BaseLineAgent):
 
             """
             Entering the room
-            
+
             """
             if Phase.ENTER_THE_ROOM == self._phase:
                 self._state_tracker.update(state)
@@ -260,7 +260,7 @@ class LazyAgent(BaseLineAgent):
             if found then grab it and drop it either at :
                 a) The Drop zone
                 b) The Intermidiate storage
-            
+
             """
             if Phase.SEARCH_AND_FIND_GOAL_BLOCK == self._phase:
                 self._state_tracker.update(state)
@@ -330,86 +330,96 @@ class LazyAgent(BaseLineAgent):
 
             """
             if Phase.PLAN_TO_DROP_CURRENTLY_DESIRED_OBJECT == self._phase:
-                self._state_tracker.update(state)
-                # Follow path to door
-                action = self._navigator.get_move_action(self._state_tracker)
-
-                if not self.check_if_quit():
-                    self._number_of_steps_to_take -= 1
-
-                    if action != None:
-                        return action, {}
-
-                    self.decide_if_quit(0)
+                if self._checkIfCurrentlyCarrying(state):
+                    self._state_tracker.update(state)
+                    # Follow path to door
+                    action = self._navigator.get_move_action(self._state_tracker)
 
                     if not self.check_if_quit():
-                        self._sendMessage(
-                            'Put currently desired object ' + str(self._currentlyCarrying), agent_name)
+                        self._number_of_steps_to_take -= 1
 
-                        if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
-                            self._currentlyWantedBlock += 1
+                        if action != None:
+                            return action, {}
 
-                        objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                        self._currentlyCarrying = -1
-
-                        self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
                         self.decide_if_quit(0)
 
-                        return DropObject.__name__, {'object_id': objCarryId}
+                        if not self.check_if_quit():
+                            self._sendMessage(
+                                'Put currently desired object ' + str(self._currentlyCarrying), agent_name)
+
+                            if self._currentlyWantedBlock < len(self._goalBlockCharacteristics) - 1:
+                                self._currentlyWantedBlock += 1
+
+                            objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                            self._currentlyCarrying = -1
+
+                            self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                            self.decide_if_quit(0)
+
+                            return DropObject.__name__, {'object_id': objCarryId}
+
+                        else:
+                            self._phase = Phase.PLAN_PATH_TO_DOOR
 
                     else:
                         self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_DOOR
+                    self._currentlyCarrying = -1
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
 
             """
             Plan to drop goal object to the next to the drop zone
             a.k.a. the intermediate storage
-            
+
             """
             if Phase.PLAN_TO_DROP_GOAL_OBJECT_NEXT_TO_DROP_ZONE == self._phase:
-                self._state_tracker.update(state)
-                # Follow path to door
-                action = self._navigator.get_move_action(self._state_tracker)
-
-                if not self.check_if_quit():
-                    self._number_of_steps_to_take -= 1
-
-                    if action != None:
-                        return action, {}
-
-                    self.decide_if_quit(0)
+                if self._checkIfCurrentlyCarrying(state):
+                    self._state_tracker.update(state)
+                    # Follow path to door
+                    action = self._navigator.get_move_action(self._state_tracker)
 
                     if not self.check_if_quit():
-                        objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
-                        visualizationObj = str(
-                            state[self.agent_id]['is_carrying'][0]['visualization'])
+                        self._number_of_steps_to_take -= 1
 
-                        self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
-                        if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
-                            list_obj = []
-                            list_obj.append((objCarryId, visualizationObj))
-                            self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
-                            # print(self._nearbyGoalBlocksStored)
-                        else:
-                            self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
-                                objCarryId)
-                            # print(self._nearbyGoalBlocksStored)
+                        if action != None:
+                            return action, {}
 
-                        self._currentlyCarrying = -1
-                        # print(self._checkGoalBlocksPlacedNearby)
-
-                        self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
                         self.decide_if_quit(0)
 
-                        return DropObject.__name__, {'object_id': objCarryId}
+                        if not self.check_if_quit():
+                            objCarryId = state[self.agent_id]['is_carrying'][0]['obj_id']
+                            visualizationObj = str(
+                                state[self.agent_id]['is_carrying'][0]['visualization'])
+
+                            self._checkGoalBlocksPlacedNearby[self._currentlyCarrying] = True
+                            if self._currentlyCarrying not in self._nearbyGoalBlocksStored:
+                                list_obj = []
+                                list_obj.append((objCarryId, visualizationObj))
+                                self._nearbyGoalBlocksStored[self._currentlyCarrying] = list_obj
+                                # print(self._nearbyGoalBlocksStored)
+                            else:
+                                self._nearbyGoalBlocksStored[self._currentlyCarrying].append(
+                                    objCarryId)
+                                # print(self._nearbyGoalBlocksStored)
+
+                            self._currentlyCarrying = -1
+                            # print(self._checkGoalBlocksPlacedNearby)
+
+                            self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
+                            self.decide_if_quit(0)
+
+                            return DropObject.__name__, {'object_id': objCarryId}
+
+                        else:
+                            self._phase = Phase.PLAN_PATH_TO_DOOR
 
                     else:
                         self._phase = Phase.PLAN_PATH_TO_DOOR
 
                 else:
-                    self._phase = Phase.PLAN_PATH_TO_DOOR
+                    self._currentlyCarrying = -1
+                    self._phase = Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY
 
             """
             Searching for the currenly desired goal block in the intermediate storage.
@@ -435,7 +445,7 @@ class LazyAgent(BaseLineAgent):
                         self._navigator.reset_full()
                         self._navigator.add_waypoints([block_location])
 
-                        for storedBlockID in self._nearbyGoalBlocksStored[self._currentlyWantedBlock]:
+                        for storedBlockID in self._nearbyGoalBlocksStored[self._droppedBlockIndex]:
                             desiredBlock = self._goalBlockCharacteristics[
                                 self._currentlyWantedBlock]['visualization']
                             # THE CHARACTERISTICS OF THE STORED BLOCK SHOULD BE GET HERE
@@ -448,7 +458,7 @@ class LazyAgent(BaseLineAgent):
                                 "'colour': ")+11:storedBlock.find(", 'de") - 1]
 
                             if storedShape == int(desiredBlock['shape']) and storedSize == float(desiredBlock['size']) and storedColour == desiredBlock['colour']:
-                                self._nearbyGoalBlocksStored[self._currentlyWantedBlock].remove(
+                                self._nearbyGoalBlocksStored[self._droppedBlockIndex].remove(
                                     storedBlockID)
                                 self._currentlyCarrying = self._currentlyWantedBlock
 
@@ -470,19 +480,28 @@ class LazyAgent(BaseLineAgent):
 
             """
             if Phase.CHECK_IF_ANOTHER_GOAL_BLOCK_PLACED_NEARBY == self._phase:
-                if not self.check_if_quit():
-                    if self._currentlyWantedBlock in self._nearbyGoalBlocksStored:
-                        self._navigator.reset_full()
-                        print('OH YEAH')
+                self._navigator.reset_full()
 
-                        block_location = self._goalBlockCharacteristics[
-                            self._currentlyWantedBlock]['location']
-                        block_location = block_location[0] + \
-                            3, block_location[1]
-                        self._navigator.add_waypoints([block_location])
+                goalBlockVisualization = self._goalBlockCharacteristics[self._currentlyWantedBlock]['visualization']
 
-                        self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
-                        self.decide_if_quit(
-                            len(self._navigator.get_all_waypoints()))
-                else:
-                    self._phase = Phase.PLAN_PATH_TO_DOOR
+                for index in self._nearbyGoalBlocksStored:
+                    for droppedBlock in self._nearbyGoalBlocksStored[index]:
+                        storedSize = float(droppedBlock[1][droppedBlock[1].find("'size': ")+8:droppedBlock[1].find(",")])
+                        storedShape = int(droppedBlock[1][droppedBlock[1].find("'shape': ")+9:droppedBlock[1].find(", 'co")])
+                        storedColour = droppedBlock[1][droppedBlock[1].find("'colour': ")+11:droppedBlock[1].find(", 'de") - 1]
+
+                        if int(goalBlockVisualization['shape']) == storedShape and goalBlockVisualization['colour'] == storedColour and float(goalBlockVisualization['size']) == storedSize:
+
+                            self._droppedBlockIndex = index
+
+                            # Really a hack to find the location of the dropped block because they are defined for all 3 goal blocks, not for every dropped block
+                            block_location = self._goalBlockCharacteristics[index]['location']
+                            block_location = block_location[0] + 3, block_location[1]
+                            self._navigator.add_waypoints([block_location])
+
+                            self._phase = Phase.GRAB_DESIRED_OBJECT_NEARBY
+
+                            action = self._navigator.get_move_action(self._state_tracker)
+                            return action, {}
+
+                self._phase = Phase.PLAN_PATH_TO_DOOR

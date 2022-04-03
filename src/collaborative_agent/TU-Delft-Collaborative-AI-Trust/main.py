@@ -16,15 +16,16 @@ press the start button in god mode to start the session.
 if __name__ == "__main__":
     agents = [
         {'name': 'baseAgent0', 'botclass': BaseLineAgent, 'settings': {}},
-        {'name': 'baseAgent1', 'botclass': BaseLineAgent, 'settings': {}},
-        #{'name': 'liarAgent', 'botclass': LiarAgent, 'settings': {}},
-        {'name': 'baseAgent2', 'botclass': BaseLineAgent, 'settings': {}},
+        # {'name': 'baseAgent1', 'botclass': BaseLineAgent, 'settings': {}},
+        # {'name': 'liarAgent', 'botclass': LiarAgent, 'settings': {}},
+        # {'name': 'baseAgent2', 'botclass': BaseLineAgent, 'settings': {}},
         # {'name': 'baseAgent3', 'botclass': BaseLineAgent, 'settings': {}},
         # {'name': 'strongAgent', 'botclass': StrongAgent, 'settings': {}},
-        #{'name': 'blindAgent', 'botclass': BlindAgent, 'settings': {}},
-        #{'name': 'secondBlind', 'botclass': BlindAgent, 'settings': {}},c
-        #{'name': 'thirdBlind', 'botclass': BlindAgent, 'settings': {}},
-        # {'name': 'lazyAgent', 'botclass': LazyAgent, 'settings': {}}
+        {'name': 'blindAgent', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'secondBlind', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'thirdBlind', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'fourthBlind', 'botclass': BlindAgent, 'settings': {}},
+        {'name': 'lazyAgent', 'botclass': LazyAgent, 'settings': {}}
     ]
 
     print("Started world...")
