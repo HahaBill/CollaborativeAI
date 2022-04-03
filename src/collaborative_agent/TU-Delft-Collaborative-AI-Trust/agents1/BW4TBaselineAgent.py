@@ -129,9 +129,9 @@ class BaseLineAgent(BW4TBrain):
                                     action_set=self.action_set, algorithm=Navigator.A_STAR_ALGORITHM)
 
     def filter_bw4t_observations(self, state):
-        print(self.agent_id)
-        print("="*10)
-        print(state)
+        # print(self.agent_id)
+        # print("="*10)
+        # print(state)
         return state
 
     ############################################################################################################
@@ -233,7 +233,6 @@ class BaseLineAgent(BW4TBrain):
         for trustee, trust_value in self._trustBeliefs.items():
             self._message_share_belief(trustee, trust_value, sender)
 
-
     def _message_put_currently_desired(self, curr_carrying, sender):
         mssg = 'Put currently desired object ' + str(curr_carrying)
         self._sendMessage(mssg, sender)
@@ -292,14 +291,14 @@ class BaseLineAgent(BW4TBrain):
             dropZones = state.get_with_property('drop_zone_nr')
             self._goalBlockCharacteristics = [
                 x for x in dropZones if x['is_goal_block'] == True]
-            print(self._goalBlockCharacteristics)
-            print("\n\n")
+            # print(self._goalBlockCharacteristics)
+            # print("\n\n")
 
         # Initialize a list that checks whether the goal block is placed nearby
         if len(self._checkGoalBlocksPlacedNearby) == 0:
             self._checkGoalBlocksPlacedNearby = [
                 False for x in range(len(self._goalBlockCharacteristics))]
-            print(self._checkGoalBlocksPlacedNearby)
+            # print(self._checkGoalBlocksPlacedNearby)
 
         agent_name = state[self.agent_id]['obj_id']
         # Add team members
@@ -654,8 +653,8 @@ class BaseLineAgent(BW4TBrain):
             raise Exception("Discovered a block in a not yet visited room.\n")
 
         self._visitedRooms[room_name].append(block_obj)
-        print("Discovered a ",
-              block_obj['visualization'], " in room ", room_name)
+        # print("Discovered a ",
+        #       block_obj['visualization'], " in room ", room_name)
 
     def extract_from_message_found_block(self, message):
         split_1 = message.split("{")[1]
@@ -749,13 +748,19 @@ class BaseLineAgent(BW4TBrain):
         for informant, messages in all_messages.items():
             for message in reversed(messages):
                 if ('Reputation' in message):
+
                     message_words = message.split()
                     agent_name = message_words[2]
                     agent_rep = float(message_words[4])
 
+                    if (agent_name == self.agent_id):
+                        continue # Since, we are not interested in the trust others assign to us
+
                     # How much can we trust the informant's message
                     informant_weight = self._trustBeliefs[informant]
 
+                    # print("MESSAGE ", message, " FROM ", informant, " TO ", self.agent_id)
+                    # print(self._trustBeliefs)
                     adjust_factor = informant_weight * (self._trustBeliefs[agent_name] - agent_rep)
                     adjust_trust = self._trustBeliefs[agent_name] - adjust_factor
                     self._trustBeliefs[agent_name] = adjust_trust
@@ -789,3 +794,4 @@ class BaseLineAgent(BW4TBrain):
         self.update_mem()
         # Notify other agents of the reputation
         self._bcast_beliefs(self.agent_id)
+
