@@ -223,6 +223,16 @@ class BaseLineAgent(BW4TBrain):
             "[" + block_vis + "]" + ", Index: " + index
         self._sendMessage(mssg, sender)
 
+    # Reputation message
+    def _message_share_belief(self, trustee, trust_value, sender):
+        mssg = "Reputation of " + trustee + " is " + str(trust_value)
+        self._sendMessage(mssg, sender)
+
+    def _bcast_beliefs(self, sender):
+        for trustee, trust_value in self._trustBeliefs.items():
+            self._message_share_belief(trustee, trust_value, sender)
+
+
     def _message_put_currently_desired(self, curr_carrying, sender):
         mssg = 'Put currently desired object ' + str(curr_carrying)
         self._sendMessage(mssg, sender)
@@ -760,3 +770,5 @@ class BaseLineAgent(BW4TBrain):
         self.image(received.keys(), received)
         # Save the result trust beliefs in the memory file
         self.update_mem()
+        # Notify other agents of the reputation
+        self._bcast_beliefs(self.agent_id)
