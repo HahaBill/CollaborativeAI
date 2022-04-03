@@ -700,35 +700,37 @@ class BaseLineAgent(BW4TBrain):
                         break
 
             # Cannot enter a room without leaving first
-            if ('Entering room' in message):
-                entered_room = message.split()[2]
-                if (current_room == None):
-                    self._agents_in_rooms[trustee] = entered_room
-                else:
-                    print("ENTERED", self._agents_in_rooms[trustee])
-                    raise Exception
-                    curr_trust = 0.0
-            if ('Leaving' in message):
-                left_room = message.split()[2]
-                print("Current room ", current_room)
-                if (current_room == left_room):
-                    self._agents_in_rooms[trustee] = None
-                else:
-                    print("LEFT", self._agents_in_rooms[trustee])
-                    raise Exception
-                    curr_trust = 0.0
+            # if ('Entering room' in message):
+            #     entered_room = message.split()[2]
+            #     if (current_room == None):
+            #         self._agents_in_rooms[trustee] = entered_room
+            #     else:
+            #         print("ENTERED", self._agents_in_rooms[trustee])
+            #         raise Exception
+            #         curr_trust = 0.0
+            # if ('Leaving' in message):
+            #     left_room = message.split()[2]
+            #     print("Current room ", current_room)
+            #     if (current_room == left_room):
+            #         self._agents_in_rooms[trustee] = None
+            #     else:
+            #         print("LEFT", self._agents_in_rooms[trustee])
+            #         raise Exception
+            #         curr_trust = 0.0
 
-            # # Check whether the room name used in a message exists on the map
-            # valid_room_name = None
-            # if ('Moving' in message or
-            #     'Entering' in message or
-            #     'Searching' in message or
-            #         'Leaving' in message):
-            #     valid_room_name = message.split()[2]
-            # elif ('Opening' in message):
-            #     valid_room_name = message.split()[3]
-            # if(valid_room_name not in self._valid_rooms):
-            #     curr_trust = 0.0
+            # Check whether the room name used in a message exists on the map
+            valid_room_name = None
+            if ('Moving' in message or
+                'Entering' in message or
+                'Searching' in message or
+                    'Leaving' in message):
+                valid_room_name = message.split()[2]
+                if(valid_room_name not in self._valid_rooms):
+                    curr_trust = 0.0
+            elif ('Opening' in message):
+                valid_room_name = message.split()[3]
+                if(valid_room_name not in self._valid_rooms):
+                    curr_trust = 0.0
 
         self._trustBeliefs[trustee] = curr_trust
 
